@@ -84,6 +84,13 @@ namespace FranceVacanceBookingSystem.Model
         {
 
         }
+
+        public Profil(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
+
         public Profil(string adresse, string @by, int postnummer, int alder, string email, string navn, string password, string username, int telefonNummer)
         {
             Adresse = adresse;

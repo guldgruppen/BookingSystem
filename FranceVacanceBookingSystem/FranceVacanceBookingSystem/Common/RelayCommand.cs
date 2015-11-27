@@ -42,7 +42,8 @@ namespace WpfApplication.ViewModel
 
         public bool CanExecute(object parameter)
         {
-            return IsEnabled;
+            //return IsEnabled;
+            return true;
         }
 
         public event EventHandler CanExecuteChanged;
