@@ -26,13 +26,22 @@
             <ViewModel:ProfilHandler/>
         </Grid.DataContext>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#99C11910">
+            
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Bruger Login" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="61.333" FontFamily="Segoe UI Light" Margin="136,10,136,0"/>
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,20,0,0"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,15,0,0" Height="38.4000015258789"/>
             <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="16,5,16,0" FontSize="20"/>
-            <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="password" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,20,0,0"/>
+            <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="kodeord" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,20,0,0"/>
             <PasswordBox x:Name="passwordBox" Margin="16,5,16,0" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
-            <StackPanel Height="65" Margin="0,25,16,0" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="button" Content="Log in" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="220" FontSize="32" FontFamily="Segoe WP Black" Command="{Binding LoginCommand}"/>
+            <StackPanel Height="65" Margin="0,25,16,0" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <StackPanel HorizontalAlignment="Left" Margin="-281,-13,0,-11">
+                    <HyperlinkButton Content="  Glemt login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="48" FontSize="21.333" Foreground="White"/>
+                    <HyperlinkButton Content="  Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="48
+                                     " FontSize="21.333" Foreground="White"/>
+                </StackPanel>
+
+                <Button x:Name="button" Content="Log in" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="220" FontSize="32" FontFamily="Segoe WP Black" Command="{Binding LoginCommand}" Margin="0,0,-304,0"/>
+
             </StackPanel>
         </StackPanel>
 

@@ -110,7 +110,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        dialog = new MessageDialog("Login Successful");                                                 
+                        dialog = new MessageDialog("Login Successful");                                                                        
                         break;
                     }
                     else
