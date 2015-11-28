@@ -124,6 +124,9 @@
     <Compile Include="View\MainSystem.xaml.cs">
       <DependentUpon>MainSystem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OpretProfil.xaml.cs">
+      <DependentUpon>OpretProfil.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -133,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\FranceImage.jpg" />
+    <Content Include="Assets\FranceImage2.jpg" />
     <Content Include="Assets\fvimg1.jpg" />
     <Content Include="Assets\fvimg2.jpg" />
     <Content Include="Assets\fvimg3.jpg" />
@@ -151,6 +155,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretProfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

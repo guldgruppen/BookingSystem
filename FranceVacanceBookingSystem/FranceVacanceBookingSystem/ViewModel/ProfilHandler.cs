@@ -46,6 +46,9 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
         }
 
+        public string AddUsername { get; set; }
+        public string AddPassword { get; set; }
+
         public string Password
         {
             get { return _password; }
@@ -57,6 +60,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
 
         public RelayCommand LoginCommand { get; set; }
+        public RelayCommand AddProfileCommand { get; set; }
 
         #endregion
 
@@ -64,16 +68,28 @@ namespace FranceVacanceBookingSystem.ViewModel
         public ProfilHandler()
         {
             Profiles = new ObservableCollection<Profil>();
-            LoginCommand = new RelayCommand(CheckLoginInfo);
+            
             Profiles.Add(new Profil("Thomas","Thomas"));
             Profiles.Add(new Profil("Preben", "Preben"));
             Profiles.Add(new Profil("Bob", "Bob"));
 
-            
+            LoginCommand = new RelayCommand(CheckLoginInfo);
+            AddProfileCommand = new RelayCommand(AddProfile);
+
+
         }  
         #endregion
 
         #region Methods
+
+        public void AddProfile()
+        {
+            Profiles.Add(new Profil(Username,Password));
+            OnPropertyChanged();
+            MessageDialog dialog = new MessageDialog("Profil er tilføjet");
+            dialog.ShowAsync();
+        }
+
         public bool CheckUsername(string name)
         {
 
@@ -95,6 +111,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public void CheckLoginInfo()
         {
+            
             if (CheckUsername(Username) == true)
             {
                 dialog = new MessageDialog("Du mangler brugernavn");
@@ -110,12 +127,15 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        dialog = new MessageDialog("Login Successful");                                                                        
+                        dialog = new MessageDialog("Login Successful"); 
+                                                                                               
                         break;
                     }
                     else
                     {
                         dialog = new MessageDialog("Login fejl - prøv igen");
+                        
+                        
                     }
                 }
             }

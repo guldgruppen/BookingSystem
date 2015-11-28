@@ -32,10 +32,17 @@ namespace FranceVacanceBookingSystem.View
             this.InitializeComponent();
             
         }
-
+        // DELETE WHEN YOU CAN FIX IT!
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (MainSystem));
+        }
+
+        //DELETE WHEN YOU CAN FIX IT!
+        private void button1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (OpretProfil));
+            
         }
     }
 }

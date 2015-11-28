@@ -36,7 +36,7 @@
 
                 <StackPanel HorizontalAlignment="Left" Margin="-290,-17,0,-11" VerticalAlignment="Bottom">
                     <Button x:Name="button1" Content="Glemt login?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="221"/>
-                    <Button x:Name="button1_Copy" Content="Opret profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <Button x:Name="button1_Copy" Content="Opret profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="button1_Copy_Click"/>
                 </StackPanel>
 
                 <Button x:Name="button" Content="Log in" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="221" FontSize="32" FontFamily="Segoe WP Black" Command="{Binding LoginCommand}" Margin="0,0,-304,-14" Click="button_Click"/>
