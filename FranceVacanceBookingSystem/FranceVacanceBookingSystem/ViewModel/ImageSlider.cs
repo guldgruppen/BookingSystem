@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
@@ -28,6 +29,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         {
             Timer = new DispatcherTimer();
             Timer.Interval = TimeSpan.FromMilliseconds(1000);
+            
             
             Timer.Start();
         }
