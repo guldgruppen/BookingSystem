@@ -132,6 +132,7 @@
     <None Include="FranceVacanceBookingSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\FranceImage.jpg" />
     <Content Include="Assets\fvimg1.jpg" />
     <Content Include="Assets\fvimg2.jpg" />
     <Content Include="Assets\fvimg3.jpg" />

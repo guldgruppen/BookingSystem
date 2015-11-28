@@ -8,7 +8,10 @@
     x:Class="FranceVacanceBookingSystem.View.Login"
     mc:Ignorable="d">
 
-    <Grid Background="#FF93281F">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/FranceImage.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="400"/>
@@ -22,9 +25,9 @@
         <Grid.DataContext>
             <ViewModel:ProfilHandler/>
         </Grid.DataContext>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#FFBA4B45">
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Bruger Login" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="61.333" FontFamily="Segoe UI Light" Margin="136,0"/>
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,30,0,0"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#99C11910">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Bruger Login" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="61.333" FontFamily="Segoe UI Light" Margin="136,10,136,0"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,20,0,0"/>
             <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="16,5,16,0" FontSize="20"/>
             <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="password" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,20,0,0"/>
             <PasswordBox x:Name="passwordBox" Margin="16,5,16,0" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
