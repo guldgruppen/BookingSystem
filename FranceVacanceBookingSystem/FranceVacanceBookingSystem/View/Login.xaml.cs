@@ -26,6 +26,7 @@ namespace FranceVacanceBookingSystem.View
     /// </summary>
     public sealed partial class Login : Page
     {
+       
         public Login()
         {
             this.InitializeComponent();

@@ -7,9 +7,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
+using Windows.UI.Xaml.Navigation;
 using FranceVacanceBookingSystem.Annotations;
+using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
+using FranceVacanceBookingSystem.View;
 using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.ViewModel
@@ -105,7 +110,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        dialog = new MessageDialog("Login Successful");
+                        dialog = new MessageDialog("Login Successful");                                                 
                         break;
                     }
                     else

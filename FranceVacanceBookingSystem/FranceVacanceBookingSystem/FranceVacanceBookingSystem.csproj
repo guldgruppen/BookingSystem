@@ -113,6 +113,7 @@
     <Compile Include="Common\PersistencyService.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -131,6 +132,9 @@
     <None Include="FranceVacanceBookingSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\fvimg1.jpg" />
+    <Content Include="Assets\fvimg2.jpg" />
+    <Content Include="Assets\fvimg3.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
