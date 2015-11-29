@@ -12,6 +12,11 @@
         <Grid.Background>
             <ImageBrush ImageSource="ms-appx:///Assets/FranceImage.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="400"/>
