@@ -8,13 +8,15 @@
     xmlns:ViewModel="using:FranceVacanceBookingSystem.ViewModel"
     x:Name="pageRoot"
     x:Class="FranceVacanceBookingSystem.View.OpretProfil"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
+    <Page.DataContext>
+        <ViewModel:ProfilHandler/>
+    </Page.DataContext>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -67,9 +69,9 @@
             <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Tlf. Nummer" FontSize="32" Margin="20,15,20,0"/>
             <TextBox x:Name="textBox2" TextWrapping="Wrap" Text="TextBox" Margin="20,0" FontSize="21.333"/>
             <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Brugernavn" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="{Binding AddUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
             <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Kodeord" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="{Binding AddPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
             <Button x:Name="button" Content="Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="97" FontSize="40" Margin="20,20,20,0" Command="{Binding AddProfileCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>

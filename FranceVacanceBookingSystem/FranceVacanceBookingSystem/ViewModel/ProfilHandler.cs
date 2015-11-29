@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -26,6 +27,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         private string _username;
         private string _password;
 
+        
         #endregion
 
         #region Properties
@@ -35,6 +37,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             set { _profiles = value; }
         }
 
+        
         public MessageDialog dialog { get; set; }
         public string Username
         {
@@ -76,18 +79,19 @@ namespace FranceVacanceBookingSystem.ViewModel
             LoginCommand = new RelayCommand(CheckLoginInfo);
             AddProfileCommand = new RelayCommand(AddProfile);
 
-
         }  
         #endregion
 
         #region Methods
+    
 
         public void AddProfile()
         {
-            Profiles.Add(new Profil(Username,Password));
+            Profiles.Add(new Profil(AddUsername,AddPassword));
             OnPropertyChanged();
             MessageDialog dialog = new MessageDialog("Profil er tilføjet");
             dialog.ShowAsync();
+            PersistencyService.SaveNotesAsJsonAsync(Profiles);
         }
 
         public bool CheckUsername(string name)

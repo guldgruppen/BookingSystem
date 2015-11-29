@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -43,6 +44,14 @@ namespace FranceVacanceBookingSystem.View
         {
             Frame.Navigate(typeof (OpretProfil));
             
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilHandler p = new ProfilHandler();
+            int c = p.Profiles.Count;
+            MessageDialog dia = new MessageDialog(c.ToString());
+            dia.ShowAsync();
         }
     }
 }
