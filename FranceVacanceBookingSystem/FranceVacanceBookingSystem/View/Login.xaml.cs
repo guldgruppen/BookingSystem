@@ -32,26 +32,7 @@ namespace FranceVacanceBookingSystem.View
         {
             this.InitializeComponent();
             
-        }
-        // DELETE WHEN YOU CAN FIX IT!
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (MainSystem));
-        }
-
-        //DELETE WHEN YOU CAN FIX IT!
-        private void button1_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (OpretProfil));
-            
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            ProfilHandler p = new ProfilHandler();
-            int c = p.Profiles.Count;
-            MessageDialog dia = new MessageDialog(c.ToString());
-            dia.ShowAsync();
-        }
+        }      
+       
     }
 }

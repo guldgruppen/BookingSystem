@@ -26,11 +26,12 @@ namespace FranceVacanceBookingSystem.ViewModel
         private ObservableCollection<Profil> _profiles;
         private string _username;
         private string _password;
-
+        private INavigationService _navigationService;
         
         #endregion
 
         #region Properties
+
         public ObservableCollection<Profil> Profiles
         {
             get { return _profiles; }
@@ -64,20 +65,30 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
+        public RelayCommand NavToOpretProfilCommand { get; set; }
 
         #endregion
 
         #region Constructors
         public ProfilHandler()
         {
-            Profiles = new ObservableCollection<Profil>();
             
+            Profiles = new ObservableCollection<Profil>();
+            _navigationService = new NavigationService();
             Profiles.Add(new Profil("Thomas","Thomas"));
             Profiles.Add(new Profil("Preben", "Preben"));
             Profiles.Add(new Profil("Bob", "Bob"));
 
             LoginCommand = new RelayCommand(CheckLoginInfo);
             AddProfileCommand = new RelayCommand(AddProfile);
+            NavToOpretProfilCommand = new RelayCommand(() =>
+            {
+                _navigationService.Navigate(typeof (OpretProfil));
+            });
+
+            LoadProfiles();
+
+
 
         }  
         #endregion
@@ -113,6 +124,11 @@ namespace FranceVacanceBookingSystem.ViewModel
             return false;
         }
 
+        public void NavigateToBookingSystem()
+        {
+            _navigationService.Navigate(typeof(MainSystem));
+        }
+      
         public void CheckLoginInfo()
         {
             
@@ -127,12 +143,13 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
             else
             {
+               
                 foreach (Profil profil in Profiles)
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        dialog = new MessageDialog("Login Successful"); 
-                                                                                               
+                        dialog = new MessageDialog("Velkommen tilbage "+profil.Username + " :)"); 
+                         NavigateToBookingSystem();                                                                      
                         break;
                     }
                     else
@@ -145,8 +162,23 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
             dialog.ShowAsync();
 
-        } 
-        #endregion
+        }
+
+        private async void LoadProfiles()
+        {
+            var loadedProfiles = await PersistencyService.LoadNotesFromJsonAsync();
+            if (loadedProfiles != null)
+            {
+                Profiles.Clear();
+                foreach (var note in loadedProfiles)
+                {
+                    Profiles.Add(note);
+                }
+
+            }
+
+        }
+        #endregion     
 
         #region OnPropertyChanged region
         public event PropertyChangedEventHandler PropertyChanged;
