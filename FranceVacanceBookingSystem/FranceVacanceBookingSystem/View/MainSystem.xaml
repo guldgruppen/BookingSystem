@@ -20,7 +20,12 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="#FF7CCF18">
+    <Grid Background="#FF0F586E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="1047*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -28,23 +33,60 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="261*"/>
+            <RowDefinition Height="234*"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid>
+        <Grid Grid.ColumnSpan="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="244"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <TextBlock x:Name="pageTitle" Text="Booking System" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" Margin="0,60,0,40" d:LayoutOverrides="TopMargin, BottomMargin" HorizontalAlignment="Left" Width="428"/>
+            <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,32,10" Width="288">
+                <Button x:Name="button1" Content="Log Ind" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="82" FontSize="48" Margin="80,0,7,0" Background="#FFEE0202"/>
+            </StackPanel>
         </Grid>
+        <StackPanel Grid.Column="1" Grid.Row="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Orientation="Horizontal" Margin="0,30,0,0">
+            <StackPanel x:Name="Antal_Værelser" Width="175" Margin="20,0,0,0">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Væresler:" Height="30" Width="163" FontSize="24" Margin="0,70,-73,20" HorizontalAlignment="Left" d:LayoutOverrides="LeftPosition, RightPosition"/>
+                <ComboBox x:Name="comboBox" Width="153" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="Antal_Personer" Width="175" RenderTransformOrigin="0.503,0.524" Margin="0">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Personer:" FontSize="24" Margin="0,70,0,20" Height="30"/>
+                <ComboBox x:Name="comboBox1" Margin="0,0,10,0" VerticalAlignment="Top" BorderThickness="2" Height="33"/>
+            </StackPanel>
+            <StackPanel x:Name="Antal_Uger" Width="175" Margin="0,0,20,0">
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" FontSize="24" Height="30" Margin="3,70,0,20">
+                	<Run Text="  "/>
+                	<Run Text="Antal Uger:"/>
+                </TextBlock>
+                <ComboBox x:Name="comboBox2" Margin="10,0"/>
+            </StackPanel>
+            <StackPanel x:Name="Husdyr_Swimmingpool" Width="175" Margin="0">
+                <StackPanel Height="82" Margin="0,40,0,0">
+                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt?" FontSize="18.667"/>
+                    <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
+                </StackPanel>
+                <StackPanel Height="94" Margin="0">
+                    <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool?" FontSize="18.667"/>
+                    <ToggleSwitch x:Name="toggleSwitch1" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="Søg" Width="175" Margin="10,0,0,0">
+                <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="113" BorderThickness="2" Margin="0,57,0,0" FontSize="48" FontStyle="Italic">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF006800" Offset="0.092"/>
+                            <GradientStop Color="#FFB1E2A6" Offset="0.996"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="textBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="22,62,0,28" Grid.Row="1" TextWrapping="Wrap" Width="215" FontSize="32" Text="Søge Kriterier:" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
     </Grid>
 </Page>
