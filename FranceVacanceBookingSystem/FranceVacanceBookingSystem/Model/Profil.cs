@@ -91,12 +91,9 @@ namespace FranceVacanceBookingSystem.Model
             Password = password;
         }
 
-        public Profil(string adresse, string @by, int postnummer, int alder, string email, string navn, string password, string username, int telefonNummer)
+        public Profil(string adresse, string email, string navn, string password, string username, int telefonNummer)
         {
-            Adresse = adresse;
-            By = by;
-            Postnummer = postnummer;
-            Alder = alder;
+            Adresse = adresse;           
             Email = email;
             Navn = navn;
             Password = password;

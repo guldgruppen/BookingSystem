@@ -45,7 +45,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _username; }
             set
             {
-
                 _username = value;
             }
         }
@@ -61,7 +60,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 _password = value;
             }
         }
-
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
         public RelayCommand NavToOpretProfilCommand { get; set; }
@@ -70,8 +68,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         #region Constructors
         public ProfilHandler()
-        {
-            
+        {           
             Profiles = new ObservableCollection<Profil>();
             _navigationService = new NavigationService();
             Profiles.Add(new Profil("Thomas","Thomas"));
