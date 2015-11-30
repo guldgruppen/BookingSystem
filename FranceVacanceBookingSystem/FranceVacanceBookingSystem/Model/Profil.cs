@@ -28,12 +28,6 @@ namespace FranceVacanceBookingSystem.Model
             set { _adresse = value; }
         }
 
-        public string By
-        {
-            get { return _by; }
-            set { _by = value; }
-        }
-
         public int Postnummer
         {
             get { return _postnummer; }
@@ -64,10 +58,15 @@ namespace FranceVacanceBookingSystem.Model
             set { _password = value; }
         }
 
+        public string RepeatPassword { get; set; }
         public string Username
         {
             get { return _username; }
-            set { _username = value; }
+            set
+            {
+                
+                _username = value;
+            }
         }
 
         public int TelefonNummer
@@ -85,10 +84,14 @@ namespace FranceVacanceBookingSystem.Model
 
         }
 
-        public Profil(string username, string password)
+        public Profil(string username, string password,string repeatPassword)
         {
+            CheckUser(username);
+            CheckPassword(password);
+            CheckRepeatPassword(password,repeatPassword);
             Username = username;
             Password = password;
+            RepeatPassword = repeatPassword;
         }
 
         public Profil(string adresse, string email, string navn, string password, string username, int telefonNummer)
@@ -99,7 +102,32 @@ namespace FranceVacanceBookingSystem.Model
             Password = password;
             Username = username;
             TelefonNummer = telefonNummer;
-        } 
+        }
+
+
+        public void CheckUser(string name)
+        {
+            if(String.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Venlig indtast et korrekt brugernavn");
+        }
+
+        public void CheckPassword(string password)
+        {
+            if(String.IsNullOrWhiteSpace(password))
+                throw new ArgumentException("Venlig indtast et kodeord");         
+        }
+
+        public void CheckRepeatPassword(string pass, string repeatpassword)
+        {
+            if(!pass.Equals(repeatpassword))
+                throw new ArgumentException("kodeordene er ikke de samme");
+        }
+
+        public void CheckTlf(int tlf)
+        {
+      
+        }
+
         #endregion
 
     }

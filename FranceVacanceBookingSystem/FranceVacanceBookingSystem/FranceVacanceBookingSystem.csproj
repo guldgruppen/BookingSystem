@@ -113,7 +113,6 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
-    <Compile Include="ViewModel\OpretProfilHandler.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>

@@ -63,15 +63,15 @@
         </Grid>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="613" Margin="0,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="600" Background="#B2D14545">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Navn" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="20,0" FontSize="21.333"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Adresse" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox1" TextWrapping="Wrap" Text="TextBox" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox1" TextWrapping="Wrap" Margin="20,0" FontSize="21.333"/>
             <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Tlf. Nummer" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox2" TextWrapping="Wrap" Text="TextBox" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox2" TextWrapping="Wrap" Margin="20,0" FontSize="21.333" Text="{Binding RepeatPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Brugernavn" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="{Binding AddUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox3" TextWrapping="Wrap" Margin="20,0" FontSize="21.333" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Kodeord" FontSize="32" Margin="20,15,20,0"/>
-            <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="{Binding AddPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="20,0" FontSize="21.333"/>
+            <TextBox x:Name="textBox4" TextWrapping="Wrap" Margin="20,0" FontSize="21.333" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="button" Content="Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="97" FontSize="40" Margin="20,20,20,0" Command="{Binding AddProfileCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         </StackPanel>

@@ -23,11 +23,17 @@ namespace FranceVacanceBookingSystem.ViewModel
     public class ProfilHandler : INotifyPropertyChanged
     {
         #region Instance Fields
+
         private ObservableCollection<Profil> _profiles;
         private string _username;
         private string _password;
         private INavigationService _navigationService;
-        
+        private string _navn;
+        private string _adresse;
+        private int _telefonNummer;
+        private string _email;
+        private string _repeatPassword;
+
         #endregion
 
         #region Properties
@@ -37,20 +43,41 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _profiles; }
             set { _profiles = value; }
         }
-
-        
-        public MessageDialog dialog { get; set; }
         public string Username
         {
             get { return _username; }
             set
-            {
+            {                    
                 _username = value;
             }
         }
 
-        public string AddUsername { get; set; }
-        public string AddPassword { get; set; }
+        public string Navn
+        {
+            get { return _navn; }
+            set
+            {             
+                _navn = value;
+            }
+        }
+
+        public string Adresse
+        {
+            get { return _adresse; }
+            set { _adresse = value; }
+        }
+
+        public int TelefonNummer
+        {
+            get { return _telefonNummer; }
+            set { _telefonNummer = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
 
         public string Password
         {
@@ -60,6 +87,15 @@ namespace FranceVacanceBookingSystem.ViewModel
                 _password = value;
             }
         }
+
+        public string RepeatPassword
+        {
+            get { return _repeatPassword; }
+            set { _repeatPassword = value; }
+        }
+
+        public MessageDialog log { get; set; }
+
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
         public RelayCommand NavToOpretProfilCommand { get; set; }
@@ -71,9 +107,9 @@ namespace FranceVacanceBookingSystem.ViewModel
         {           
             Profiles = new ObservableCollection<Profil>();
             _navigationService = new NavigationService();
-            Profiles.Add(new Profil("Thomas","Thomas"));
-            Profiles.Add(new Profil("Preben", "Preben"));
-            Profiles.Add(new Profil("Bob", "Bob"));
+            Profiles.Add(new Profil("Thomas","Thomas","Thomas"));
+            Profiles.Add(new Profil("Preben", "Preben","Preben"));
+            Profiles.Add(new Profil("Bob", "Bob","Bob"));
 
             LoginCommand = new RelayCommand(CheckLoginInfo);
             AddProfileCommand = new RelayCommand(AddProfile);
@@ -83,21 +119,31 @@ namespace FranceVacanceBookingSystem.ViewModel
             });
 
             LoadProfiles();
-
-
-
-        }  
+        }
         #endregion
 
         #region Methods
-    
+
+        public void CheckUserName(string name)
+        {
+            if(String.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("prøve");
+        }
 
         public void AddProfile()
         {
-            Profiles.Add(new Profil(AddUsername,AddPassword));
-            OnPropertyChanged();
-            MessageDialog dialog = new MessageDialog("Profil er tilføjet");
-            dialog.ShowAsync();
+            try
+            {
+                Profiles.Add(new Profil(Username, Password, RepeatPassword));
+
+                MessageDialog dialo = new MessageDialog("virker");
+                dialo.ShowAsync();
+            }
+            catch (ArgumentException e)
+            {
+                ShowDialog(e.Message);
+            }           
+           
             PersistencyService.SaveNotesAsJsonAsync(Profiles);
         }
 
@@ -130,12 +176,12 @@ namespace FranceVacanceBookingSystem.ViewModel
             
             if (CheckUsername(Username) == true)
             {
-                dialog = new MessageDialog("Du mangler brugernavn");
+                log = new MessageDialog("Du mangler brugernavn");
                 
             }
             else if (CheckPassword(Password) == true)
             {
-                dialog = new MessageDialog("Du mangler kodeord");
+                log = new MessageDialog("Du mangler kodeord");
             }
             else
             {
@@ -144,20 +190,26 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        dialog = new MessageDialog("Velkommen tilbage "+profil.Username + " :)"); 
+                        log = new MessageDialog("Velkommen tilbage "+profil.Username + " :)"); 
                          NavigateToBookingSystem();                                                                      
                         break;
                     }
                     else
                     {
-                        dialog = new MessageDialog("Login fejl - prøv igen");
+                        log = new MessageDialog("Login fejl - prøv igen");
                         
                         
                     }
                 }
             }
-            dialog.ShowAsync();
+            log.ShowAsync();
 
+        }
+
+        public void ShowDialog(string text)
+        {
+            MessageDialog dialog = new MessageDialog(text);
+            dialog.ShowAsync();
         }
 
         private async void LoadProfiles()
