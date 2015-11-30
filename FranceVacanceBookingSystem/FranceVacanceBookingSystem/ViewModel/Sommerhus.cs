@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FranceVacanceBookingSystem.Model;
 using FranceVacanceBookingSystem.Common;
+using FranceVacanceBookingSystem.View;
 using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.ViewModel
@@ -43,7 +44,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse = new ObservableCollection<SommerhusBeskrivelse>();
             Sommerhuse.Add(new SommerhusBeskrivelse(5,2,2,1,"Paris",false,5000,180));
             AddSommerhuCommand = new RelayCommand(AddSommerhus);
-            PersistencyService.SaveNotesAsJsonAsync(Sommerhuse);
+            PersistencyService.SaveCottageAsJsonAsync(Sommerhuse);
         }
 
         public void AddSommerhus()

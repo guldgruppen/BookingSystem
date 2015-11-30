@@ -128,6 +128,9 @@
     <Compile Include="View\OpretProfil.xaml.cs">
       <DependentUpon>OpretProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OpretProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

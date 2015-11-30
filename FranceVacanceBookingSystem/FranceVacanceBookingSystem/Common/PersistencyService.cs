@@ -15,17 +15,18 @@ namespace FranceVacanceBookingSystem.Common
     class PersistencyService
     {
         private static string JsonFileName = "ProfilesAsJson.dat";
+        private static string SommerHuse = "CottagesAsJson.dat";
 
-        public static async void SaveNotesAsJsonAsync(ObservableCollection<Profil> notes)
+        public static async void SaveProfileAsJsonAsync(ObservableCollection<Profil> notes)
         {
             string notesJsonString = JsonConvert.SerializeObject(notes);
             SerializeNotesFileAsync(notesJsonString, JsonFileName);
         }
 
-        public static async void SaveNotesAsJsonAsync(ObservableCollection<SommerhusBeskrivelse> sommerhus)
+        public static async void SaveCottageAsJsonAsync(ObservableCollection<SommerhusBeskrivelse> sommerhus)
         {
             string notesJsonString = JsonConvert.SerializeObject(sommerhus);
-            SerializeNotesFileAsync(notesJsonString, JsonFileName);
+            SerializeNotesFileAsync(notesJsonString, SommerHuse);
         }
 
         public static async Task<List<Profil>> LoadNotesFromJsonAsync()
