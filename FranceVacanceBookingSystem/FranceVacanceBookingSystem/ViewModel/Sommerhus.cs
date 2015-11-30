@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FranceVacanceBookingSystem.Model;
+using FranceVacanceBookingSystem.Common;
+using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.ViewModel
 {
@@ -34,17 +36,19 @@ namespace FranceVacanceBookingSystem.ViewModel
         public double Price { get; set; }
         public double Size { get; set; }
 
+        public RelayCommand AddSommerhuCommand { get; set; }
+
         public Sommerhus()
         {
             Sommerhuse = new ObservableCollection<SommerhusBeskrivelse>();
             Sommerhuse.Add(new SommerhusBeskrivelse(5,2,2,1,"Paris",false,5000,180));
- 
+            AddSommerhuCommand = new RelayCommand(AddSommerhus);
+            PersistencyService.SaveNotesAsJsonAsync(Sommerhuse);
         }
 
         public void AddSommerhus()
         {
             Sommerhuse.Add(new SommerhusBeskrivelse(Distancefromwater,Bathrooms,Parkinglots,Bedrooms, Location, Petallowed, Price, Size));
         }
-        
     }
 }

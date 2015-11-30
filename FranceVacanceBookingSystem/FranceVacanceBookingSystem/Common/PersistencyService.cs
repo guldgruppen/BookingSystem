@@ -22,6 +22,12 @@ namespace FranceVacanceBookingSystem.Common
             SerializeNotesFileAsync(notesJsonString, JsonFileName);
         }
 
+        public static async void SaveNotesAsJsonAsync(ObservableCollection<SommerhusBeskrivelse> sommerhus)
+        {
+            string notesJsonString = JsonConvert.SerializeObject(sommerhus);
+            SerializeNotesFileAsync(notesJsonString, JsonFileName);
+        }
+
         public static async Task<List<Profil>> LoadNotesFromJsonAsync()
         {
             string notesJsonString = await DeserializeNotesFileAsync(JsonFileName);
