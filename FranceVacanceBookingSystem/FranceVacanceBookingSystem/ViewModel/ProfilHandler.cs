@@ -58,7 +58,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _password; }
             set
             {
-
                 _password = value;
             }
         }
