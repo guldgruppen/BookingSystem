@@ -10,7 +10,7 @@ namespace FranceVacanceBookingSystem.Model
     {
         #region Instance Fields
 
-        private string _by;
+       
 
         #endregion
 
@@ -36,14 +36,12 @@ namespace FranceVacanceBookingSystem.Model
 
         #endregion
 
-
         #region Constructors
 
         public Profil()
         {
 
         }
-
         //public Profil(string username, string password)
         //{
         //    CheckUsername(username);

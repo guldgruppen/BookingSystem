@@ -30,7 +30,7 @@
         <Grid.DataContext>
             <local:ProfilHandler/>
         </Grid.DataContext>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#B2000000">
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#CC192B46">
 
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Bruger Login" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="61.333" FontFamily="Segoe UI Light" Margin="136,10,136,0"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,15,0,0" Height="38.4000015258789"/>
@@ -40,7 +40,17 @@
             <StackPanel Height="65" Margin="0,25,16,0" Orientation="Horizontal" HorizontalAlignment="Center">
 
                 <StackPanel HorizontalAlignment="Left" Margin="-290,-17,0,-11" VerticalAlignment="Bottom">
-                    <Button x:Name="button1" Content="Glemt login?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="221"/>
+                    <Button x:Name="button1" Content="Glemt login?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="221">
+                        <Button.Flyout>
+                            <Flyout Placement="Bottom">
+                                <Grid Height="146" Width="344" Background="#CC0C1727" Margin="-22,-20,-20,-20">
+                                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="49" Width="324" FontSize="26.667"/>
+                                    <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Indtast E-mail:" VerticalAlignment="Top" Height="41" Width="213" SelectionHighlightColor="White" FontSize="32" FontFamily="Segoe UI Semilight" Foreground="White" Margin="10,0,0,0"/>
+                                    <Button x:Name="button2" Content="Send E-mail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,92,0,0" Height="47" Width="330" Command="{Binding SendEmailCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="26.667" Background="#FF4F89DE" Foreground="White"/>
+                                </Grid>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
                     <Button x:Name="button1_Copy" Content="Opret profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding NavToOpretProfilCommand}"/>
                 </StackPanel>
 
