@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-2HJJFD7</Machine>
+    <WindowsUser>Ricki</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>8ec963bd-8c5b-452f-9e21-b5a3ccc15540</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
+      <PackagePath>FranceVacanceBookingSystem.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage.jpg">
+      <PackagePath>Assets\FranceImage.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage2.jpg">
+      <PackagePath>Assets\FranceImage2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg1.jpg">
+      <PackagePath>Assets\fvimg1.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg2.jpg">
+      <PackagePath>Assets\fvimg2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg3.jpg">
+      <PackagePath>Assets\fvimg3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
+      <PackagePath>FranceVacanceBookingSystem.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
+      <PackagePath>View\Login.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
+      <PackagePath>View\MainSystem.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
+      <PackagePath>View\OpretProfil.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SHlistTest.xbf">
+      <PackagePath>View\SHlistTest.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ricki\Source\Repos\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
