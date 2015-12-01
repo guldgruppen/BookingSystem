@@ -38,6 +38,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         #region Properties
 
+        public string SendEmail { get; set; }
         public ObservableCollection<Profil> Profiles
         {
             get { return _profiles; }
@@ -96,9 +97,12 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public MessageDialog log { get; set; }
 
+        public RelayCommand SendEmailCommand { get; set; }
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
         public RelayCommand NavToOpretProfilCommand { get; set; }
+        public string AddUsername { get; private set; }
+        public string AddPassword { get; private set; }
 
         #endregion
 
@@ -113,6 +117,11 @@ namespace FranceVacanceBookingSystem.ViewModel
             NavToOpretProfilCommand = new RelayCommand(() =>
             {
                 _navigationService.Navigate(typeof (OpretProfil));
+            });
+            SendEmailCommand = new RelayCommand(() =>
+            {
+                log = new MessageDialog("E-mail med logininformation er sendt til din email");
+                log.ShowAsync();
             });
 
             LoadProfiles();
@@ -129,19 +138,24 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public void AddProfile()
         {
+            Profiles.Add(new Profil(AddUsername,AddPassword));
+            OnPropertyChanged();
+            MessageDialog dialog = new MessageDialog("Profil er tilføjet");
+            dialog.ShowAsync();
+            PersistencyService.SaveProfileAsJsonAsync(Profiles);
             try
             {
                 CheckEmailAndUsername();
                 Profiles.Add(new Profil(Adresse,Email,Navn,Password,RepeatPassword,Username,TelefonNummer));          
-                MessageDialog dialo = new MessageDialog("virker");
-                dialo.ShowAsync();
+                log = new MessageDialog("Profil er tilføjet");
+                log.ShowAsync();
             }
             catch (ArgumentException e)
             {
                 ShowDialog(e.Message);
             }           
            
-            PersistencyService.SaveNotesAsJsonAsync(Profiles);
+            PersistencyService.SaveProfileAsJsonAsync(Profiles);
         }
 
         public bool CheckUsername(string name)
@@ -205,8 +219,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                     else
                     {
                         log = new MessageDialog("Login fejl - prøv igen");
-                        
-                        
+                                             
                     }
                 }
             }

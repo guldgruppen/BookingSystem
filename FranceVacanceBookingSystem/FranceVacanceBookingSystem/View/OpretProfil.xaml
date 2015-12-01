@@ -66,7 +66,7 @@
                 <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="417" Background="#7F000000" Grid.Column="1" Margin="0,0,-9,0" Height="508">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="417" Background="#CC192B46" Grid.Column="1" Margin="0,0,-9,0" Height="508">
                 <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBox x:Name="textBox1_Copy" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -78,7 +78,7 @@
                 <Button x:Name="button" Content="Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="97" FontSize="40" Margin="20,20,17,0" Command="{Binding AddProfileCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="#FF2984CF"/>
 
             </StackPanel>
-            <StackPanel Background="#7F000000" HorizontalAlignment="Left" VerticalAlignment="Top" Height="508">
+            <StackPanel Background="#CC192B46" HorizontalAlignment="Left" VerticalAlignment="Top" Height="508">
                 <TextBlock x:Name="textBlock_Copy1" TextWrapping="Wrap" Text="Navn:" FontSize="24" Margin="10,21,10,0" Width="177"/>
                 <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="E-mail:" FontSize="24" Margin="10,24,10,0" Width="177"/>
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="24" Margin="10,27,0,0" Width="182">
