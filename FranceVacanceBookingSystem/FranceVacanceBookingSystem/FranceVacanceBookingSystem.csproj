@@ -127,6 +127,9 @@
     <Compile Include="View\OpretProfil.xaml.cs">
       <DependentUpon>OpretProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OpretSommerhus.xaml.cs">
+      <DependentUpon>OpretSommerhus.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -138,11 +141,19 @@
   <ItemGroup>
     <Content Include="Assets\FranceImage.jpg" />
     <Content Include="Assets\FranceImage2.jpg" />
+    <Content Include="Assets\frankrigs skønhed.jpg" />
+    <Content Include="Assets\frankrigs skønhed2.jpg" />
     <Content Include="Assets\fvimg1.jpg" />
     <Content Include="Assets\fvimg2.jpg" />
     <Content Include="Assets\fvimg3.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Louvre-pyramiden-Paris-Frankrig-1024x682.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\Sommer i Frankrig3.jpg" />
+    <Content Include="Assets\Sommerhus i Frankrig.jpg" />
+    <Content Include="Assets\Sommerhus i Frankrig1.jpg" />
+    <Content Include="Assets\Sommerhus i Frankrig2.jpg" />
+    <Content Include="Assets\Sommerhus i Frankrig4.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
   </ItemGroup>
@@ -160,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OpretProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretSommerhus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
