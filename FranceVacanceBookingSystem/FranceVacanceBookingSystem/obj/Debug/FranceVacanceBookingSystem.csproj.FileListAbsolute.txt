@@ -113,7 +113,6 @@ C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceV
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.build.appxrecipe
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\FranceVacanceBookingSystem.csprojResolveAssemblyReference.cache
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\App.g.i.cs
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\App.g.cs
 C:\Users\Kasper\Desktop\GitHub\BookingSystem3\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\View\Login.g.i.cs
