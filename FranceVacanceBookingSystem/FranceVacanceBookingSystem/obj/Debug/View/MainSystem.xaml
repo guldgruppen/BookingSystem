@@ -20,11 +20,15 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="#FF0F586E">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/louvre_museum.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="198*"/>
-            <ColumnDefinition Width="1089*"/>
-            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="349*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto" MinWidth="1"/>
         </Grid.ColumnDefinitions>
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -39,67 +43,48 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="#FF0C5FFB">
+        <Grid Grid.ColumnSpan="4" Background="#CC192B46" Margin="10,0,-9,23">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="280"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" Margin="0,60,310,40" d:LayoutOverrides="TopMargin, BottomMargin" HorizontalAlignment="Right" Width="766">
+                        IsHitTestVisible="false" TextWrapping="NoWrap" Margin="-72,28,391,34" HorizontalAlignment="Right" Width="766" d:LayoutOverrides="VerticalAlignment">
             	<Run Text="France Vacance"/>
             	<Run Text="Booking System"/>
             </TextBlock>
             <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,32,10" Width="288" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-                <Button x:Name="button1" Content="Log Ind" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="82" FontSize="48" Margin="70,20,10,0">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black" Offset="0"/>
-                            <GradientStop Color="#FFDE8181" Offset="1"/>
-                            <GradientStop Color="#FF12F1D3" Offset="0.071"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button x:Name="button1" Content="Log Ind" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="82" FontSize="48" Margin="60,0,10,0" Background="#B25474A3"/>
             </StackPanel>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="51,0,0,34" TextWrapping="Wrap" Text="LOGO" VerticalAlignment="Bottom" FontSize="48"/>
         </Grid>
-        <StackPanel Grid.Column="1" Grid.Row="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Orientation="Horizontal" Background="#FF192B46">
-            <StackPanel x:Name="Antal_Værelser" Width="175" Margin="50,0,0,0">
-                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Væresler:" Height="30" Width="163" FontSize="24" Margin="0,70,-73,20" HorizontalAlignment="Left" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition" Orientation="Horizontal" Background="#CC192B46" Margin="0,0,-43,90">
+            <StackPanel x:Name="Antal_Værelser" Width="175" Margin="20,0,0,0">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Væresler:" Height="30" Width="163" FontSize="24" Margin="0,20,-73,10" HorizontalAlignment="Left" d:LayoutOverrides="LeftPosition, RightPosition"/>
                 <ComboBox x:Name="comboBox" Width="153" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel x:Name="Antal_Personer" Width="175" RenderTransformOrigin="0.503,0.524" Margin="0">
-                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Personer:" FontSize="24" Margin="0,70,0,20" Height="30"/>
+            <StackPanel x:Name="Antal_Personer" Width="175" RenderTransformOrigin="0.503,0.524" Margin="0,0,10,0">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Personer:" FontSize="24" Margin="0,20,0,10" Height="30"/>
                 <ComboBox x:Name="comboBox1" Margin="0,0,10,0" VerticalAlignment="Top" BorderThickness="2" Height="33"/>
             </StackPanel>
-            <StackPanel x:Name="Antal_Uger" Width="175" Margin="0,0,20,0">
-                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" FontSize="24" Height="30" Margin="3,70,0,20">
-                	<Run Text="  "/>
-                	<Run Text="Antal Uger:"/>
-                </TextBlock>
-                <ComboBox x:Name="comboBox2" Margin="10,0"/>
+            <StackPanel x:Name="Dato" Width="320" Margin="0,0,20,0">
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" FontSize="24" Height="30" Margin="3,20,0,10" Text="Afrejse dato:" d:LayoutOverrides="TopPosition, BottomPosition"/>
+                <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
+                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" FontSize="24" Text="Hjemrejse Dato:" Margin="0,20,0,15"/>
+                <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel x:Name="Husdyr_Swimmingpool" Width="175" Margin="0">
-                <StackPanel Height="82" Margin="0,40,0,0">
-                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt?" FontSize="18.667"/>
+                <StackPanel Height="82" Margin="0,25,0,0">
+                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt?" FontSize="24"/>
                     <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
                 </StackPanel>
-                <StackPanel Height="94" Margin="0">
-                    <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool?" FontSize="18.667"/>
+                <StackPanel Height="94" Margin="0,10,0,0">
+                    <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool?" FontSize="24"/>
                     <ToggleSwitch x:Name="toggleSwitch1" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel x:Name="Søg" Width="175" Margin="50,0,0,0">
-                <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="84" BorderThickness="2" Margin="10,80,17,0" FontSize="48" FontStyle="Italic">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF006800" Offset="0.092"/>
-                            <GradientStop Color="#FFB1E2A6" Offset="0.996"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
+            <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="73" Width="218" FontSize="36" Background="#B25474A3" Margin="30,65,0,0"/>
         </StackPanel>
-        <TextBlock x:Name="textBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="22,62,0,28" Grid.Row="1" TextWrapping="Wrap" Width="215" FontSize="32" Text="Søge Kriterier:" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
     </Grid>
 </Page>
 

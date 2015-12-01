@@ -43,3 +43,9 @@ C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVa
 C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\ProjectArchitectures.txt
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SHlistTest.xbf
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\FranceVacanceBookingSystem.csprojResolveAssemblyReference.cache
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\View\SHlistTest.g.i.cs
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\View\SHlistTest.g.cs
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\View\SHlistTest.xaml
+C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\View\SHlistTest.xbf

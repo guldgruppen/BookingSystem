@@ -124,13 +124,13 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[26];
             _typeNameTable[0] = "FranceVacanceBookingSystem.ViewModel.ProfilHandler";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.Profil>";
-            _typeNameTable[3] = "System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.Profil>";
-            _typeNameTable[4] = "FranceVacanceBookingSystem.Model.Profil";
-            _typeNameTable[5] = "String";
+            _typeNameTable[2] = "String";
+            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.Profil>";
+            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.Profil>";
+            _typeNameTable[5] = "FranceVacanceBookingSystem.Model.Profil";
             _typeNameTable[6] = "Int32";
             _typeNameTable[7] = "Windows.UI.Popups.MessageDialog";
             _typeNameTable[8] = "WpfApplication.ViewModel.RelayCommand";
@@ -142,14 +142,23 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
             _typeNameTable[14] = "FranceVacanceBookingSystem.Common.NavigationHelper";
             _typeNameTable[15] = "Windows.UI.Xaml.DependencyObject";
             _typeNameTable[16] = "FranceVacanceBookingSystem.View.OpretProfil";
+            _typeNameTable[17] = "FranceVacanceBookingSystem.ViewModel.Sommerhus";
+            _typeNameTable[18] = "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>";
+            _typeNameTable[19] = "System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>";
+            _typeNameTable[20] = "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse";
+            _typeNameTable[21] = "Double";
+            _typeNameTable[22] = "Boolean";
+            _typeNameTable[23] = "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>";
+            _typeNameTable[24] = "System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>";
+            _typeNameTable[25] = "FranceVacanceBookingSystem.View.SHlistTest";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[26];
             _typeTable[0] = typeof(global::FranceVacanceBookingSystem.ViewModel.ProfilHandler);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.Profil>);
-            _typeTable[3] = typeof(global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.Profil>);
-            _typeTable[4] = typeof(global::FranceVacanceBookingSystem.Model.Profil);
-            _typeTable[5] = typeof(global::System.String);
+            _typeTable[2] = typeof(global::System.String);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.Profil>);
+            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.Profil>);
+            _typeTable[5] = typeof(global::FranceVacanceBookingSystem.Model.Profil);
             _typeTable[6] = typeof(global::System.Int32);
             _typeTable[7] = typeof(global::Windows.UI.Popups.MessageDialog);
             _typeTable[8] = typeof(global::WpfApplication.ViewModel.RelayCommand);
@@ -161,6 +170,15 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
             _typeTable[14] = typeof(global::FranceVacanceBookingSystem.Common.NavigationHelper);
             _typeTable[15] = typeof(global::Windows.UI.Xaml.DependencyObject);
             _typeTable[16] = typeof(global::FranceVacanceBookingSystem.View.OpretProfil);
+            _typeTable[17] = typeof(global::FranceVacanceBookingSystem.ViewModel.Sommerhus);
+            _typeTable[18] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>);
+            _typeTable[19] = typeof(global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>);
+            _typeTable[20] = typeof(global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse);
+            _typeTable[21] = typeof(global::System.Double);
+            _typeTable[22] = typeof(global::System.Boolean);
+            _typeTable[23] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>);
+            _typeTable[24] = typeof(global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>);
+            _typeTable[25] = typeof(global::FranceVacanceBookingSystem.View.SHlistTest);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -196,20 +214,27 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
         }
 
         private object Activate_0_ProfilHandler() { return new global::FranceVacanceBookingSystem.ViewModel.ProfilHandler(); }
-        private object Activate_2_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.Profil>(); }
-        private object Activate_3_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.Profil>(); }
-        private object Activate_4_Profil() { return new global::FranceVacanceBookingSystem.Model.Profil(); }
+        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.Profil>(); }
+        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.Profil>(); }
+        private object Activate_5_Profil() { return new global::FranceVacanceBookingSystem.Model.Profil(); }
         private object Activate_9_Login() { return new global::FranceVacanceBookingSystem.View.Login(); }
         private object Activate_12_MainSystem() { return new global::FranceVacanceBookingSystem.View.MainSystem(); }
         private object Activate_13_ObservableDictionary() { return new global::FranceVacanceBookingSystem.Common.ObservableDictionary(); }
         private object Activate_16_OpretProfil() { return new global::FranceVacanceBookingSystem.View.OpretProfil(); }
-        private void VectorAdd_2_ObservableCollection(object instance, object item)
+        private object Activate_17_Sommerhus() { return new global::FranceVacanceBookingSystem.ViewModel.Sommerhus(); }
+        private object Activate_18_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>(); }
+        private object Activate_19_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>(); }
+        private object Activate_20_SommerhusBeskrivelse() { return new global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse(); }
+        private object Activate_23_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>(); }
+        private object Activate_24_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>(); }
+        private object Activate_25_SHlistTest() { return new global::FranceVacanceBookingSystem.View.SHlistTest(); }
+        private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.Model.Profil>)instance;
             var newItem = (global::FranceVacanceBookingSystem.Model.Profil)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_3_Collection(object instance, object item)
+        private void VectorAdd_4_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.Model.Profil>)instance;
             var newItem = (global::FranceVacanceBookingSystem.Model.Profil)item;
@@ -221,6 +246,30 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
             var newKey = (global::System.String)key;
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
+        }
+        private void VectorAdd_18_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>)instance;
+            var newItem = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_19_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>)instance;
+            var newItem = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_23_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>)instance;
+            var newItem = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_24_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>)instance;
+            var newItem = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)item;
+            collection.Add(newItem);
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -236,6 +285,7 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
             case 0:   //  FranceVacanceBookingSystem.ViewModel.ProfilHandler
                 userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ProfilHandler;
+                userType.AddMemberName("SendEmail");
                 userType.AddMemberName("Profiles");
                 userType.AddMemberName("Username");
                 userType.AddMemberName("Navn");
@@ -245,9 +295,12 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
                 userType.AddMemberName("Password");
                 userType.AddMemberName("RepeatPassword");
                 userType.AddMemberName("log");
+                userType.AddMemberName("SendEmailCommand");
                 userType.AddMemberName("LoginCommand");
                 userType.AddMemberName("AddProfileCommand");
                 userType.AddMemberName("NavToOpretProfilCommand");
+                userType.AddMemberName("AddUsername");
+                userType.AddMemberName("AddPassword");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -256,23 +309,27 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
                 xamlType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.Profil>
+            case 2:   //  String
+                xamlType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.Profil>
                 userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.Profil>"));
-                userType.CollectionAdd = VectorAdd_2_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_3_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 3:   //  System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.Profil>
+            case 4:   //  System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.Profil>
                 userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_3_Collection;
-                userType.CollectionAdd = VectorAdd_3_Collection;
+                userType.Activator = Activate_4_Collection;
+                userType.CollectionAdd = VectorAdd_4_Collection;
                 xamlType = userType;
                 break;
 
-            case 4:   //  FranceVacanceBookingSystem.Model.Profil
+            case 5:   //  FranceVacanceBookingSystem.Model.Profil
                 userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_4_Profil;
+                userType.Activator = Activate_5_Profil;
                 userType.AddMemberName("Adresse");
                 userType.AddMemberName("Postnummer");
                 userType.AddMemberName("Alder");
@@ -284,10 +341,6 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
                 userType.AddMemberName("TelefonNummer");
                 userType.SetIsLocalType();
                 xamlType = userType;
-                break;
-
-            case 5:   //  String
-                xamlType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 6:   //  Int32
@@ -358,240 +411,536 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 17:   //  FranceVacanceBookingSystem.ViewModel.Sommerhus
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_17_Sommerhus;
+                userType.AddMemberName("Sommerhuse");
+                userType.AddMemberName("Sommerhuslist");
+                userType.AddMemberName("Distancefromwater");
+                userType.AddMemberName("Bathrooms");
+                userType.AddMemberName("Parkinglots");
+                userType.AddMemberName("Bedrooms");
+                userType.AddMemberName("Location");
+                userType.AddMemberName("Petallowed");
+                userType.AddMemberName("Price");
+                userType.AddMemberName("Size");
+                userType.AddMemberName("AddSommerhuCommand");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 18:   //  System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>"));
+                userType.CollectionAdd = VectorAdd_18_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 19:   //  System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_19_Collection;
+                userType.CollectionAdd = VectorAdd_19_Collection;
+                xamlType = userType;
+                break;
+
+            case 20:   //  FranceVacanceBookingSystem.Model.SommerhusBeskrivelse
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_20_SommerhusBeskrivelse;
+                userType.AddMemberName("Distancefromwater");
+                userType.AddMemberName("Bathrooms");
+                userType.AddMemberName("Parkinglots");
+                userType.AddMemberName("Bedrooms");
+                userType.AddMemberName("Location");
+                userType.AddMemberName("Petsallowed");
+                userType.AddMemberName("Price");
+                userType.AddMemberName("Size");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Double
+                xamlType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 22:   //  Boolean
+                xamlType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 23:   //  System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>"));
+                userType.CollectionAdd = VectorAdd_23_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 24:   //  System.Collections.ObjectModel.Collection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_24_Collection;
+                userType.CollectionAdd = VectorAdd_24_Collection;
+                xamlType = userType;
+                break;
+
+            case 25:   //  FranceVacanceBookingSystem.View.SHlistTest
+                userType = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_25_SHlistTest;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
 
-        private object get_0_ProfilHandler_Profiles(object instance)
+        private object get_0_ProfilHandler_SendEmail(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            return that.SendEmail;
+        }
+        private void set_0_ProfilHandler_SendEmail(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            that.SendEmail = (global::System.String)Value;
+        }
+        private object get_1_ProfilHandler_Profiles(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Profiles;
         }
-        private void set_0_ProfilHandler_Profiles(object instance, object Value)
+        private void set_1_ProfilHandler_Profiles(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Profiles = (global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.Profil>)Value;
         }
-        private object get_1_Profil_Adresse(object instance)
+        private object get_2_Profil_Adresse(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Adresse;
         }
-        private void set_1_Profil_Adresse(object instance, object Value)
+        private void set_2_Profil_Adresse(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Adresse = (global::System.String)Value;
         }
-        private object get_2_Profil_Postnummer(object instance)
+        private object get_3_Profil_Postnummer(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Postnummer;
         }
-        private void set_2_Profil_Postnummer(object instance, object Value)
+        private void set_3_Profil_Postnummer(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Postnummer = (global::System.Int32)Value;
         }
-        private object get_3_Profil_Alder(object instance)
+        private object get_4_Profil_Alder(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Alder;
         }
-        private void set_3_Profil_Alder(object instance, object Value)
+        private void set_4_Profil_Alder(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Alder = (global::System.Int32)Value;
         }
-        private object get_4_Profil_Email(object instance)
+        private object get_5_Profil_Email(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Email;
         }
-        private void set_4_Profil_Email(object instance, object Value)
+        private void set_5_Profil_Email(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Email = (global::System.String)Value;
         }
-        private object get_5_Profil_Navn(object instance)
+        private object get_6_Profil_Navn(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Navn;
         }
-        private void set_5_Profil_Navn(object instance, object Value)
+        private void set_6_Profil_Navn(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Navn = (global::System.String)Value;
         }
-        private object get_6_Profil_Password(object instance)
+        private object get_7_Profil_Password(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Password;
         }
-        private void set_6_Profil_Password(object instance, object Value)
+        private void set_7_Profil_Password(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_7_Profil_RepeatPassword(object instance)
+        private object get_8_Profil_RepeatPassword(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.RepeatPassword;
         }
-        private void set_7_Profil_RepeatPassword(object instance, object Value)
+        private void set_8_Profil_RepeatPassword(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.RepeatPassword = (global::System.String)Value;
         }
-        private object get_8_Profil_Username(object instance)
+        private object get_9_Profil_Username(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.Username;
         }
-        private void set_8_Profil_Username(object instance, object Value)
+        private void set_9_Profil_Username(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_9_Profil_TelefonNummer(object instance)
+        private object get_10_Profil_TelefonNummer(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             return that.TelefonNummer;
         }
-        private void set_9_Profil_TelefonNummer(object instance, object Value)
+        private void set_10_Profil_TelefonNummer(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.Model.Profil)instance;
             that.TelefonNummer = (global::System.String)Value;
         }
-        private object get_10_ProfilHandler_Username(object instance)
+        private object get_11_ProfilHandler_Username(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Username;
         }
-        private void set_10_ProfilHandler_Username(object instance, object Value)
+        private void set_11_ProfilHandler_Username(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_11_ProfilHandler_Navn(object instance)
+        private object get_12_ProfilHandler_Navn(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Navn;
         }
-        private void set_11_ProfilHandler_Navn(object instance, object Value)
+        private void set_12_ProfilHandler_Navn(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Navn = (global::System.String)Value;
         }
-        private object get_12_ProfilHandler_Adresse(object instance)
+        private object get_13_ProfilHandler_Adresse(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Adresse;
         }
-        private void set_12_ProfilHandler_Adresse(object instance, object Value)
+        private void set_13_ProfilHandler_Adresse(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Adresse = (global::System.String)Value;
         }
-        private object get_13_ProfilHandler_TelefonNummer(object instance)
+        private object get_14_ProfilHandler_TelefonNummer(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.TelefonNummer;
         }
-        private void set_13_ProfilHandler_TelefonNummer(object instance, object Value)
+        private void set_14_ProfilHandler_TelefonNummer(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.TelefonNummer = (global::System.String)Value;
         }
-        private object get_14_ProfilHandler_Email(object instance)
+        private object get_15_ProfilHandler_Email(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Email;
         }
-        private void set_14_ProfilHandler_Email(object instance, object Value)
+        private void set_15_ProfilHandler_Email(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Email = (global::System.String)Value;
         }
-        private object get_15_ProfilHandler_Password(object instance)
+        private object get_16_ProfilHandler_Password(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.Password;
         }
-        private void set_15_ProfilHandler_Password(object instance, object Value)
+        private void set_16_ProfilHandler_Password(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_16_ProfilHandler_RepeatPassword(object instance)
+        private object get_17_ProfilHandler_RepeatPassword(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.RepeatPassword;
         }
-        private void set_16_ProfilHandler_RepeatPassword(object instance, object Value)
+        private void set_17_ProfilHandler_RepeatPassword(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.RepeatPassword = (global::System.String)Value;
         }
-        private object get_17_ProfilHandler_log(object instance)
+        private object get_18_ProfilHandler_log(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.log;
         }
-        private void set_17_ProfilHandler_log(object instance, object Value)
+        private void set_18_ProfilHandler_log(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.log = (global::Windows.UI.Popups.MessageDialog)Value;
         }
-        private object get_18_ProfilHandler_LoginCommand(object instance)
+        private object get_19_ProfilHandler_SendEmailCommand(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            return that.SendEmailCommand;
+        }
+        private void set_19_ProfilHandler_SendEmailCommand(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            that.SendEmailCommand = (global::WpfApplication.ViewModel.RelayCommand)Value;
+        }
+        private object get_20_ProfilHandler_LoginCommand(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.LoginCommand;
         }
-        private void set_18_ProfilHandler_LoginCommand(object instance, object Value)
+        private void set_20_ProfilHandler_LoginCommand(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.LoginCommand = (global::WpfApplication.ViewModel.RelayCommand)Value;
         }
-        private object get_19_ProfilHandler_AddProfileCommand(object instance)
+        private object get_21_ProfilHandler_AddProfileCommand(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.AddProfileCommand;
         }
-        private void set_19_ProfilHandler_AddProfileCommand(object instance, object Value)
+        private void set_21_ProfilHandler_AddProfileCommand(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.AddProfileCommand = (global::WpfApplication.ViewModel.RelayCommand)Value;
         }
-        private object get_20_ProfilHandler_NavToOpretProfilCommand(object instance)
+        private object get_22_ProfilHandler_NavToOpretProfilCommand(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             return that.NavToOpretProfilCommand;
         }
-        private void set_20_ProfilHandler_NavToOpretProfilCommand(object instance, object Value)
+        private void set_22_ProfilHandler_NavToOpretProfilCommand(object instance, object Value)
         {
             var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
             that.NavToOpretProfilCommand = (global::WpfApplication.ViewModel.RelayCommand)Value;
         }
-        private object get_21_MainSystem_DefaultViewModel(object instance)
+        private object get_23_ProfilHandler_AddUsername(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            return that.AddUsername;
+        }
+        private object get_24_ProfilHandler_AddPassword(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.ProfilHandler)instance;
+            return that.AddPassword;
+        }
+        private object get_25_MainSystem_DefaultViewModel(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.View.MainSystem)instance;
             return that.DefaultViewModel;
         }
-        private object get_22_MainSystem_NavigationHelper(object instance)
+        private object get_26_MainSystem_NavigationHelper(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.View.MainSystem)instance;
             return that.NavigationHelper;
         }
-        private object get_23_OpretProfil_DefaultViewModel(object instance)
+        private object get_27_OpretProfil_DefaultViewModel(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.View.OpretProfil)instance;
             return that.DefaultViewModel;
         }
-        private object get_24_OpretProfil_NavigationHelper(object instance)
+        private object get_28_OpretProfil_NavigationHelper(object instance)
         {
             var that = (global::FranceVacanceBookingSystem.View.OpretProfil)instance;
             return that.NavigationHelper;
+        }
+        private object get_29_Sommerhus_Sommerhuse(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Sommerhuse;
+        }
+        private void set_29_Sommerhus_Sommerhuse(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Sommerhuse = (global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>)Value;
+        }
+        private object get_30_SommerhusBeskrivelse_Distancefromwater(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Distancefromwater;
+        }
+        private void set_30_SommerhusBeskrivelse_Distancefromwater(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Distancefromwater = (global::System.Double)Value;
+        }
+        private object get_31_SommerhusBeskrivelse_Bathrooms(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Bathrooms;
+        }
+        private void set_31_SommerhusBeskrivelse_Bathrooms(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Bathrooms = (global::System.Int32)Value;
+        }
+        private object get_32_SommerhusBeskrivelse_Parkinglots(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Parkinglots;
+        }
+        private void set_32_SommerhusBeskrivelse_Parkinglots(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Parkinglots = (global::System.Int32)Value;
+        }
+        private object get_33_SommerhusBeskrivelse_Bedrooms(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Bedrooms;
+        }
+        private void set_33_SommerhusBeskrivelse_Bedrooms(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Bedrooms = (global::System.Int32)Value;
+        }
+        private object get_34_SommerhusBeskrivelse_Location(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Location;
+        }
+        private void set_34_SommerhusBeskrivelse_Location(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Location = (global::System.String)Value;
+        }
+        private object get_35_SommerhusBeskrivelse_Petsallowed(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Petsallowed;
+        }
+        private void set_35_SommerhusBeskrivelse_Petsallowed(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Petsallowed = (global::System.Boolean)Value;
+        }
+        private object get_36_SommerhusBeskrivelse_Price(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Price;
+        }
+        private void set_36_SommerhusBeskrivelse_Price(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Price = (global::System.Double)Value;
+        }
+        private object get_37_SommerhusBeskrivelse_Size(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            return that.Size;
+        }
+        private void set_37_SommerhusBeskrivelse_Size(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.Model.SommerhusBeskrivelse)instance;
+            that.Size = (global::System.Double)Value;
+        }
+        private object get_38_Sommerhus_Sommerhuslist(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Sommerhuslist;
+        }
+        private void set_38_Sommerhus_Sommerhuslist(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Sommerhuslist = (global::System.Collections.ObjectModel.ObservableCollection<global::FranceVacanceBookingSystem.ViewModel.Sommerhus>)Value;
+        }
+        private object get_39_Sommerhus_Distancefromwater(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Distancefromwater;
+        }
+        private void set_39_Sommerhus_Distancefromwater(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Distancefromwater = (global::System.Double)Value;
+        }
+        private object get_40_Sommerhus_Bathrooms(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Bathrooms;
+        }
+        private void set_40_Sommerhus_Bathrooms(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Bathrooms = (global::System.Int32)Value;
+        }
+        private object get_41_Sommerhus_Parkinglots(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Parkinglots;
+        }
+        private void set_41_Sommerhus_Parkinglots(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Parkinglots = (global::System.Int32)Value;
+        }
+        private object get_42_Sommerhus_Bedrooms(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Bedrooms;
+        }
+        private void set_42_Sommerhus_Bedrooms(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Bedrooms = (global::System.Int32)Value;
+        }
+        private object get_43_Sommerhus_Location(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Location;
+        }
+        private void set_43_Sommerhus_Location(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Location = (global::System.String)Value;
+        }
+        private object get_44_Sommerhus_Petallowed(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Petallowed;
+        }
+        private void set_44_Sommerhus_Petallowed(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Petallowed = (global::System.Boolean)Value;
+        }
+        private object get_45_Sommerhus_Price(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Price;
+        }
+        private void set_45_Sommerhus_Price(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Price = (global::System.Double)Value;
+        }
+        private object get_46_Sommerhus_Size(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.Size;
+        }
+        private void set_46_Sommerhus_Size(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.Size = (global::System.Double)Value;
+        }
+        private object get_47_Sommerhus_AddSommerhuCommand(object instance)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            return that.AddSommerhuCommand;
+        }
+        private void set_47_Sommerhus_AddSommerhuCommand(object instance, object Value)
+        {
+            var that = (global::FranceVacanceBookingSystem.ViewModel.Sommerhus)instance;
+            that.AddSommerhuCommand = (global::WpfApplication.ViewModel.RelayCommand)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -601,155 +950,293 @@ namespace FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.SendEmail":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "SendEmail", "String");
+                xamlMember.Getter = get_0_ProfilHandler_SendEmail;
+                xamlMember.Setter = set_0_ProfilHandler_SendEmail;
+                break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Profiles":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Profiles", "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.Profil>");
-                xamlMember.Getter = get_0_ProfilHandler_Profiles;
-                xamlMember.Setter = set_0_ProfilHandler_Profiles;
+                xamlMember.Getter = get_1_ProfilHandler_Profiles;
+                xamlMember.Setter = set_1_ProfilHandler_Profiles;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Adresse":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Adresse", "String");
-                xamlMember.Getter = get_1_Profil_Adresse;
-                xamlMember.Setter = set_1_Profil_Adresse;
+                xamlMember.Getter = get_2_Profil_Adresse;
+                xamlMember.Setter = set_2_Profil_Adresse;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Postnummer":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Postnummer", "Int32");
-                xamlMember.Getter = get_2_Profil_Postnummer;
-                xamlMember.Setter = set_2_Profil_Postnummer;
+                xamlMember.Getter = get_3_Profil_Postnummer;
+                xamlMember.Setter = set_3_Profil_Postnummer;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Alder":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Alder", "Int32");
-                xamlMember.Getter = get_3_Profil_Alder;
-                xamlMember.Setter = set_3_Profil_Alder;
+                xamlMember.Getter = get_4_Profil_Alder;
+                xamlMember.Setter = set_4_Profil_Alder;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Email":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Email", "String");
-                xamlMember.Getter = get_4_Profil_Email;
-                xamlMember.Setter = set_4_Profil_Email;
+                xamlMember.Getter = get_5_Profil_Email;
+                xamlMember.Setter = set_5_Profil_Email;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Navn":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Navn", "String");
-                xamlMember.Getter = get_5_Profil_Navn;
-                xamlMember.Setter = set_5_Profil_Navn;
+                xamlMember.Getter = get_6_Profil_Navn;
+                xamlMember.Setter = set_6_Profil_Navn;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Password":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_6_Profil_Password;
-                xamlMember.Setter = set_6_Profil_Password;
+                xamlMember.Getter = get_7_Profil_Password;
+                xamlMember.Setter = set_7_Profil_Password;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.RepeatPassword":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "RepeatPassword", "String");
-                xamlMember.Getter = get_7_Profil_RepeatPassword;
-                xamlMember.Setter = set_7_Profil_RepeatPassword;
+                xamlMember.Getter = get_8_Profil_RepeatPassword;
+                xamlMember.Setter = set_8_Profil_RepeatPassword;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.Username":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_8_Profil_Username;
-                xamlMember.Setter = set_8_Profil_Username;
+                xamlMember.Getter = get_9_Profil_Username;
+                xamlMember.Setter = set_9_Profil_Username;
                 break;
             case "FranceVacanceBookingSystem.Model.Profil.TelefonNummer":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.Profil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "TelefonNummer", "String");
-                xamlMember.Getter = get_9_Profil_TelefonNummer;
-                xamlMember.Setter = set_9_Profil_TelefonNummer;
+                xamlMember.Getter = get_10_Profil_TelefonNummer;
+                xamlMember.Setter = set_10_Profil_TelefonNummer;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Username":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_10_ProfilHandler_Username;
-                xamlMember.Setter = set_10_ProfilHandler_Username;
+                xamlMember.Getter = get_11_ProfilHandler_Username;
+                xamlMember.Setter = set_11_ProfilHandler_Username;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Navn":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Navn", "String");
-                xamlMember.Getter = get_11_ProfilHandler_Navn;
-                xamlMember.Setter = set_11_ProfilHandler_Navn;
+                xamlMember.Getter = get_12_ProfilHandler_Navn;
+                xamlMember.Setter = set_12_ProfilHandler_Navn;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Adresse":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Adresse", "String");
-                xamlMember.Getter = get_12_ProfilHandler_Adresse;
-                xamlMember.Setter = set_12_ProfilHandler_Adresse;
+                xamlMember.Getter = get_13_ProfilHandler_Adresse;
+                xamlMember.Setter = set_13_ProfilHandler_Adresse;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.TelefonNummer":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "TelefonNummer", "String");
-                xamlMember.Getter = get_13_ProfilHandler_TelefonNummer;
-                xamlMember.Setter = set_13_ProfilHandler_TelefonNummer;
+                xamlMember.Getter = get_14_ProfilHandler_TelefonNummer;
+                xamlMember.Setter = set_14_ProfilHandler_TelefonNummer;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Email":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Email", "String");
-                xamlMember.Getter = get_14_ProfilHandler_Email;
-                xamlMember.Setter = set_14_ProfilHandler_Email;
+                xamlMember.Getter = get_15_ProfilHandler_Email;
+                xamlMember.Setter = set_15_ProfilHandler_Email;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.Password":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_15_ProfilHandler_Password;
-                xamlMember.Setter = set_15_ProfilHandler_Password;
+                xamlMember.Getter = get_16_ProfilHandler_Password;
+                xamlMember.Setter = set_16_ProfilHandler_Password;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.RepeatPassword":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "RepeatPassword", "String");
-                xamlMember.Getter = get_16_ProfilHandler_RepeatPassword;
-                xamlMember.Setter = set_16_ProfilHandler_RepeatPassword;
+                xamlMember.Getter = get_17_ProfilHandler_RepeatPassword;
+                xamlMember.Setter = set_17_ProfilHandler_RepeatPassword;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.log":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "log", "Windows.UI.Popups.MessageDialog");
-                xamlMember.Getter = get_17_ProfilHandler_log;
-                xamlMember.Setter = set_17_ProfilHandler_log;
+                xamlMember.Getter = get_18_ProfilHandler_log;
+                xamlMember.Setter = set_18_ProfilHandler_log;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.SendEmailCommand":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "SendEmailCommand", "WpfApplication.ViewModel.RelayCommand");
+                xamlMember.Getter = get_19_ProfilHandler_SendEmailCommand;
+                xamlMember.Setter = set_19_ProfilHandler_SendEmailCommand;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.LoginCommand":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "LoginCommand", "WpfApplication.ViewModel.RelayCommand");
-                xamlMember.Getter = get_18_ProfilHandler_LoginCommand;
-                xamlMember.Setter = set_18_ProfilHandler_LoginCommand;
+                xamlMember.Getter = get_20_ProfilHandler_LoginCommand;
+                xamlMember.Setter = set_20_ProfilHandler_LoginCommand;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.AddProfileCommand":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "AddProfileCommand", "WpfApplication.ViewModel.RelayCommand");
-                xamlMember.Getter = get_19_ProfilHandler_AddProfileCommand;
-                xamlMember.Setter = set_19_ProfilHandler_AddProfileCommand;
+                xamlMember.Getter = get_21_ProfilHandler_AddProfileCommand;
+                xamlMember.Setter = set_21_ProfilHandler_AddProfileCommand;
                 break;
             case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.NavToOpretProfilCommand":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "NavToOpretProfilCommand", "WpfApplication.ViewModel.RelayCommand");
-                xamlMember.Getter = get_20_ProfilHandler_NavToOpretProfilCommand;
-                xamlMember.Setter = set_20_ProfilHandler_NavToOpretProfilCommand;
+                xamlMember.Getter = get_22_ProfilHandler_NavToOpretProfilCommand;
+                xamlMember.Setter = set_22_ProfilHandler_NavToOpretProfilCommand;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.AddUsername":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "AddUsername", "String");
+                xamlMember.Getter = get_23_ProfilHandler_AddUsername;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.ProfilHandler.AddPassword":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.ProfilHandler");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "AddPassword", "String");
+                xamlMember.Getter = get_24_ProfilHandler_AddPassword;
+                xamlMember.SetIsReadOnly();
                 break;
             case "FranceVacanceBookingSystem.View.MainSystem.DefaultViewModel":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.View.MainSystem");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "FranceVacanceBookingSystem.Common.ObservableDictionary");
-                xamlMember.Getter = get_21_MainSystem_DefaultViewModel;
+                xamlMember.Getter = get_25_MainSystem_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "FranceVacanceBookingSystem.View.MainSystem.NavigationHelper":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.View.MainSystem");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "NavigationHelper", "FranceVacanceBookingSystem.Common.NavigationHelper");
-                xamlMember.Getter = get_22_MainSystem_NavigationHelper;
+                xamlMember.Getter = get_26_MainSystem_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "FranceVacanceBookingSystem.View.OpretProfil.DefaultViewModel":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.View.OpretProfil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "FranceVacanceBookingSystem.Common.ObservableDictionary");
-                xamlMember.Getter = get_23_OpretProfil_DefaultViewModel;
+                xamlMember.Getter = get_27_OpretProfil_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "FranceVacanceBookingSystem.View.OpretProfil.NavigationHelper":
                 userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.View.OpretProfil");
                 xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "NavigationHelper", "FranceVacanceBookingSystem.Common.NavigationHelper");
-                xamlMember.Getter = get_24_OpretProfil_NavigationHelper;
+                xamlMember.Getter = get_28_OpretProfil_NavigationHelper;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Sommerhuse":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Sommerhuse", "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.Model.SommerhusBeskrivelse>");
+                xamlMember.Getter = get_29_Sommerhus_Sommerhuse;
+                xamlMember.Setter = set_29_Sommerhus_Sommerhuse;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Distancefromwater":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Distancefromwater", "Double");
+                xamlMember.Getter = get_30_SommerhusBeskrivelse_Distancefromwater;
+                xamlMember.Setter = set_30_SommerhusBeskrivelse_Distancefromwater;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Bathrooms":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Bathrooms", "Int32");
+                xamlMember.Getter = get_31_SommerhusBeskrivelse_Bathrooms;
+                xamlMember.Setter = set_31_SommerhusBeskrivelse_Bathrooms;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Parkinglots":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Parkinglots", "Int32");
+                xamlMember.Getter = get_32_SommerhusBeskrivelse_Parkinglots;
+                xamlMember.Setter = set_32_SommerhusBeskrivelse_Parkinglots;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Bedrooms":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Bedrooms", "Int32");
+                xamlMember.Getter = get_33_SommerhusBeskrivelse_Bedrooms;
+                xamlMember.Setter = set_33_SommerhusBeskrivelse_Bedrooms;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Location":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Location", "String");
+                xamlMember.Getter = get_34_SommerhusBeskrivelse_Location;
+                xamlMember.Setter = set_34_SommerhusBeskrivelse_Location;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Petsallowed":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Petsallowed", "Boolean");
+                xamlMember.Getter = get_35_SommerhusBeskrivelse_Petsallowed;
+                xamlMember.Setter = set_35_SommerhusBeskrivelse_Petsallowed;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Price":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Price", "Double");
+                xamlMember.Getter = get_36_SommerhusBeskrivelse_Price;
+                xamlMember.Setter = set_36_SommerhusBeskrivelse_Price;
+                break;
+            case "FranceVacanceBookingSystem.Model.SommerhusBeskrivelse.Size":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.Model.SommerhusBeskrivelse");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Size", "Double");
+                xamlMember.Getter = get_37_SommerhusBeskrivelse_Size;
+                xamlMember.Setter = set_37_SommerhusBeskrivelse_Size;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Sommerhuslist":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Sommerhuslist", "System.Collections.ObjectModel.ObservableCollection`1<FranceVacanceBookingSystem.ViewModel.Sommerhus>");
+                xamlMember.Getter = get_38_Sommerhus_Sommerhuslist;
+                xamlMember.Setter = set_38_Sommerhus_Sommerhuslist;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Distancefromwater":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Distancefromwater", "Double");
+                xamlMember.Getter = get_39_Sommerhus_Distancefromwater;
+                xamlMember.Setter = set_39_Sommerhus_Distancefromwater;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Bathrooms":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Bathrooms", "Int32");
+                xamlMember.Getter = get_40_Sommerhus_Bathrooms;
+                xamlMember.Setter = set_40_Sommerhus_Bathrooms;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Parkinglots":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Parkinglots", "Int32");
+                xamlMember.Getter = get_41_Sommerhus_Parkinglots;
+                xamlMember.Setter = set_41_Sommerhus_Parkinglots;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Bedrooms":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Bedrooms", "Int32");
+                xamlMember.Getter = get_42_Sommerhus_Bedrooms;
+                xamlMember.Setter = set_42_Sommerhus_Bedrooms;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Location":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Location", "String");
+                xamlMember.Getter = get_43_Sommerhus_Location;
+                xamlMember.Setter = set_43_Sommerhus_Location;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Petallowed":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Petallowed", "Boolean");
+                xamlMember.Getter = get_44_Sommerhus_Petallowed;
+                xamlMember.Setter = set_44_Sommerhus_Petallowed;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Price":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Price", "Double");
+                xamlMember.Getter = get_45_Sommerhus_Price;
+                xamlMember.Setter = set_45_Sommerhus_Price;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.Size":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "Size", "Double");
+                xamlMember.Getter = get_46_Sommerhus_Size;
+                xamlMember.Setter = set_46_Sommerhus_Size;
+                break;
+            case "FranceVacanceBookingSystem.ViewModel.Sommerhus.AddSommerhuCommand":
+                userType = (global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FranceVacanceBookingSystem.ViewModel.Sommerhus");
+                xamlMember = new global::FranceVacanceBookingSystem.FranceVacanceBookingSystem_XamlTypeInfo.XamlMember(this, "AddSommerhuCommand", "WpfApplication.ViewModel.RelayCommand");
+                xamlMember.Getter = get_47_Sommerhus_AddSommerhuCommand;
+                xamlMember.Setter = set_47_Sommerhus_AddSommerhuCommand;
                 break;
             }
             return xamlMember;
