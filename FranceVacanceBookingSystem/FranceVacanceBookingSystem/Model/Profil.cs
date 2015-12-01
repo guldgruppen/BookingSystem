@@ -42,15 +42,6 @@ namespace FranceVacanceBookingSystem.Model
         {
 
         }
-        //public Profil(string username, string password)
-        //{
-        //    CheckUsername(username);
-        //    CheckPassword(password);
-        //    CheckRepeatPassword(password, repeatPassword);
-        //    Username = username;
-        //    Password = password;
-        //    RepeatPassword = repeatPassword;
-        //}
 
         public Profil(string adresse, string email, string navn, string password, string repeatPassword, string username, string telefonNummer)
         {
@@ -108,7 +99,7 @@ namespace FranceVacanceBookingSystem.Model
         {
             if (String.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentException("Venlist indtast et ordentlig navn! WIRK!!");
+                throw new ArgumentException("Venlist indtast et ordentlig navn");
             }
         }
 
