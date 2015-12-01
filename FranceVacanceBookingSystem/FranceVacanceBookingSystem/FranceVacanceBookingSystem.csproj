@@ -113,7 +113,10 @@
     <Compile Include="Common\PersistencyService.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Model\Sommerhus.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
+    <Compile Include="ViewModel\OpretSommerhus.cs" />
+    <Compile Include="ViewModel\SommerhusKatalog.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,9 @@
     </Compile>
     <Compile Include="View\OpretSommerhus.xaml.cs">
       <DependentUpon>OpretSommerhus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SommerhusListe.xaml.cs">
+      <DependentUpon>SommerhusListe.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OpretSommerhus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SommerhusListe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
