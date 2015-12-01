@@ -42,7 +42,7 @@ namespace FranceVacanceBookingSystem.Common
         {
             string sommerhusJsonString = await DeserializeNotesFileAsync(SommerHuse);
             if (sommerhusJsonString != null)
-                return (List<Sommerhus>)JsonConvert.DeserializeObject(sommerhusJsonString, typeof(List<Profil>));
+                return (List<Sommerhus>)JsonConvert.DeserializeObject(sommerhusJsonString, typeof(List<Sommerhus>));
             return null;
         }
 

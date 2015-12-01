@@ -28,6 +28,21 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
         }
 
+        private ObservableCollection<Sommerhus> _sommerhuslist;
+
+        public ObservableCollection<Sommerhus> Sommerhuslist
+        {
+            get
+            {
+                return _sommerhuslist;
+            }
+
+            set
+            {
+                _sommerhuslist = value;
+            }
+        }
+
         public double Distancefromwater { get; set; }
         public int Bathrooms { get; set; }
         public int Parkinglots { get; set; }
@@ -45,11 +60,34 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse.Add(new SommerhusBeskrivelse(5,2,2,1,"Paris",false,5000,180));
             AddSommerhuCommand = new RelayCommand(AddSommerhus);
             PersistencyService.SaveCottageAsJsonAsync(Sommerhuse);
+
+            Sommerhuslist = new ObservableCollection<Sommerhus>();
+
+            LoadSommerhus();
         }
 
         public void AddSommerhus()
         {
             Sommerhuse.Add(new SommerhusBeskrivelse(Distancefromwater,Bathrooms,Parkinglots,Bedrooms, Location, Petallowed, Price, Size));
+        }
+
+        private async void LoadSommerhus()
+        {
+            var loadedSommerhus = await PersistencyService.LoadSommerhusFromJsonAsync();
+            if (loadedSommerhus != null)
+            {
+                Sommerhuslist.Clear();
+                foreach (var sh in loadedSommerhus)
+                {
+                    Sommerhuslist.Add(sh);
+                }
+
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Distancefromwater: {Distancefromwater}, Bathrooms: {Bathrooms}, Parkinglots: {Parkinglots}, Bedrooms: {Bedrooms}, Location: {Location}, Petallowed: {Petallowed}, Price: {Price}, Size: {Size}";
         }
     }
 }
