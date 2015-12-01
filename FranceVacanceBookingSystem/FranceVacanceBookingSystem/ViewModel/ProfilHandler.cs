@@ -137,12 +137,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
 
         public void AddProfile()
-        {
-            Profiles.Add(new Profil(AddUsername,AddPassword));
-            OnPropertyChanged();
-            MessageDialog dialog = new MessageDialog("Profil er tilføjet");
-            dialog.ShowAsync();
-            PersistencyService.SaveProfileAsJsonAsync(Profiles);
+        {          
             try
             {
                 CheckEmailAndUsername();

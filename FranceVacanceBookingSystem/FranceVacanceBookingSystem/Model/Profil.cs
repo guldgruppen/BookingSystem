@@ -100,7 +100,7 @@ namespace FranceVacanceBookingSystem.Model
 
         public void CheckTlf(string tlf)
         {
-            if (tlf.Length != 8)
+            if (String.IsNullOrWhiteSpace(tlf) || tlf.Length != 8)
                 throw new ArgumentException("Venlig indtast et korret telefon nummer");
         }
 

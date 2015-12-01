@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>KASPER-PC</Machine>
+    <Machine>CHAMPENS</Machine>
     <WindowsUser>Kasper</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetOsVersion>6.3</TargetOsVersion>
@@ -9,8 +9,8 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>8ec963bd-8c5b-452f-9e21-b5a3ccc15540</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>904BACE30ED85240CD3EC89C753B3827FFC55FC455DFA7BD607AC3207BF83401</RegisteredManifestChecksum>
+    <IntermediateOutputPath>C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>A6286F5ABA6BE1ED5902A15B43C151364353CEAA4D9AB5993A53E3B59C8D98AF</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>8ec963bd-8c5b-452f-9e21-b5a3ccc15540_1.0.0.0_neutral__7hhygd37760rc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>8ec963bd-8c5b-452f-9e21-b5a3ccc15540_7hhygd37760rc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>8ec963bd-8c5b-452f-9e21-b5a3ccc15540</RegisteredPackageID>
@@ -19,92 +19,92 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-01T12:04:31.853</Modified>
+      <Modified>2015-12-01T13:22:01.292</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
       <PackagePath>FranceVacanceBookingSystem.exe</PackagePath>
-      <Modified>2015-12-01T12:04:30.995</Modified>
+      <Modified>2015-12-01T13:22:01.253</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2015-12-01T11:54:03.078</Modified>
+      <Modified>2015-12-01T13:15:49.841</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage.jpg">
       <PackagePath>Assets\FranceImage.jpg</PackagePath>
-      <Modified>2015-11-28T12:32:51.673</Modified>
+      <Modified>2015-12-01T13:15:49.569</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage2.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage2.jpg">
       <PackagePath>Assets\FranceImage2.jpg</PackagePath>
-      <Modified>2015-11-28T14:54:34.002</Modified>
+      <Modified>2015-12-01T13:15:49.573</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg1.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg1.jpg">
       <PackagePath>Assets\fvimg1.jpg</PackagePath>
-      <Modified>2015-11-28T10:35:18.471</Modified>
+      <Modified>2015-12-01T13:15:49.574</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg2.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg2.jpg">
       <PackagePath>Assets\fvimg2.jpg</PackagePath>
-      <Modified>2015-11-28T10:35:18.513</Modified>
+      <Modified>2015-12-01T13:15:49.574</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg3.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg3.jpg">
       <PackagePath>Assets\fvimg3.jpg</PackagePath>
-      <Modified>2015-11-28T10:35:18.561</Modified>
+      <Modified>2015-12-01T13:15:49.576</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\louvre_museum.jpg">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\louvre_museum.jpg">
       <PackagePath>Assets\louvre_museum.jpg</PackagePath>
-      <Modified>2015-12-01T11:54:07.239</Modified>
+      <Modified>2015-12-01T13:15:49.583</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T21:05:20.000</Modified>
+      <Modified>2015-12-01T13:15:49.576</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T21:05:20.000</Modified>
+      <Modified>2015-12-01T13:15:49.584</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T21:05:20.000</Modified>
+      <Modified>2015-12-01T13:15:49.584</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T21:05:20.000</Modified>
+      <Modified>2015-12-01T13:15:49.585</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
       <PackagePath>FranceVacanceBookingSystem.xr.xml</PackagePath>
-      <Modified>2015-12-01T12:04:30.609</Modified>
+      <Modified>2015-12-01T13:16:15.363</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-12-01T12:04:30.673</Modified>
+      <Modified>2015-12-01T13:19:42.243</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
-      <Modified>2015-12-01T12:04:30.676</Modified>
+      <Modified>2015-12-01T13:19:42.244</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
       <PackagePath>View\MainSystem.xbf</PackagePath>
-      <Modified>2015-12-01T12:04:30.679</Modified>
+      <Modified>2015-12-01T13:19:42.244</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
       <PackagePath>View\OpretProfil.xbf</PackagePath>
-      <Modified>2015-12-01T12:04:30.683</Modified>
+      <Modified>2015-12-01T13:19:42.244</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SHlistTest.xbf">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SHlistTest.xbf">
       <PackagePath>View\SHlistTest.xbf</PackagePath>
-      <Modified>2015-12-01T12:04:30.687</Modified>
+      <Modified>2015-12-01T13:19:42.244</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem2\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-01T12:04:31.657</Modified>
+      <Modified>2015-12-01T13:19:42.439</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
