@@ -113,6 +113,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Model\SommerhusBeskrivelse.cs" />
+    <Compile Include="Model\Sommerhusliste.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\Sommerhus.cs" />
     <Compile Include="View\Login.xaml.cs">
@@ -127,9 +128,6 @@
     </Compile>
     <Compile Include="View\OpretProfil.xaml.cs">
       <DependentUpon>OpretProfil.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -164,10 +162,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OpretProfil.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
