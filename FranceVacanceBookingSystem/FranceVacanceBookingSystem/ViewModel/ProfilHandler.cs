@@ -38,6 +38,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         #region Properties
 
+        public string SendEmail { get; set; }
         public ObservableCollection<Profil> Profiles
         {
             get { return _profiles; }
@@ -96,6 +97,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public MessageDialog log { get; set; }
 
+        public RelayCommand SendEmailCommand { get; set; }
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
         public RelayCommand NavToOpretProfilCommand { get; set; }
@@ -113,6 +115,11 @@ namespace FranceVacanceBookingSystem.ViewModel
             NavToOpretProfilCommand = new RelayCommand(() =>
             {
                 _navigationService.Navigate(typeof (OpretProfil));
+            });
+            SendEmailCommand = new RelayCommand(() =>
+            {
+                log = new MessageDialog("E-mail med logininformation er sendt til din email");
+                log.ShowAsync();
             });
 
             LoadProfiles();
@@ -133,8 +140,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 CheckEmailAndUsername();
                 Profiles.Add(new Profil(Adresse,Email,Navn,Password,RepeatPassword,Username,TelefonNummer));          
-                MessageDialog dialo = new MessageDialog("virker");
-                dialo.ShowAsync();
+                log = new MessageDialog("Profil er tilføjet");
+                log.ShowAsync();
             }
             catch (ArgumentException e)
             {
@@ -205,8 +212,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                     else
                     {
                         log = new MessageDialog("Login fejl - prøv igen");
-                        
-                        
+                                             
                     }
                 }
             }
