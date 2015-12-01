@@ -113,7 +113,6 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Model\SommerhusBeskrivelse.cs" />
-    <Compile Include="Model\Sommerhusliste.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\Sommerhus.cs" />
     <Compile Include="View\Login.xaml.cs">
