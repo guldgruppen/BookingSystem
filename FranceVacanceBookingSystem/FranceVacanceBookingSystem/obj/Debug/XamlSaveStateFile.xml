@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\kasper\desktop\github\bookingsystem2\francevacancebookingsystem\francevacancebookingsystem\obj\debug\intermediatexaml\francevacancebookingsystem.exe" HashGuid="ccb04472-61cb-5a1b-e705-31b031e71338" />
-    <ReferenceAssembly PathName="c:\users\kasper\desktop\github\bookingsystem2\francevacancebookingsystem\packages\newtonsoft.json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\newtonsoft.json.dll" HashGuid="86223907-5808-be51-71b4-c872f8140e29" />
+    <LocalAssembly PathName="c:\users\kasper\desktop\github\bookingsystem3\francevacancebookingsystem\francevacancebookingsystem\obj\debug\intermediatexaml\francevacancebookingsystem.exe" HashGuid="ccb04472-61cb-5a1b-e705-31b031e71338" />
+    <ReferenceAssembly PathName="c:\users\kasper\desktop\github\bookingsystem3\francevacancebookingsystem\packages\newtonsoft.json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\newtonsoft.json.dll" HashGuid="86223907-5808-be51-71b4-c872f8140e29" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
