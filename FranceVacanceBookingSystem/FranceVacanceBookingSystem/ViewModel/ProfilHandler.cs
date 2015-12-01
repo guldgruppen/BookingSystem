@@ -154,7 +154,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 ShowDialog(e.Message);
             }           
            
-            PersistencyService.SaveNotesAsJsonAsync(Profiles);
+            PersistencyService.SaveProfileAsJsonAsync(Profiles);
         }
 
         public bool CheckUsername(string name)

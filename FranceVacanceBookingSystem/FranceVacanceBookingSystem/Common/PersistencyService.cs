@@ -16,7 +16,7 @@ namespace FranceVacanceBookingSystem.Common
     {
         private static string JsonFileName = "ProfilesAsJson.dat";
 
-        public static async void SaveNotesAsJsonAsync(ObservableCollection<Profil> notes)
+        public static async void SaveProfileAsJsonAsync(ObservableCollection<Profil> notes)
         {
             string notesJsonString = JsonConvert.SerializeObject(notes);
             SerializeNotesFileAsync(notesJsonString, JsonFileName);
