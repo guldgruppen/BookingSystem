@@ -13,10 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace EmailTest
+namespace FranceVacanceBookingSystem
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -26,11 +25,6 @@ namespace EmailTest
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            SmtpClient client = new SmtpClient();
         }
     }
 }
