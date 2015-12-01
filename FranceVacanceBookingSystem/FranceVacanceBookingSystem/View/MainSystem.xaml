@@ -22,7 +22,7 @@
     -->
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Assets/louvre_museum.jpg"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/louvre-museum.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70*"/>
