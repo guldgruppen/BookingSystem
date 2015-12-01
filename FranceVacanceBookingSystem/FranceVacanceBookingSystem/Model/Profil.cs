@@ -75,9 +75,7 @@ namespace FranceVacanceBookingSystem.Model
             Username = username;
             Password = password;
         }
-
-
-        #endregion
+       #endregion
        
         #region CheckInformationRegion
         public void CheckUsername(string name)
