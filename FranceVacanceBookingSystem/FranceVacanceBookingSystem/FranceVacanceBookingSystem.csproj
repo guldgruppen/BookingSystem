@@ -105,6 +105,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\Dialog.cs" />
     <Compile Include="Common\INavigationService.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\NavigationService.cs" />
@@ -146,6 +147,7 @@
     <Content Include="Assets\fvimg2.jpg" />
     <Content Include="Assets\fvimg3.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\louvre_museum.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />

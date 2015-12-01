@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FranceVacanceBookingSystem.ViewModel;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -101,6 +102,6 @@ namespace FranceVacanceBookingSystem.View
             navigationHelper.OnNavigatedFrom(e);
         }
 
-        #endregion
+        #endregion       
     }
 }
