@@ -102,6 +102,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand AddProfileCommand { get; set; }
         public RelayCommand NavToOpretProfilCommand { get; set; }
 
+        public RelayCommand NavSommerhusListCommand { get; set; }
+
         #endregion
 
         #region Constructors
@@ -120,6 +122,10 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 log = new MessageDialog("E-mail med logininformation er sendt til din email");
                 log.ShowAsync();
+            });
+            NavSommerhusListCommand = new RelayCommand(() =>
+            {
+                _navigationService.Navigate(typeof(SommerhusListe));
             });
 
             LoadProfiles();
