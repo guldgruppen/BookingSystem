@@ -10,69 +10,29 @@ namespace FranceVacanceBookingSystem.Model
     {
         #region Instance Fields
 
-        private string _adresse;
         private string _by;
-        private int _postnummer;
-        private int _alder;
-        private string _email;
-        private string _navn;
-        private string _password;
-        private string _username;
-        private int _telefonNummer;
 
         #endregion
 
         #region Properties
 
-        public string Adresse
-        {
-            get { return _adresse; }
-            set { _adresse = value; }
-        }
+        public string Adresse { get; set; }
 
-        public int Postnummer
-        {
-            get { return _postnummer; }
-            set { _postnummer = value; }
-        }
+        public int Postnummer { get; set; }
 
-        public int Alder
-        {
-            get { return _alder; }
-            set { _alder = value; }
-        }
+        public int Alder { get; set; }
 
-        public string Email
-        {
-            get { return _email; }
-            set { _email = value; }
-        }
+        public string Email { get; set; }
 
-        public string Navn
-        {
-            get { return _navn; }
-            set { _navn = value; }
-        }
+        public string Navn { get; set; }
 
-        public string Password
-        {
-            get { return _password; }
-            set { _password = value; }
-        }
+        public string Password { get; set; }
 
         public string RepeatPassword { get; set; }
 
-        public string Username
-        {
-            get { return _username; }
-            set { _username = value; }
-        }
+        public string Username { get; set; }
 
-        public int TelefonNummer
-        {
-            get { return _telefonNummer; }
-            set { _telefonNummer = value; }
-        }
+        public string TelefonNummer { get; set; }
 
         #endregion
 
@@ -84,18 +44,26 @@ namespace FranceVacanceBookingSystem.Model
 
         }
 
-        public Profil(string username, string password, string repeatPassword)
-        {
-            CheckUser(username);
-            CheckPassword(password);
-            CheckRepeatPassword(password, repeatPassword);
-            Username = username;
-            Password = password;
-            RepeatPassword = repeatPassword;
-        }
+        //public Profil(string username, string password)
+        //{
+        //    CheckUsername(username);
+        //    CheckPassword(password);
+        //    CheckRepeatPassword(password, repeatPassword);
+        //    Username = username;
+        //    Password = password;
+        //    RepeatPassword = repeatPassword;
+        //}
 
-        public Profil(string adresse, string email, string navn, string password, string username, int telefonNummer)
+        public Profil(string adresse, string email, string navn, string password, string repeatPassword, string username, string telefonNummer)
         {
+            CheckNavn(navn);
+            CheckEmail(email);
+            CheckAdresse(adresse);
+            CheckTlf(telefonNummer);
+            CheckUsername(username);
+            CheckPassword(password);
+            CheckRepeatPassword(password,repeatPassword);
+            
             Adresse = adresse;
             Email = email;
             Navn = navn;
@@ -104,8 +72,17 @@ namespace FranceVacanceBookingSystem.Model
             TelefonNummer = telefonNummer;
         }
 
+        public Profil(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
 
-        public void CheckUser(string name)
+
+        #endregion
+       
+        #region CheckInformationRegion
+        public void CheckUsername(string name)
         {
             if (String.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Venlig indtast et korrekt brugernavn");
@@ -123,28 +100,35 @@ namespace FranceVacanceBookingSystem.Model
                 throw new ArgumentException("kodeordene er ikke de samme");
         }
 
-        public void CheckTlf(int tlf)
+        public void CheckTlf(string tlf)
         {
-            if (tlf < 10000000 || tlf > 99999999)
+            if (tlf.Length != 8)
                 throw new ArgumentException("Venlig indtast et korret telefon nummer");
         }
 
         public void CheckNavn(string name)
         {
             if (String.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("Venlig indtast et navn");
+            {
+                throw new ArgumentException("Venlist indtast et ordentlig navn! WIRK!!");
+            }
         }
 
         public void CheckAdresse(string adresse)
         {
             if (String.IsNullOrWhiteSpace(adresse))
-                throw new ArgumentException("Venligst indtast en korrekt adresse");                       
+                throw new ArgumentException("Venligst indtast en korrekt adresse");
+        }
+        public void CheckEmail(string email)
+        {
+            if(String.IsNullOrWhiteSpace(email))
+                throw new ArgumentException("Venligst indtast en korrekt email");
         }
 
 
-
-
         #endregion
+
+
 
     }
 }

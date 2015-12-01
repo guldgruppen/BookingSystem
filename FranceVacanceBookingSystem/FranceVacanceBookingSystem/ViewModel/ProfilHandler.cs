@@ -30,7 +30,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         private INavigationService _navigationService;
         private string _navn;
         private string _adresse;
-        private int _telefonNummer;
+        private string _telefonNummer;
         private string _email;
         private string _repeatPassword;
 
@@ -67,7 +67,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             set { _adresse = value; }
         }
 
-        public int TelefonNummer
+        public string TelefonNummer
         {
             get { return _telefonNummer; }
             set { _telefonNummer = value; }
@@ -107,10 +107,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         {           
             Profiles = new ObservableCollection<Profil>();
             _navigationService = new NavigationService();
-            Profiles.Add(new Profil("Thomas","Thomas","Thomas"));
-            Profiles.Add(new Profil("Preben", "Preben","Preben"));
-            Profiles.Add(new Profil("Bob", "Bob","Bob"));
-
+            Profiles.Add(new Profil("bob","bob"));
             LoginCommand = new RelayCommand(CheckLoginInfo);
             AddProfileCommand = new RelayCommand(AddProfile);
             NavToOpretProfilCommand = new RelayCommand(() =>
@@ -134,8 +131,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         {
             try
             {
-                Profiles.Add(new Profil(Username, Password, RepeatPassword));
-
+                CheckEmailAndUsername();
+                Profiles.Add(new Profil(Adresse,Email,Navn,Password,RepeatPassword,Username,TelefonNummer));          
                 MessageDialog dialo = new MessageDialog("virker");
                 dialo.ShowAsync();
             }
@@ -170,7 +167,18 @@ namespace FranceVacanceBookingSystem.ViewModel
         {
             _navigationService.Navigate(typeof(MainSystem));
         }
-      
+
+        public void CheckEmailAndUsername()
+        {
+            foreach (Profil profil in Profiles)
+            {
+                if(profil.Username == Username)
+                    throw new ArgumentException("brugernavn eksisterer i forvejen");
+                if(profil.Email == Email)
+                    throw new ArgumentException("Email eksisterer i forvejen");
+            }
+        }
+
         public void CheckLoginInfo()
         {
             

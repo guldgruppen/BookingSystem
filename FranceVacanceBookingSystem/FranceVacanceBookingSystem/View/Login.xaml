@@ -30,7 +30,7 @@
         <Grid.DataContext>
             <local:ProfilHandler/>
         </Grid.DataContext>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#99C11910">
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#B2000000">
 
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Bruger Login" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="61.333" FontFamily="Segoe UI Light" Margin="136,10,136,0"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="brugernavn" FontFamily="Segoe UI Semilight" FontSize="32" Margin="16,15,0,0" Height="38.4000015258789"/>
