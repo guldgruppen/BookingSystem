@@ -137,7 +137,11 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
 
         public void AddProfile()
+<<<<<<< HEAD
         {          
+=======
+        {           
+>>>>>>> refs/remotes/origin/Kasper
             try
             {
                 CheckEmailAndUsername();
@@ -147,6 +151,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
             catch (ArgumentException e)
             {
+
                 ShowDialog(e.Message);
             }           
            
