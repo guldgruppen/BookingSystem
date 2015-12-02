@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Core.AnimationMetrics;
 
 namespace FranceVacanceBookingSystem.Model
 {
     public class Profil
     {
-        #region Instance Fields
-
-       
-
-        #endregion
 
         #region Properties
-
+        
         public string Adresse { get; set; }
 
         public int Postnummer { get; set; }
@@ -42,15 +38,6 @@ namespace FranceVacanceBookingSystem.Model
         {
 
         }
-        //public Profil(string username, string password)
-        //{
-        //    CheckUsername(username);
-        //    CheckPassword(password);
-        //    CheckRepeatPassword(password, repeatPassword);
-        //    Username = username;
-        //    Password = password;
-        //    RepeatPassword = repeatPassword;
-        //}
 
         public Profil(string adresse, string email, string navn, string password, string repeatPassword, string username, string telefonNummer)
         {
