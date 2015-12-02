@@ -14,7 +14,7 @@ using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.ViewModel
 {
-    class SommerhusKatalog : INotifyPropertyChanged
+    public class SommerhusKatalog : INotifyPropertyChanged
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
         public int AntalPersoner { get; set; }
@@ -47,7 +47,13 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse.Add(new Sommerhus(100,2,2,4,"Val Torens",true,5000,250,true));
             Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
             Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+
         }
 
 
