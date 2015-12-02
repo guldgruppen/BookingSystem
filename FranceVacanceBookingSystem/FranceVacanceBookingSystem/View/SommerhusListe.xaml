@@ -22,6 +22,10 @@
         * Row 1 contains the rest of the page layout
     -->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/louvre-museum.jpg"/>
         </Grid.Background>
@@ -41,7 +45,7 @@
         </Grid.DataContext>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="3" Background="#CC192B46">
+        <Grid Grid.ColumnSpan="2" Background="#CC192B46">
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
 				Style="{StaticResource NavigationBackButtonNormalStyle}"
 				VerticalAlignment="Top"
@@ -49,25 +53,31 @@
 				AutomationProperties.AutomationId="BackButton"
 				AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" 
-				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="106,0,-76,40"/>
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="106,0,32,40"/>
         </Grid>
-        <ListView x:Name="listView" Grid.Row="1" Background="#CC192B46" Margin="54,21,54,35" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <ListView x:Name="listView" Grid.Row="1" Background="#CC192B46" Margin="40,0,0,10" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" d:LayoutOverrides="LeftPosition, RightPosition" HorizontalAlignment="Left" Width="1550">
             <ListView.Resources>
                 <DataTemplate x:Key="SommerhusListeTemplate">
-                    <Grid Background="#FFDE3434" Height="150" Margin="0" Width="1431">
-                        <StackPanel Orientation="Horizontal" Margin="0" Background="#FFBD8D54">
-                            <Image x:Name="image" Width="201" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg"/>
-                            <StackPanel Width="300" Margin="20,0,0,0">
-                                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Val Thorens" FontSize="40"/>
-                                <StackPanel Height="28" Orientation="Horizontal" Margin="0,30,0,0">
-                                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Swimmingpool:" FontSize="21.333"/>
-                                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="ja" Width="61" FontSize="21.333" Margin="20,0,0,0"/>
-                                </StackPanel>
-                                <StackPanel Height="35" Orientation="Horizontal" Margin="0,5,0,0">
-                                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Husdyr Tilladt:" FontSize="21.333"/>
-                                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Nej" Margin="20,0,0,0" FontSize="21.333"/>
-                                </StackPanel>
+                    <Grid Background="#FF9E1E1E" Margin="0" Width="1550">
+                        <StackPanel Orientation="Horizontal" Margin="0" Background="#00BD8D54">
+                            <StackPanel Orientation="Vertical" Width="262">
+                                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Val Thorens" FontSize="40" Height="55" HorizontalAlignment="Center"/>
+                                <Image x:Name="image" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Height="197" Margin="-16,0,-14,0"/>
                             </StackPanel>
+                            <StackPanel Width="302" Margin="20,0,0,0">
+                                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Swimmingpool:" FontSize="21.333" HorizontalAlignment="Left" Height="34" Margin="0,50,0,0"/>
+                                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Husdyr Tilladt:" FontSize="21.333" HorizontalAlignment="Left" Height="34"/>
+                                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="Antal Parkeringspladser:" FontSize="21.333" Height="34" Margin="0,0,76,0" d:LayoutOverrides="Width"/>
+                                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Antal Badeværelser:" FontSize="21.333" Margin="0,0,116,0" d:LayoutOverrides="VerticalAlignment, Width" Height="34"/>
+                            </StackPanel>
+                            <StackPanel Width="100">
+                                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="ja" FontSize="21.333" Margin="20,50,0,0" Height="34"/>
+                                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Nej" Margin="20,0,0,0" FontSize="21.333" Height="34" d:LayoutOverrides="Width"/>
+                                <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="4" FontSize="21.333" Margin="20,0,0,0" Height="34" d:LayoutOverrides="Width"/>
+                                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="3" Margin="20,0,0,0" FontSize="21.333" Height="34" d:LayoutOverrides="LeftMargin, RightMargin"/>
+                            </StackPanel>
+                            <StackPanel Width="316" HorizontalAlignment="Right" Background="#FF462626"/>
+                            <StackPanel Width="548" Background="#FFBF6E6E"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
@@ -76,6 +86,7 @@
                 <StaticResource ResourceKey="SommerhusListeTemplate"/>
             </ListView.ItemTemplate>
         </ListView>
+        <StackPanel Grid.Row="1" d:LayoutOverrides="TopPosition, BottomPosition" Margin="0,0,0,10" Background="Black"/>
 
     </Grid>
 </Page>
