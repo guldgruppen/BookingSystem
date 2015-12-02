@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Core.AnimationMetrics;
+using Windows.UI.Xaml.Controls;
 
 namespace FranceVacanceBookingSystem.Model
 {
     public class Profil
     {
+        private string _adresse;
 
         #region Properties
         
@@ -79,11 +81,11 @@ namespace FranceVacanceBookingSystem.Model
                 throw new ArgumentException("Venlig indtast et kodeord");
         }
 
-        public void CheckRepeatPassword(string pass, string repeatpassword)
-        {
-            if (!pass.Equals(repeatpassword))
+        public void CheckRepeatPassword(string password, string repeatpassword)
+        {            
+            if (!password.Equals(repeatpassword))
                 throw new ArgumentException("kodeordene er ikke de samme");
-        }
+        }       
 
         public void CheckTlf(string tlf)
         {
@@ -109,8 +111,7 @@ namespace FranceVacanceBookingSystem.Model
             if(String.IsNullOrWhiteSpace(email))
                 throw new ArgumentException("Venligst indtast en korrekt email");
         }
-
-
+              
         #endregion
 
 
