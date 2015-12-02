@@ -56,6 +56,7 @@ namespace FranceVacanceBookingSystem.Common
 
         private class MessageDialogHelper
         {
+            
             public static async void Show(string content, string title)
             {               
                 MessageDialog messageDialog = new MessageDialog(content, title);
