@@ -60,7 +60,7 @@
             <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,32,10" Width="288" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
                 <Button x:Name="button1" Content="Log Ind" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="82" FontSize="48" Margin="60,0,10,0" Background="#B25474A3"/>
             </StackPanel>
-            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="51,0,0,34" TextWrapping="Wrap" Text="LOGO" VerticalAlignment="Bottom" FontSize="48"/>
+            <TextBlock x:Name="textBlock6" Margin="51,0,94,34" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" FontSize="48" d:LayoutOverrides="LeftPosition, RightPosition"/>
             <Button x:Name="button2" Content="Bliv Udlejer!" Grid.Column="1" HorizontalAlignment="Left" Margin="670,22,0,0" VerticalAlignment="Top" Height="64" Width="147" Command="{Binding NavToOpretCommand}"/>
         </Grid>
         <StackPanel Grid.Column="1" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition" Orientation="Horizontal" Background="#CC192B46" Margin="0,0,-43,90">
@@ -90,5 +90,7 @@
             </StackPanel>
             <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="73" Width="218" FontSize="36" Background="#B25474A3" Margin="30,65,0,0" Command="{Binding NavToListCommand}"/>
         </StackPanel>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="button3" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="237,29,0,0" Grid.Row="1" VerticalAlignment="Top" Height="83" Width="287" Command="{Binding ShowUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Page>
