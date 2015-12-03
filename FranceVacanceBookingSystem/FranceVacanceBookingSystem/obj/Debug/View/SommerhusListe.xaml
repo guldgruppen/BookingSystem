@@ -84,34 +84,42 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid HorizontalAlignment="Stretch" Margin="0" Background="#CC415471" Width="auto">
-                        <StackPanel d:LayoutOverrides="LeftPosition, RightPosition" Background="#00000000" Orientation="Horizontal">
-                            <StackPanel Width="177">
-                                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Val Thorens" HorizontalAlignment="Center" FontSize="29.333"/>
-                                <Image x:Name="image" Height="133" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Margin="0"/>
-                            </StackPanel>
-                            <StackPanel Width="152" Margin="60,0,0,0">
-                                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Badeværelser:" Margin="0,40,0,0"/>
-                                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Soveværelser:" Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse:" Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt:" Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool:" Margin="0,5,0,0"/>
-                            </StackPanel>
-                            <StackPanel Width="77">
-                                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="4" Margin="0,40,0,0"/>
-                                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="4" Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="160 " Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="ja" Margin="0,5,0,0"/>
-                                <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="nej" Margin="0,5,0,0"/>
-                            </StackPanel>
-                            <StackPanel Width="193" Margin="100,0,0,0">
-                                <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="3.400 DKK" Margin="0,100,0,0" FontSize="40"/>
-                            </StackPanel>
-                            <StackPanel Margin="70,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <Button x:Name="button" Content="Tilføj til favoritter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFF9A716" Margin="0" FontSize="21.333"/>
-                                <Button x:Name="button1" Content="Mere Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFCB2929" FontSize="21.333"/>
-                                <Button x:Name="button2" Content="Book" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1AAA13" FontSize="21.333"/>
-                            </StackPanel>
+                    <Grid HorizontalAlignment="Stretch" Margin="0" Background="#CC415471" Width="auto" Height="175">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="178"/>
+                            <ColumnDefinition Width="22*"/>
+                            <ColumnDefinition Width="132"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="202"/>
+                            <ColumnDefinition Width="59*"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Height="173" VerticalAlignment="Top" Margin="0,0,1,0" d:LayoutOverrides="LeftPosition, RightPosition">
+                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Val Thorens" HorizontalAlignment="Center" FontSize="29.333"/>
+                            <Image x:Name="image" Height="133" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Margin="0"/>
+                        </StackPanel>
+                        <StackPanel Margin="4,0,0,0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Height="173" VerticalAlignment="Top" Grid.Column="2">
+                            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Badeværelser:" Margin="0,40,0,0"/>
+                            <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Soveværelser:" Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse:" Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt:" Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool:" Margin="0,5,0,0"/>
+                        </StackPanel>
+                        <StackPanel Margin="13,0,0,0" Grid.Column="3" Height="173" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition">
+                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="4" Margin="0,40,0,0"/>
+                            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="4" Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="160 " Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="ja" Margin="0,5,0,0"/>
+                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="nej" Margin="0,5,0,0"/>
+                        </StackPanel>
+                        <StackPanel Margin="9,0,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Column="5" Height="173" VerticalAlignment="Top">
+                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="3.400 DKK" Margin="0,100,0,0" FontSize="40"/>
+                        </StackPanel>
+                        <StackPanel Margin="16,16,0,0" Grid.Column="7" d:LayoutOverrides="Width, LeftPosition, RightPosition">
+                            <Button x:Name="button" Content="Tilføj til favoritter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFF9A716" Margin="0" FontSize="21.333"/>
+                            <Button x:Name="button1" Content="Mere Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFCB2929" FontSize="21.333"/>
+                            <Button x:Name="button2" Content="Book" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1AAA13" FontSize="21.333"/>
                         </StackPanel>
                     </Grid>
 
