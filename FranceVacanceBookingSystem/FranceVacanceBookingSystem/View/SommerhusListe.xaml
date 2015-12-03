@@ -24,7 +24,7 @@
     -->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="240"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="22"/>
         </Grid.ColumnDefinitions>
@@ -127,7 +127,6 @@
             </ListView.ItemTemplate>
 
         </ListView>
-        <StackPanel Margin="0,5,0,0" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition" Background="#FFE81A1A"/>
 
     </Grid>
 </Page>
