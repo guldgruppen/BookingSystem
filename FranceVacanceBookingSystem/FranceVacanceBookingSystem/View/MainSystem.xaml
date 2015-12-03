@@ -47,7 +47,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="4" Background="#CC192B46" Margin="10,0,-9,23">
+        <Grid Grid.ColumnSpan="4" Background="#CC192B46" Margin="1,0,0,23">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="280"/>
                 <ColumnDefinition/>
