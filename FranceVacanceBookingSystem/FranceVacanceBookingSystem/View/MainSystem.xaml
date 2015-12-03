@@ -29,9 +29,11 @@
             <ImageBrush ImageSource="ms-appx:///Assets/louvre-museum.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70*"/>
-            <ColumnDefinition Width="349*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1089"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0"/>
             <ColumnDefinition Width="Auto" MinWidth="1"/>
         </Grid.ColumnDefinitions>
         <Grid.ChildrenTransitions>
@@ -40,14 +42,14 @@
             </TransitionCollection>
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
-            <RowDefinition Height="133*"/>
-            <RowDefinition Height="261*"/>
-            <RowDefinition Height="234*"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="216"/>
+            <RowDefinition Height="31*"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="4" Background="#CC192B46" Margin="1,0,0,23">
+        <Grid Grid.ColumnSpan="6" Background="#CC192B46" Margin="1,0,0,0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="280"/>
                 <ColumnDefinition/>
@@ -60,25 +62,21 @@
             <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,32,10" Width="288" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
                 <Button x:Name="button1" Content="Log Ind" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="82" FontSize="48" Margin="60,0,10,0" Background="#B25474A3"/>
             </StackPanel>
-            <TextBlock x:Name="textBlock6" Margin="51,0,94,34" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" FontSize="48" d:LayoutOverrides="LeftPosition, RightPosition"/>
-            <Button x:Name="button2" Content="Bliv Udlejer!" Grid.Column="1" HorizontalAlignment="Left" Margin="670,22,0,0" VerticalAlignment="Top" Height="64" Width="147" Command="{Binding NavToOpretCommand}"/>
         </Grid>
-        <StackPanel Grid.Column="1" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition" Orientation="Horizontal" Background="#CC192B46" Margin="0,0,-43,90">
+        <StackPanel x:Name="Søgefelt" Grid.Column="2" Grid.Row="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Orientation="Horizontal" Background="#CC192B46">
             <StackPanel x:Name="Antal_Værelser" Width="175" Margin="20,0,0,0">
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Væresler:" Height="30" Width="163" FontSize="24" Margin="0,20,-73,10" HorizontalAlignment="Left" d:LayoutOverrides="LeftPosition, RightPosition"/>
                 <ComboBox x:Name="comboBox" Width="153" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            </StackPanel>
-            <StackPanel x:Name="Antal_Personer" Width="175" RenderTransformOrigin="0.503,0.524" Margin="0,0,10,0">
                 <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Personer:" FontSize="24" Margin="0,20,0,10" Height="30"/>
                 <ComboBox x:Name="comboBox1" Margin="0,0,10,0" VerticalAlignment="Top" BorderThickness="2" Height="33"/>
             </StackPanel>
-            <StackPanel x:Name="Dato" Width="320" Margin="0,0,20,0">
+            <StackPanel x:Name="Dato" Width="320" Margin="40,0,0,0">
                 <TextBlock x:Name="textBlock3" TextWrapping="Wrap" FontSize="24" Height="30" Margin="3,20,0,10" Text="Afrejse dato:" d:LayoutOverrides="TopPosition, BottomPosition"/>
                 <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
                 <TextBlock x:Name="textBlock7" TextWrapping="Wrap" FontSize="24" Text="Hjemrejse Dato:" Margin="0,20,0,15"/>
                 <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
-            <StackPanel x:Name="Husdyr_Swimmingpool" Width="175" Margin="0">
+            <StackPanel x:Name="Husdyr_Swimmingpool" Width="175" Margin="40,0,0,0">
                 <StackPanel Height="82" Margin="0,25,0,0">
                     <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt?" FontSize="24"/>
                     <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
@@ -88,9 +86,20 @@
                     <ToggleSwitch x:Name="toggleSwitch1" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja"/>
                 </StackPanel>
             </StackPanel>
-            <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="73" Width="218" FontSize="36" Background="#B25474A3" Margin="30,65,0,0" Command="{Binding NavToListCommand}"/>
+            <Button x:Name="button" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="96" Width="248" FontSize="36" Background="#B25474A3" Margin="30,65,100,0" Command="{Binding NavToListCommand}"/>
         </StackPanel>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="button3" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="237,29,0,0" Grid.Row="1" VerticalAlignment="Top" Height="83" Width="287" Command="{Binding ShowUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Grid Margin="0" Grid.Row="1" Grid.RowSpan="3" Background="#FF08172E">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="376"/>
+                <RowDefinition Height="56*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="10,0" Grid.Row="1" d:LayoutOverrides="TopPosition, BottomPosition">
+                <Button x:Name="button3" Content="Min Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,50,0,0"/>
+                <Button x:Name="button4" Content="Bliv Udlejer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
+                <Button x:Name="button5" Content="Kontakt os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
+                <Button x:Name="button6" Content="Om os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
