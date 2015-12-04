@@ -118,6 +118,9 @@
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\ProfileRegister.cs" />
     <Compile Include="Model\Sommerhus.cs" />
+    <Compile Include="Persistency\KundePersistency.cs" />
+    <Compile Include="Persistency\ProfilePersistency.cs" />
+    <Compile Include="Persistency\SommerhusPersistency.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
@@ -258,6 +261,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

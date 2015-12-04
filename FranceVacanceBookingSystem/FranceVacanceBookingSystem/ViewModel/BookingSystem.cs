@@ -1,6 +1,7 @@
 ﻿using System;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
+using FranceVacanceBookingSystem.Persistency;
 using FranceVacanceBookingSystem.View;
 using WpfApplication.ViewModel;
 
@@ -29,8 +30,9 @@ namespace FranceVacanceBookingSystem.ViewModel
        
 
         public BookingSystem()
-        {   
-            NavToMainSystemCommand = new RelayCommand(CheckLoginInformation);
+        {
+            LoadProfiles();
+            NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
             AddProfileWithCustomerCommand = new RelayCommand(AddCustomerWithProfile);
             NavToOretProfilCommand = new RelayCommand(() =>
             {
@@ -51,6 +53,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             try
             {
                 ProfileRegister.AddProfile(Username, Password, RepeatPassword,Adress, Email, Name, Tlf);
+                ProfilePersistency.SaveProfilesAsJsonAsync(ProfileRegister.Profiles);
                 Dialog.Show("Profil er tilføjet");
             }
             catch (ArgumentException ex)
@@ -59,7 +62,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
         }
 
-        public void CheckLoginInformation()
+        public void CheckLoginInformationAndNavigate()
         {
             try
             {
@@ -92,6 +95,20 @@ namespace FranceVacanceBookingSystem.ViewModel
             _navigationService.Navigate(typeof(MainSystem));
         }
 
+        private async void LoadProfiles()
+        {
+            var loadedProfiles = await ProfilePersistency.LoadProfilesFromJsonAsync();
+            if (loadedProfiles != null)
+            {
+                ProfileRegister.Profiles.Clear();
+                foreach (var profile in loadedProfiles)
+                {
+                    ProfileRegister.Profiles.Add(profile);
+                }
+
+            }
+
+        }
 
 
 
