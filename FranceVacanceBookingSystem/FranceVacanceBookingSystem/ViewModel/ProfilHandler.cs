@@ -95,8 +95,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             set { _repeatPassword = value; }
         }
 
-        public MessageDialog log { get; set; }
-
         public RelayCommand SendEmailCommand { get; set; }
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand AddProfileCommand { get; set; }
@@ -118,8 +116,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             });
             SendEmailCommand = new RelayCommand(() =>
             {
-                log = new MessageDialog("E-mail med logininformation er sendt til din email");
-                log.ShowAsync();
+                
             });
 
             LoadProfiles();
@@ -140,8 +137,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 CheckEmailAndUsername();
                 Profiles.Add(new Profil(Adresse,Email,Navn,Password,RepeatPassword,Username,TelefonNummer));          
-                log = new MessageDialog("Profil er tilføjet");
-                log.ShowAsync();
+                
             }
             catch (ArgumentException e)
             {
@@ -191,12 +187,12 @@ namespace FranceVacanceBookingSystem.ViewModel
             
             if (CheckUsername(Username) == true)
             {
-                log = new MessageDialog("Du mangler brugernavn");
+                
                 
             }
             else if (CheckPassword(Password) == true)
             {
-                log = new MessageDialog("Du mangler kodeord");
+              
             }
             else
             {
@@ -205,9 +201,9 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        log = new MessageDialog("Velkommen tilbage "+profil.Username + " :)");
+                        
                         //NavigateToBookingSystem();
-                        SommerhusKatalog.LoginProfil = profil;
+                        //SommerhusKatalog.LoginProfil = profil;
                         _navigationService.Navigate(typeof(MainSystem));
                         
 
@@ -215,12 +211,12 @@ namespace FranceVacanceBookingSystem.ViewModel
                     }
                     else
                     {
-                        log = new MessageDialog("Login fejl - prøv igen");
+                       
                                              
                     }
                 }
             }
-            log.ShowAsync();
+            
 
         }
 

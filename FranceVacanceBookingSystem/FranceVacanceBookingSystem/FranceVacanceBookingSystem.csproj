@@ -113,7 +113,12 @@
     <Compile Include="Common\PersistencyService.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Model\Kunde.cs" />
+    <Compile Include="Model\KundeRegister.cs" />
+    <Compile Include="Model\Profile.cs" />
+    <Compile Include="Model\ProfileRegister.cs" />
     <Compile Include="Model\Sommerhus.cs" />
+    <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
     <Compile Include="ViewModel\SommerhusKatalog.cs" />
