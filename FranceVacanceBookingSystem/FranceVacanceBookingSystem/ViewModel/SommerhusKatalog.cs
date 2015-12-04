@@ -21,7 +21,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
 
-        public static Profil LoginProfil { get; set; }
+        public static Profile LoginProfil { get; set; }
 
         public string Username
         {

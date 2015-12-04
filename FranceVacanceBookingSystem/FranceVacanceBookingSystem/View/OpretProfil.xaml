@@ -15,7 +15,7 @@
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
     <Page.DataContext>
-        <ViewModel:ProfilHandler/>
+        <ViewModel:BookingSystem/>
     </Page.DataContext>
 
     <!--
@@ -43,7 +43,7 @@
         </Grid.RowDefinitions>
 
         <Grid.DataContext>
-            <ViewModel:ProfilHandler/>
+            <ViewModel:BookingSystem/>
         </Grid.DataContext>
 
         <!-- Back button and page title -->
@@ -67,15 +67,15 @@
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="417" Background="#CC192B46" Grid.Column="1" Margin="0,0,-9,0" Height="508">
-                <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBox x:Name="textBox1_Copy" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox x:Name="textBox1" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Adresse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox x:Name="textBox2" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding TelefonNummer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="textBox1" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Adress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="textBox2" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Tlf, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBox x:Name="textBox3" TextWrapping="Wrap" Margin="20,15,20,0" FontSize="21.333" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <PasswordBox x:Name="passwordBox" Margin="20,15,20,0" Height="41" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
                 <PasswordBox x:Name="passwordBox_Copy" Margin="20,15,20,0" Height="41" Password="{Binding RepeatPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
-                <Button x:Name="button" Content="Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="97" FontSize="40" Margin="20,20,17,0" Command="{Binding AddProfileCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="#FF2984CF"/>
+                <Button x:Name="button" Content="Opret Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="97" FontSize="40" Margin="20,20,17,0" Command="{Binding AddProfileWithCustomerCommand}" Background="#FF2984CF"/>
 
             </StackPanel>
             <StackPanel Background="#CC192B46" HorizontalAlignment="Left" VerticalAlignment="Top" Height="508">

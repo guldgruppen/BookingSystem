@@ -28,7 +28,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.DataContext>
-            <local:ProfilHandler/>
+            <local:BookingSystem/>
         </Grid.DataContext>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="400" Grid.Row="1" VerticalAlignment="Top" Width="620" Background="#CC192B46">
 
@@ -51,10 +51,10 @@
                             </Flyout>
                         </Button.Flyout>
                     </Button>
-                    <Button x:Name="button1_Copy" Content="Opret profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding NavToOpretProfilCommand}"/>
+                    <Button x:Name="button1_Copy" Content="Opret profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding NavToOretProfilCommand}"/>
                 </StackPanel>
 
-                <Button x:Name="button" Content="Log in" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="221" FontSize="32" FontFamily="Segoe WP Black" Command="{Binding LoginCommand}" Margin="0,0,-304,-14"/>
+                <Button x:Name="button" Content="Log in" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="221" FontSize="32" FontFamily="Segoe WP Black" Command="{Binding NavToMainSystemCommand}" Margin="0,0,-304,-14"/>
 
             </StackPanel>
         </StackPanel>
