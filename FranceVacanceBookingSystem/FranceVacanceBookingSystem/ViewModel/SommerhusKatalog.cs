@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
@@ -14,9 +16,19 @@ using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.ViewModel
 {
-    class SommerhusKatalog : INotifyPropertyChanged
+    public class SommerhusKatalog : INotifyPropertyChanged
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
+
+
+        public static Profil LoginProfil { get; set; }
+
+        public string Username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+
         public int AntalPersoner { get; set; }
         public int AntalVærelser { get; set; }
         public int FraDato { get; set; }
@@ -25,6 +37,10 @@ namespace FranceVacanceBookingSystem.ViewModel
         public bool Swimmingpool { get; set; }
         public int SelectedIndex { get; set; }
         private NavigationService _navigationService;
+
+        private string _username = LoginProfil.Username;
+
+        public RelayCommand ShowUsername { get; set; }
 
         public RelayCommand NavToOpretCommand { get; set; }
 
@@ -42,12 +58,23 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 _navigationService.Navigate(typeof(OpretSommerhus));
             });
+            ShowUsername = new RelayCommand(() =>
+            {
+                MessageDialog dialog = new MessageDialog(Username);
+                dialog.ShowAsync();
+            });
 
             Sommerhuse = new ObservableCollection<Sommerhus>();
             Sommerhuse.Add(new Sommerhus(100,2,2,4,"Val Torens",true,5000,250,true));
             Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
             Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+
         }
 
 

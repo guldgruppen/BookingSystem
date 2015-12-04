@@ -205,8 +205,12 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     if (profil.Username == Username && profil.Password == Password)
                     {
-                        log = new MessageDialog("Velkommen tilbage "+profil.Username + " :)"); 
-                         NavigateToBookingSystem();                                                                      
+                        log = new MessageDialog("Velkommen tilbage "+profil.Username + " :)");
+                        //NavigateToBookingSystem();
+                        SommerhusKatalog.LoginProfil = profil;
+                        _navigationService.Navigate(typeof(MainSystem));
+                        
+
                         break;
                     }
                     else
