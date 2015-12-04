@@ -48,6 +48,7 @@ namespace FranceVacanceBookingSystem.ViewModel
        
         public SommerhusKatalog()
         {
+            
             _navigationService = new NavigationService();
 
             NavToListCommand = new RelayCommand(() =>
@@ -63,20 +64,40 @@ namespace FranceVacanceBookingSystem.ViewModel
                 MessageDialog dialog = new MessageDialog(Username);
                 dialog.ShowAsync();
             });
-
             Sommerhuse = new ObservableCollection<Sommerhus>();
-            Sommerhuse.Add(new Sommerhus(100,2,2,4,"Val Torens",true,5000,250,true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
 
+            LoadSommerhuse();
         }
 
+        public void AddSommerhus()
+        {
+            
+            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Persistency.SommerhusPersistency.SaveSommerhusAsJsonAsync(Sommerhuse);
+        }
+
+        private async void LoadSommerhuse()
+        {
+            var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
+            if (loadedSommerhuse != null)
+            {
+                Sommerhuse.Clear();
+                foreach (var s in loadedSommerhuse)
+                {
+                    Sommerhuse.Add(s);
+                }
+
+            }
+
+        }
 
 
 

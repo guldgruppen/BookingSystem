@@ -114,6 +114,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Model\Sommerhus.cs" />
+    <Compile Include="Persistency\SommerhusPersistency.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
     <Compile Include="ViewModel\SommerhusKatalog.cs" />
