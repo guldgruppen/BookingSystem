@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FranceVacanceBookingSystem</RootNamespace>
     <AssemblyName>FranceVacanceBookingSystem</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>da-dk</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -145,23 +145,81 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-140.png" />
+    <Content Include="Assets\BadgeLogo.scale-180.png" />
     <Content Include="Assets\FranceImage.jpg" />
     <Content Include="Assets\FranceImage2.jpg" />
+    <Content Include="Assets\FranceVacanceSplashScreen.scale-180.png" />
     <Content Include="Assets\frankrigs skønhed.jpg" />
     <Content Include="Assets\frankrigs skønhed2.jpg" />
     <Content Include="Assets\fvimg1.jpg" />
     <Content Include="Assets\fvimg2.jpg" />
     <Content Include="Assets\fvimg3.jpg" />
+    <Content Include="Assets\fvlogo120x120.png" />
+    <Content Include="Assets\fvlogo126x126.png" />
+    <Content Include="Assets\fvlogo150x150.png" />
+    <Content Include="Assets\fvlogo16x16.png" />
+    <Content Include="Assets\fvlogo210x210.png" />
+    <Content Include="Assets\fvlogo248x120.png" />
+    <Content Include="Assets\fvlogo248x248.png" />
+    <Content Include="Assets\fvlogo24x24.png" />
+    <Content Include="Assets\fvlogo256x256.png" />
+    <Content Include="Assets\fvlogo270x270.png" />
+    <Content Include="Assets\fvlogo30x30.png" />
+    <Content Include="Assets\fvlogo310x150.png" />
+    <Content Include="Assets\fvlogo310x310.png" />
+    <Content Include="Assets\fvlogo32x32.png" />
+    <Content Include="Assets\fvlogo33x33.png" />
+    <Content Include="Assets\fvlogo42x42.png" />
+    <Content Include="Assets\fvlogo434x210.png" />
+    <Content Include="Assets\fvlogo434x434.png" />
+    <Content Include="Assets\fvlogo43x43.png" />
+    <Content Include="Assets\fvlogo48x48.png" />
+    <Content Include="Assets\fvlogo50x50.png" />
+    <Content Include="Assets\fvlogo54x54.png" />
+    <Content Include="Assets\fvlogo558x558.png" />
+    <Content Include="Assets\fvlogo56x56.png" />
+    <Content Include="Assets\fvlogo70x70.png" />
+    <Content Include="Assets\fvlogo90x90.png" />
+    <Content Include="Assets\fvlogo98x98.png" />
+    <Content Include="Assets\fvlogob24x24.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
     <Content Include="Assets\louvre-museum.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-140.png" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
+    <Content Include="Assets\SmallLogo.scale-80.png" />
+    <Content Include="Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="Assets\SmallLogo.targetsize-48.png" />
     <Content Include="Assets\Sommer i Frankrig3.jpg" />
     <Content Include="Assets\Sommerhus i Frankrig.jpg" />
     <Content Include="Assets\Sommerhus i Frankrig1.jpg" />
     <Content Include="Assets\Sommerhus i Frankrig2.jpg" />
     <Content Include="Assets\Sommerhus i Frankrig4.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-80.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
