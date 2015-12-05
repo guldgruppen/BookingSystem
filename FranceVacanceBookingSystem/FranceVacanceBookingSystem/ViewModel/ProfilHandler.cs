@@ -139,9 +139,9 @@ namespace FranceVacanceBookingSystem.ViewModel
                 Profiles.Add(new Profil(Adresse,Email,Navn,Password,RepeatPassword,Username,TelefonNummer));          
                 
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
-                ShowDialog(e.Message);
+                
             }           
            
             PersistencyService.SaveNotesAsJsonAsync(Profiles);
@@ -220,11 +220,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         }
 
-        public void ShowDialog(string text)
-        {
-            MessageDialog dialog = new MessageDialog(text);
-            dialog.ShowAsync();
-        }
+
 
         private async void LoadProfiles()
         {

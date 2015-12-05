@@ -10,8 +10,6 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Profil
     {
-        private string _adresse;
-
         #region Properties
         
         public string Adresse { get; set; }

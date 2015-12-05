@@ -4,6 +4,8 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Kunde
     {
+        private static int _id = 1;
+
         #region Instance Fields
 
         #endregion
@@ -15,25 +17,30 @@ namespace FranceVacanceBookingSystem.Model
         public string Tlf { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public static int Id { get; set; } = 1;
+
+        public static int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         #endregion
 
         #region Constructors
-        public Kunde(string adress, string email, string name, string tlf,string username,string password, string repeatPassword)
+        public Kunde(string adress, string email, string name, string tlf,string username,string password)
         {
             CheckName(name);
             CheckAdress(adress);
             CheckEmail(email);
             CheckTlf(tlf);
-            CheckRepeatPassword(password,repeatPassword);
+            _id++;
             Adress = adress;
             Email = email;
             Name = name;
             Tlf = tlf;
             Username = username;
             Password = password;
-            Id++;
+           
         } 
         #endregion
 
@@ -62,12 +69,6 @@ namespace FranceVacanceBookingSystem.Model
         {
             if (String.IsNullOrWhiteSpace(email))
                 throw new ArgumentException("Venligst indtast en korrekt email");
-        }
-
-        public void CheckRepeatPassword(string password, string repeatPassword)
-        {
-            if(!password.Equals(repeatPassword))
-                throw new ArgumentException("Kodeordene er ikke ens");
         }
 
         #endregion

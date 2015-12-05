@@ -46,7 +46,7 @@ namespace FranceVacanceBookingSystem.Common
                 StorageFile localFile = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
                 return await FileIO.ReadTextAsync(localFile);
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 MessageDialogHelper.Show("Loading for the first time? - Try Add and Save some Notes before trying to Save for the first time", "File not Found");
                 return null;

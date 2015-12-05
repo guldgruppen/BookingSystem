@@ -5,11 +5,9 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class ProfileRegister
     {
-        public List<Profile> Profiles { get; set; }
-        public KundeRegister KundeRegister { get; set; }
+        public List<Profile> Profiles { get; set; }     
         public ProfileRegister()
-        {
-            KundeRegister = new KundeRegister();
+        {           
             Profiles = new List<Profile>()
             {
                 new Profile("bob","bob"),
@@ -17,13 +15,11 @@ namespace FranceVacanceBookingSystem.Model
             };           
         }
               
-        public void AddProfile(string username, string password, string repeatPassword,string adresse, string email, string navn, string tlf)
+        public void AddProfile(string username, string password)
         {
             Profiles.Add(new Profile(username,password));
-            KundeRegister.AddKunde(username,password,repeatPassword,adresse,email,navn,tlf);
-        }
-
-        
+           
+        }        
         public Profile FindProfile(string username, string password)
         {
             foreach (var profile in Profiles)

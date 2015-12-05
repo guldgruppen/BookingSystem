@@ -14,11 +14,10 @@ namespace FranceVacanceBookingSystem.Model
         public Profile(string username, string password)
         {
             CheckUsername(username);
-            CheckPassword(password);
+            CheckPassword(password);           
             Username = username;
             Password = password;
         }
-
         public void CheckUsername(string username)
         {
             if (String.IsNullOrWhiteSpace(username))
