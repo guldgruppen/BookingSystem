@@ -16,5 +16,7 @@ namespace FranceVacanceBookingSystem.Model
         {
             KundeMedId.Add(Kunde.Id,new Kunde(adresse, email, name, tlf,username,password));
         }
+
+
     }
 }

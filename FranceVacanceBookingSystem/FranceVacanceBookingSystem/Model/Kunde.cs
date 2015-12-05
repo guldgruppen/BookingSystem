@@ -4,7 +4,7 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Kunde
     {
-        private static int _id = 5;
+        private static int _id = 1;
 
         #region Instance Fields
 
@@ -33,7 +33,7 @@ namespace FranceVacanceBookingSystem.Model
             CheckAdress(adress);
             CheckEmail(email);
             CheckTlf(tlf);
-            Id++;
+            _id++;
             Adress = adress;
             Email = email;
             Name = name;

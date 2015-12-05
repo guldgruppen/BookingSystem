@@ -14,6 +14,7 @@ namespace FranceVacanceBookingSystem.Persistency
     public class KundePersistency
     {
         private static string JsonFileKunder = "KunderAsJson.dat";
+        
 
         public static async void SaveKunderAsJsonAsync(Dictionary<int,Kunde> sh)
         {

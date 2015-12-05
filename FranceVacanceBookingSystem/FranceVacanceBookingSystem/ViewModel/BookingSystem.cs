@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Windows.ApplicationModel.Activation;
+using Windows.Security.Cryptography.Core;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
 using FranceVacanceBookingSystem.Persistency;
@@ -14,6 +16,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         #region Instance Fields
         private NavigationService _navigationService;
         private string[] _loginTypes = new string[] { "Kunde", "Admin" };
+        private static int _id = 1;
+    
 
         #endregion
 
@@ -26,7 +30,9 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _loginTypes; }
             set { _loginTypes = value; }
         }
+
         public static int ProfilId { get; set; }
+
         public int SelectedIndexLoginType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -48,9 +54,11 @@ namespace FranceVacanceBookingSystem.ViewModel
         #region Constructors
         public BookingSystem()
         {
+           
             ProfileRegister = new ProfileRegister();
             KundeRegister = new KundeRegister();
             AdminRegister = new AdminRegister();
+
             LoadProfiles();
             LoadKunder();
 
@@ -107,8 +115,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 if (LoginTypes[SelectedIndexLoginType] == "Kunde")
                 {
                     Profile LoginProfile = ProfileRegister.FindProfile(Username, Password);
-                    ProfilId = GetId(LoginProfile.Username);
-
                     NavigateToMainSystem();
                 }
                 if (LoginTypes[SelectedIndexLoginType] == "Admin")
@@ -116,7 +122,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                     AdminRegister.FindAdmin(Username, Password);
                     NavigateToAdminPage();
                 }
-
             }
             catch (ArgumentException ex)
             {
@@ -126,16 +131,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 Dialog.Show(ex.Message);
             }
-        }
-
-        public int GetId(string username)
-        {
-            foreach (KeyValuePair<int, Kunde> kunder in KundeRegister.KundeMedId)
-            {
-                if (kunder.Value.Username == username)
-                    return kunder.Key;
-            }
-            return 100;
         }
 
         public void CheckForNullOrWhiteSpace(string username, string password)
@@ -172,14 +167,16 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
         private async void LoadKunder()
         {
+            
             var loadedKunder = await KundePersistency.LoadKunderFromJsonAsync();
-
+            
             if (loadedKunder != null)
             {
                 KundeRegister.KundeMedId.Clear();
                 foreach (var kunde in loadedKunder)
                 {
-                    KundeRegister.KundeMedId.Add(kunde.Key, kunde.Value);
+                    
+                    KundeRegister.KundeMedId.Add(_id++, kunde.Value);
                 }
 
             }
