@@ -20,6 +20,8 @@ namespace FranceVacanceBookingSystem.ViewModel
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
+        public Dictionary<int, int> av { get; set; }
+
 
         public static Profil LoginProfil { get; set; }
 
@@ -66,21 +68,25 @@ namespace FranceVacanceBookingSystem.ViewModel
             });
             Sommerhuse = new ObservableCollection<Sommerhus>();
 
+           
+
             LoadSommerhuse();
+
+            AddToComboBox();
         }
 
         public void AddSommerhus()
         {
-            
-            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            //Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            //Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
             Persistency.SommerhusPersistency.SaveSommerhusAsJsonAsync(Sommerhuse);
         }
 
@@ -99,7 +105,19 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         }
 
+        private void AddToComboBox()
+        {
+            av = new Dictionary<int, int>();
 
+            Sommerhuse.Select(x => x.AntalSoveværelser).Distinct();
+
+            foreach (int item in Sommerhuse.Select(x => x.AntalSoveværelser).Distinct())
+            {
+                av.Add(item, item);
+            }
+        }
+
+        
 
 
 
