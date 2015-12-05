@@ -15,37 +15,37 @@ namespace FranceVacanceBookingSystem.Persistency
     {
         private static string JsonFileKunder = "KunderAsJson.dat";
 
-        public static async void SaveProfilesAsJsonAsync(List<Profile> sh)
+        public static async void SaveKunderAsJsonAsync(Dictionary<int,Kunde> sh)
         {
-            string notesJsonString = JsonConvert.SerializeObject(sh);
-            SerializeProfilesFileAsync(notesJsonString, JsonFileKunder);
+            string kundeJsonString = JsonConvert.SerializeObject(sh);
+            SerializeKunderFileAsync(kundeJsonString, JsonFileKunder);
         }
 
-        public static async Task<List<Profile>> LoadProfilesFromJsonAsync()
+        public static async Task<Dictionary<int,Kunde>> LoadKunderFromJsonAsync()
         {
-            string SommerhusJsonString = await DeserializeProfilesFileAsync(JsonFileKunder);
-            if (SommerhusJsonString != null)
-                return (List<Profile>)JsonConvert.DeserializeObject(SommerhusJsonString, typeof(List<Profile>));
+            string kundeJsonString = await DeserializekunderFileAsync(JsonFileKunder);
+            if (kundeJsonString != null)
+                return (Dictionary<int,Kunde>)JsonConvert.DeserializeObject(kundeJsonString, typeof(Dictionary<int,Kunde>));
             return null;
         }
 
 
 
-        private static async void SerializeProfilesFileAsync(string profilJsonString, string fileName)
+        private static async void SerializeKunderFileAsync(string kunderJsonString, string fileName)
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(localFile, profilJsonString);
+            await FileIO.WriteTextAsync(localFile, kunderJsonString);
         }
 
 
-        private static async Task<string> DeserializeProfilesFileAsync(string fileName)
+        private static async Task<string> DeserializekunderFileAsync(string fileName)
         {
             try
             {
                 StorageFile localFile = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
                 return await FileIO.ReadTextAsync(localFile);
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 return null;
             }

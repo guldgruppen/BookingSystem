@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.ServiceModel.Security;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Popups;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
@@ -20,7 +13,6 @@ namespace FranceVacanceBookingSystem.ViewModel
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
-
         public static Profile LoginProfil { get; set; }
 
         public string Username
@@ -32,22 +24,21 @@ namespace FranceVacanceBookingSystem.ViewModel
         public int AntalPersoner { get; set; }
         public int AntalVærelser { get; set; }
         public int FraDato { get; set; }
-        public int tilDato { get; set; }
+        public int TilDato { get; set; }
         public bool HusdyrTilladt{ get; set; }
         public bool Swimmingpool { get; set; }
         public int SelectedIndex { get; set; }
         private NavigationService _navigationService;
-
         private string _username = LoginProfil.Username;
 
-        public RelayCommand ShowUsername { get; set; }
-
+     
         public RelayCommand NavToOpretCommand { get; set; }
 
         public RelayCommand NavToListCommand { get; set; }     
        
         public SommerhusKatalog()
         {
+            
             _navigationService = new NavigationService();
 
             NavToListCommand = new RelayCommand(() =>
@@ -57,12 +48,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             NavToOpretCommand = new RelayCommand(() =>
             {
                 _navigationService.Navigate(typeof(OpretSommerhus));
-            });
-            ShowUsername = new RelayCommand(() =>
-            {
-                MessageDialog dialog = new MessageDialog(Username);
-                dialog.ShowAsync();
-            });
+            }); 
+                    
 
             Sommerhuse = new ObservableCollection<Sommerhus>();
             Sommerhuse.Add(new Sommerhus(100,2,2,4,"Val Torens",true,5000,250,true));
