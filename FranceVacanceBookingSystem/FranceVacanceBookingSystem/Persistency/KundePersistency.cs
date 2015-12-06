@@ -13,11 +13,11 @@ namespace FranceVacanceBookingSystem.Persistency
 {
     public class KundePersistency
     {
-        private static string JsonFileKunder = "KunderAsJson.dat";
+        private static string JsonFileKunder = "KundeAsJson.dat";
         
 
-        public static async void SaveKunderAsJsonAsync(Dictionary<int,Kunde> sh)
-        {
+        public static async void SaveKunderAsJsonAsync(List<Kunde> sh)
+        {           
             string kundeJsonString = JsonConvert.SerializeObject(sh);
             SerializeKunderFileAsync(kundeJsonString, JsonFileKunder);
         }

@@ -123,6 +123,7 @@
     <Compile Include="Persistency\KundePersistency.cs" />
     <Compile Include="Persistency\ProfilePersistency.cs" />
     <Compile Include="Persistency\SommerhusPersistency.cs" />
+    <Compile Include="ViewModel\AdminVM.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
