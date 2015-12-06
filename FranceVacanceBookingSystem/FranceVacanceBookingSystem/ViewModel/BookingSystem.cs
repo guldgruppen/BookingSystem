@@ -20,7 +20,6 @@ namespace FranceVacanceBookingSystem.ViewModel
     
 
         #endregion
-
         #region Properties
         public ProfileRegister ProfileRegister { get; set; }
         public KundeRegister KundeRegister { get; set; }
@@ -31,9 +30,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _loginTypes; }
             set { _loginTypes = value; }
         }
-
         public static int ProfilId { get; set; }
-
         public int SelectedIndexLoginType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -43,7 +40,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public string Adress { get; set; }
         public string Tlf { get; set; }
 
-        public string AntalKunder { get; set; }
+        public static string AntalKunder { get; set; }
 
         public RelayCommand NavToMainSystemCommand { get; set; }
         public RelayCommand AddProfileWithCustomerCommand { get; set; }
@@ -53,7 +50,6 @@ namespace FranceVacanceBookingSystem.ViewModel
         
 
         #endregion
-
         #region Constructors
         public BookingSystem()
         {
@@ -62,13 +58,10 @@ namespace FranceVacanceBookingSystem.ViewModel
             KundeRegister = new KundeRegister();
             AdminRegister = new AdminRegister();
            
-
             LoadProfiles();
             LoadKunder();
-
-            
-
-            _navigationService = new NavigationService();
+                       
+           _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
             
             AddProfileWithCustomerCommand = new RelayCommand(AddCustomerWithProfile);
@@ -84,7 +77,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 Dialog.Show(KundeRegister.KundeMedId.Count.ToString());
             });
-           
+            AntalKunder = KundeRegister.KundeMedId.Count.ToString();
+
         }
 
         #endregion
@@ -128,8 +122,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 if (LoginTypes[SelectedIndexLoginType] == "Admin")
                 {
                     AdminRegister.FindAdmin(Username, Password);
-                    NavigateToAdminPage();
-                    _navigationService.Navigate(typeof(AdminPage));
+                    NavigateToAdminPage();                  
                 }
             }
             catch (ArgumentException ex)
@@ -185,13 +178,12 @@ namespace FranceVacanceBookingSystem.ViewModel
                 foreach (var kunde in loadedKunder)
                 {
                     
-                    KundeRegister.KundeMedId.Add(kunde.Key, kunde.Value);
-                }
+                    KundeRegister.KundeMedId.Add(kunde.Key, kunde.Value);                    
+                }                
 
             }
 
         }
-
 
         #endregion
 

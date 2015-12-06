@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:FranceVacanceBookingSystem.ViewModel"
+    xmlns:model="using:FranceVacanceBookingSystem.Model"
     x:Name="pageRoot"
     x:Class="FranceVacanceBookingSystem.View.AdminPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
@@ -63,7 +64,7 @@
         <ListView x:Name="listView" Grid.Column="2" HorizontalAlignment="Left" Height="531" Grid.Row="2" VerticalAlignment="Top" Width="648" Background="#FF306791" Margin="0,0,0,-106" Grid.ColumnSpan="2" ItemsSource="{Binding KundeRegister.KundeMedId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="115" Grid.Row="1" VerticalAlignment="Top" Width="648" Background="#FF4B7B9F" Grid.ColumnSpan="2" Orientation="Horizontal">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Antal Kunder:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="15,0,0,0"/>
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding AntalKunder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="10,0,0,0"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="10,42,0,41" Text="{Binding AntalKunder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="97"/>
             <StackPanel Width="175" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,0,0,0">
                 <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Søg efter navn:" FontSize="24"/>
                 <TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox"/>
