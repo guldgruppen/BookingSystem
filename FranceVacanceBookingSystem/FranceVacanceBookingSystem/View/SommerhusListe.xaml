@@ -44,7 +44,7 @@
 
         <!-- Back button and page title -->
         <Grid.DataContext>
-            <ViewModel:SommerhusKatalog/>
+            <ViewModel:BookingSystem/>
         </Grid.DataContext>
 
         <!-- Back button and page title -->

@@ -123,9 +123,7 @@
     <Compile Include="Persistency\KundePersistency.cs" />
     <Compile Include="Persistency\ProfilePersistency.cs" />
     <Compile Include="Persistency\SommerhusPersistency.cs" />
-    <Compile Include="ViewModel\AdminVM.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
-    <Compile Include="ViewModel\ImageSlider.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
     <Compile Include="ViewModel\SommerhusKatalog.cs" />
     <Compile Include="View\AdminPage.xaml.cs">
@@ -137,7 +135,6 @@
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ProfilHandler.cs" />
     <Compile Include="View\MainSystem.xaml.cs">
       <DependentUpon>MainSystem.xaml</DependentUpon>
     </Compile>
