@@ -22,11 +22,11 @@ namespace FranceVacanceBookingSystem.Persistency
             SerializeKunderFileAsync(kundeJsonString, JsonFileKunder);
         }
 
-        public static async Task<Dictionary<int,Kunde>> LoadKunderFromJsonAsync()
+        public static async Task<List<Kunde>> LoadKunderFromJsonAsync()
         {
             string kundeJsonString = await DeserializekunderFileAsync(JsonFileKunder);
             if (kundeJsonString != null)
-                return (Dictionary<int,Kunde>)JsonConvert.DeserializeObject(kundeJsonString, typeof(Dictionary<int,Kunde>));
+                return (List<Kunde>)JsonConvert.DeserializeObject(kundeJsonString, typeof(List<Kunde>));
             return null;
         }
 
