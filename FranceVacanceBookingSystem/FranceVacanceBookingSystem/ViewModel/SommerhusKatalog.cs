@@ -20,7 +20,7 @@ namespace FranceVacanceBookingSystem.ViewModel
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
-        public Dictionary<int, string> av { get; set; }
+        public ObservableCollection<int> av { get; set; }
 
 
         public static Profil LoginProfil { get; set; }
@@ -67,12 +67,11 @@ namespace FranceVacanceBookingSystem.ViewModel
                 dialog.ShowAsync();
             });
             Sommerhuse = new ObservableCollection<Sommerhus>();
+            av = new ObservableCollection<int>();
 
            
 
             LoadSommerhuse();
-
-            AddToComboBox();
         }
 
         public void AddSommerhus()
@@ -93,6 +92,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         private async void LoadSommerhuse()
         {
             var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
+            
             if (loadedSommerhuse != null)
             {
                 Sommerhuse.Clear();
@@ -101,24 +101,14 @@ namespace FranceVacanceBookingSystem.ViewModel
                     Sommerhuse.Add(s);
                 }
 
-            }
-
-        }
-
-        private async void AddToComboBox()
-        {
-            av = new Dictionary<int, string>();
-
-            var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
-
-            if(loadedSommerhuse != null)
-            {
                 av.Clear();
-                foreach (int item in loadedSommerhuse.Select(x => x.AntalSoveværelser).Distinct())
+                foreach (var item in loadedSommerhuse.Select(x => x.AntalSoveværelser).Distinct())
                 {
-                    av.Add(item, item.ToString());
+                    av.Add(item);
                 }
+
             }
+
         }
 
         #region PropertyChanged Region
