@@ -20,7 +20,7 @@ namespace FranceVacanceBookingSystem.ViewModel
     {
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
-        public Dictionary<int, int> av { get; set; }
+        public Dictionary<int, string> av { get; set; }
 
 
         public static Profil LoginProfil { get; set; }
@@ -105,24 +105,21 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         }
 
-        private void AddToComboBox()
+        private async void AddToComboBox()
         {
-            av = new Dictionary<int, int>();
+            av = new Dictionary<int, string>();
 
-            Sommerhuse.Select(x => x.AntalSoveværelser).Distinct();
+            var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
 
-            foreach (int item in Sommerhuse.Select(x => x.AntalSoveværelser).Distinct())
+            if(loadedSommerhuse != null)
             {
-                av.Add(item, item);
+                av.Clear();
+                foreach (int item in loadedSommerhuse.Select(x => x.AntalSoveværelser).Distinct())
+                {
+                    av.Add(item, item.ToString());
+                }
             }
         }
-
-        
-
-
-
-
-
 
         #region PropertyChanged Region
         public event PropertyChangedEventHandler PropertyChanged;
