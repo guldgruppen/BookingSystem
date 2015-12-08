@@ -25,8 +25,8 @@
     <Grid Background="#FFA2C5DF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="43*"/>
-            <ColumnDefinition Width="675"/>
-            <ColumnDefinition Width="642"/>
+            <ColumnDefinition Width="598"/>
+            <ColumnDefinition Width="719"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Grid.ChildrenTransitions>
@@ -35,9 +35,10 @@
             </TransitionCollection>
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
-            <RowDefinition Height="118"/>
-            <RowDefinition Height="498"/>
+            <RowDefinition Height="136"/>
+            <RowDefinition Height="47"/>
+            <RowDefinition Height="135"/>
+            <RowDefinition Height="438"/>
 
             <RowDefinition/>
 
@@ -48,7 +49,7 @@
         </Grid.DataContext>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="4">
+        <Grid Grid.ColumnSpan="4" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
@@ -63,18 +64,53 @@
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="260,0,387,40" Text="Administrator" HorizontalAlignment="Center" FontSize="106.667" Foreground="#FF2C2828">
             </TextBlock>
         </Grid>
-        <ListView x:Name="listView" Grid.Column="2" HorizontalAlignment="Left" Height="421" Grid.Row="1" VerticalAlignment="Top" Width="642" Background="#FF306791" Margin="0,115,0,0" ItemsSource="{Binding KundeRegister.KundeMedId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
-        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="115" Grid.Row="1" VerticalAlignment="Top" Width="642" Background="#FF4B7B9F" Orientation="Horizontal">
+        <ListView x:Name="listView" Grid.Column="2" Grid.Row="3" Background="#FF306791" Margin="0,0,0,80" ItemsSource="{Binding KundeRegister.Kunder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" SelectedIndex="{Binding SelectedIndexListeKunde, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.Resources>
+                <DataTemplate x:Key="KundeListeTemplate">
+                    <Grid Height="47" Width="714">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="111"/>
+                            <ColumnDefinition Width="145"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="142"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="148"/>
+                            <ColumnDefinition Width="27"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="textBlock" Margin="10,14,22,13" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                        <TextBlock x:Name="textBlock1" Grid.Column="1" Margin="20,14,8,13" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                        <TextBlock x:Name="textBlock3" Grid.Column="5" Margin="23,14,10,13" TextWrapping="Wrap" Text="{Binding Tlf, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height, TopMargin, BottomMargin"/>
+                        <TextBlock x:Name="textBlock4" Grid.Column="7" Margin="26,14,17,13" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Width, Height, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                        <TextBlock x:Name="textBlock5" Grid.Column="9" Margin="41,14,9,13" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <StaticResource ResourceKey="KundeListeTemplate"/>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Background="#FF4B7B9F" Orientation="Horizontal" Grid.Column="2" Grid.Row="2" Margin="0,0,0,32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Antal Kunder:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="15,0,0,0"/>
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="10,26,0,25" Text="{Binding AntalKunder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
-            <StackPanel Width="175" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="71,0,0,0">
-                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Søg efter navn:" FontSize="24"/>
-                <TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26.667" Margin="10,28,0,26" Text="{Binding KundeRegister.Kunder.Count, Mode=OneWay}" Width="99"/>
+            <StackPanel Width="398" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,27,0,26" Orientation="Horizontal" Height="33">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Søg efter navn:" FontSize="24" Margin="0,0,10,0"/>
+                <TextBox x:Name="textBox" TextWrapping="Wrap" Text="" Width="146"/>
+                <Button x:Name="button2" Content="Søg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontSize="18.667" Padding="12,1,12,0" Background="Black" Width="79" Margin="0,0,0,-3"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Column="2" Height="71" Grid.Row="2" Width="642" Background="#FF4B7B9F" Margin="0,418,0,0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" FlowDirection="RightToLeft">
-            <Button x:Name="button" Content="Slet Kunde" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0" Command="{Binding DeleteCustomersCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <StackPanel Height="32" Background="#FF123E5F" Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" Orientation="Horizontal" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Navn" FontSize="18.667" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Email" FontSize="18.667" Margin="100,0,0,0" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="Tlf" FontSize="18.667" Margin="120,0,0,0" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="Brugernavn" FontSize="18.667" Margin="75,0,0,0" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="Kodeord" FontSize="18.667" Margin="65,0,0,0" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <Button x:Name="button1" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="220,129,0,0" Grid.Row="2" VerticalAlignment="Top" Height="79" Width="178" Command="{Binding ShowCustomerCommand}"/>
+        <StackPanel Grid.Column="2" Height="71" Grid.Row="3" Background="#FF4B7B9F" Margin="0,0,0,9" Orientation="Horizontal" VerticalAlignment="Bottom" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Button x:Name="button" Content="Slet Kunde" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0" Command="{Binding DeleteKundeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
     </Grid>
 </Page>

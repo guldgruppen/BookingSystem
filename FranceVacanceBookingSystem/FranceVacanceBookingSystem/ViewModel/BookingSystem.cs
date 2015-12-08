@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.ApplicationModel.Activation;
 using Windows.Security.Cryptography.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
@@ -25,10 +26,6 @@ namespace FranceVacanceBookingSystem.ViewModel
         private List<Kunde> _kunderTilList;
         private string _loginUsername = "";
 
-
-        private static int _id = 1;    
-       
-           
         #endregion
         #region Properties
         public ProfileRegister ProfileRegister { get; set; }
@@ -76,10 +73,10 @@ namespace FranceVacanceBookingSystem.ViewModel
         public string Email { get; set; }
         public string Adress { get; set; }
         public string Tlf { get; set; }
+        public MessageDialog conDialog { get; set; }
+        public int SelectedIndexListeKunde { get; set; }
 
 
-        
-       
         public RelayCommand NavToMainSystemCommand { get; set; }
         public RelayCommand AddProfileWithCustomerCommand { get; set; }
         public RelayCommand NavToOretProfilCommand { get; set; }
@@ -89,10 +86,11 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand NavToListSommerhus { get; set; }
         public RelayCommand LogudCommand { get; set; }
         public RelayCommand AddSommerhusCommand { get; set; }
-        public RelayCommand ShowCustomerCommand { get; set; }
-
+        public RelayCommand DeleteKundeCommand { get; set; }
         public RelayCommand ShowPageOmOsCommand { get; set; }
         public RelayCommand ShowPageKontaktOsCommand { get; set; }
+
+
 
 
 
@@ -149,10 +147,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 _navigationService.GoBack();           
             });
-            ShowCustomerCommand = new RelayCommand(() =>
-            {
-                Dialog.Show(KundeRegister.KundeMedId.Count.ToString());              
-            });
+            DeleteKundeCommand = new RelayCommand(DeleteKundeFromListe);
+            
             AddSommerhusCommand = new RelayCommand(AddSommerhus);
             //NEDENUNDER ER EN TEST 
             ShowInfoCommand = new RelayCommand(getSommerhus);
@@ -165,6 +161,35 @@ namespace FranceVacanceBookingSystem.ViewModel
         #endregion
 
         #region Methods
+
+        public void DeleteKundeFromListe()
+        {
+            try
+            {
+                NoSelectedIndex(SelectedIndexListeKunde);
+                conDialog = new MessageDialog("Er du sikker på at ville slette en kunde fra listen?");
+                conDialog.Commands.Add(new UICommand("JA", (command) =>
+                {
+                    KundeRegister.Kunder.Remove(KundeRegister.Kunder[SelectedIndexListeKunde]);
+                    KundePersistency.SaveKunderAsJsonAsync(KundeRegister.Kunder);
+                }));
+                conDialog.Commands.Add(new UICommand("NEJ", (command) => { }));
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Dialog.Show("Ingen kunde er valgt");
+                return;
+            }
+            conDialog.ShowAsync();
+
+
+        }
+
+        public void NoSelectedIndex(int val)
+        {
+            if (val < 0 || val > KundeRegister.Kunder.Count)
+            throw new ArgumentOutOfRangeException();
+        }
 
         public void ShowOmOs()
         {
@@ -191,7 +216,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 Dialog.Show(ex.Message);
             }
             ProfilePersistency.SaveProfilesAsJsonAsync(ProfileRegister.Profiles);
-            SaveCustomers();
+            KundePersistency.SaveKunderAsJsonAsync(KundeRegister.Kunder);
         }
         public void CheckRepeatPassword(string password, string repeatPassword)
         {
@@ -228,15 +253,15 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
         private async void LoadKunder()
         {
-            _id = 1;
+            
             var loadedKunder = await KundePersistency.LoadKunderFromJsonAsync();
 
             if (loadedKunder != null)
             {
-                KundeRegister.KundeMedId.Clear();             
+                KundeRegister.Kunder.Clear();             
                 foreach (var kunde in loadedKunder)
                 {
-                    KundeRegister.KundeMedId.Add(_id++, kunde);               
+                    KundeRegister.Kunder.Add(kunde);               
                 }
             }
         }
@@ -288,11 +313,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 }
             }
 
-        }
-        public void SaveCustomers()
-        {
-            _kunderTilList = KundeRegister.KundeMedId.Values.ToList();           
-            KundePersistency.SaveKunderAsJsonAsync(_kunderTilList);
         }
         public void InitSommerhus()
         {
