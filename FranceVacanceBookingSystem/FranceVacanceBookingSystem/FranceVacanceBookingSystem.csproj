@@ -125,7 +125,6 @@
     <Compile Include="Persistency\SommerhusPersistency.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
-    <Compile Include="ViewModel\SommerhusKatalog.cs" />
     <Compile Include="View\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>

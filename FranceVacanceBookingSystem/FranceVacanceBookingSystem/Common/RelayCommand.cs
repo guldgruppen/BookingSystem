@@ -11,6 +11,7 @@ namespace WpfApplication.ViewModel
     public class RelayCommand : ICommand
     {
         private Action _handler;
+
         public RelayCommand(Action handler)
         {
             _handler = handler;

@@ -14,7 +14,7 @@ namespace FranceVacanceBookingSystem.Persistency
 {
     public class SommerhusPersistency
     {
-        private static string JsonFileName = "SommerhusAsJson.dat";
+        private static string JsonFileName = "SommerhuseAsJson.dat";
 
         public static async void SaveSommerhusAsJsonAsync(ObservableCollection<Sommerhus> sh)
         {
