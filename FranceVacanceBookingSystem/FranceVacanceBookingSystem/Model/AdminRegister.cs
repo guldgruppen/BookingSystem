@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FranceVacanceBookingSystem.Persistency;
 using FranceVacanceBookingSystem.ViewModel;
 
 namespace FranceVacanceBookingSystem.Model
@@ -10,14 +11,15 @@ namespace FranceVacanceBookingSystem.Model
     public class AdminRegister
     {
         public List<Admin> Admins { get; set; }
-        public string AntalKunder { get; set; }
-        
         public AdminRegister()
-        {
+        {   
+                 
             Admins = new List<Admin>();
             Admins.Add(new Admin("kasper","kasper"));
-            Admins.Add(new Admin("ricki", "ricki"));          
+            Admins.Add(new Admin("ricki", "ricki")); 
+                     
         }
+       
 
         public Admin FindAdmin(string username, string password)
         {

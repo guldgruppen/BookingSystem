@@ -44,6 +44,11 @@ namespace FranceVacanceBookingSystem.Model
         } 
         #endregion
 
+        public override string ToString()
+        {
+            return $"Adress: {Adress}, Email: {Email}, Name: {Name}, Tlf: {Tlf}, Username: {Username}, Password: {Password}";
+        }
+
         #region CheckInformationRegion
 
         public void CheckTlf(string tlf)
