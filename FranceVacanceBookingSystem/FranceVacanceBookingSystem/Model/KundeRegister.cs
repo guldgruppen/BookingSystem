@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using FranceVacanceBookingSystem.Annotations;
@@ -8,21 +9,21 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class KundeRegister : INotifyPropertyChanged
     {
-        public Dictionary<int, Kunde> KundeMedId { get; set; }
+        public ObservableCollection<Kunde> Kunder { get; set; }
         
        
         public KundeRegister()
         {
-            KundeMedId = new Dictionary<int, Kunde>();           
-            KundeMedId.Add(Kunde.Id,new Kunde("bob","bob","bob","bobbobbo","bob","bob"));
-            KundeMedId.Add(Kunde.Id, new Kunde("bob", "bob", "bob", "bobbobbo", "bob", "bob"));
-           
+           Kunder = new ObservableCollection<Kunde>();
+            Kunder.Add(new Kunde("bob", "bob", "bob", "bobbobbo", "bob", "bob"));
+            Kunder.Add(new Kunde("bob", "bob", "bob", "bobbobbo", "bob", "bob"));
+            Kunder.Add(new Kunde("bob", "bob", "bob", "bobbobbo", "bob", "bob"));
+
         }
 
         public void AddKunde(string username, string password,string adresse,string email, string name, string tlf)
         {
-            KundeMedId.Add(Kunde.Id, new Kunde(adresse, email, name, tlf, username, password));
-            OnPropertyChanged();
+            Kunder.Add(new Kunde(adresse, email, name, tlf, username, password));    
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,10 @@ namespace FranceVacanceBookingSystem.Persistency
 {
     public class KundePersistency
     {
-        private static string JsonFileKunder = "KundeAsJson.dat";
+        private static string JsonFileKunder = "KunderneAsJson.dat";
         
 
-        public static async void SaveKunderAsJsonAsync(List<Kunde> sh)
+        public static async void SaveKunderAsJsonAsync(ObservableCollection<Kunde> sh)
         {           
             string kundeJsonString = JsonConvert.SerializeObject(sh);
             SerializeKunderFileAsync(kundeJsonString, JsonFileKunder);
