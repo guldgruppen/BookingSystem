@@ -20,7 +20,16 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="1000"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/louvre-museum.jpg"/>
+        </Grid.Background>
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -28,23 +37,91 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="550"/>
+            <RowDefinition Height="93*"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid>
+        <Grid Background="#CC192B46" Grid.ColumnSpan="4" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+        		Style="{StaticResource NavigationBackButtonNormalStyle}"
+        		VerticalAlignment="Top"
+        		AutomationProperties.Name="Back"
+        		AutomationProperties.AutomationId="BackButton"
+        		AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Text="Kontakt Os" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+        		IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <Grid Grid.Row="1" Background="#FF08172E" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Margin="0,0,-2,0" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="376"/>
+                <RowDefinition Height="56*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="10,0" Orientation="Vertical" Width="220" Height="376" Grid.Row="1">
+                <Button x:Name="button2" Content="Min Profil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,50,0,0" Height="54" FontSize="26.667"/>
+                <Button x:Name="button1" Content="Bliv Udlejer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
+                <Button x:Name="button3" Content="Kontakt os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
+                <Button x:Name="button" Content="Om os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Background="#CC192B46" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="2" Margin="0,0,0,2" Orientation="Horizontal">
+            <StackPanel Height="511" HorizontalAlignment="Left" Width="365" VerticalAlignment="Top">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Information" FontSize="33.333" Margin="15,0,0,0"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="20" Margin="30,10,0,0">
+                	<Run FontStyle="Italic" Text="Personer"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Margin="30,5,0,0" FontSize="13.333">
+                	<Run Text="Navn: Kasper"/>
+                	<LineBreak/>
+                	<Run Text="Tlf: 12345678"/>
+                	<LineBreak/>
+                	<Run Text="Email: Kasper@email.dk"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Margin="30,10,0,0" FontSize="13.333">
+                	<Run Text="Navn: Ricki"/>
+                	<LineBreak/>
+                	<Run Text="Tlf 23456789"/>
+                	<LineBreak/>
+                	<Run Text="Email: Ricki@email.dk"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Margin="30,10,0,0" FontSize="13.333">
+                	<Run Text="Navn: Rasmus"/>
+                	<LineBreak/>
+                	<Run Text="Tlf: 34567891"/>
+                	<LineBreak/>
+                	<Run Text="Email:"/>
+                	<Run Text=" "/>
+                	<Run Text="Rasmus@email.dk"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Margin="30,10,0,0" FontSize="13.333">
+                	<Run Text="Navn: Stefan"/>
+                	<LineBreak/>
+                	<Run Text="Tlf: 45678912"/>
+                	<LineBreak/>
+                	<Run Text="Email: Stefan@email.dk"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="Location" FontSize="20" FontStyle="Italic" Margin="30,25,0,0"/>
+                <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Margin="30,5,0,0" FontSize="13.333">
+                	<Run Text="Adresse: Enellerandenvej 100"/>
+                	<LineBreak/>
+                	<Run Text="P"/>
+                	<Run Text="ostnummer: "/>
+                	<Run Text="4000"/>
+                	<LineBreak/>
+                	<Run Text="By: Roskilde"/>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Width="591" Margin="15,0,0,37" Height="511">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Har du et spørgsmål så skriv en mail direkte til France Vacance Kundecenter" FontSize="17.333" Margin="0,25,0,0"/>
+                <TextBox x:Name="textBox" TextWrapping="Wrap" Text="" PlaceholderText="Skriv spørgsmål her..." Height="322" Margin="10,25,10,0"/>
+                <Button x:Name="button4" Content="Send" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="187,25,164,0" Width="184" Background="#B25474A3"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
