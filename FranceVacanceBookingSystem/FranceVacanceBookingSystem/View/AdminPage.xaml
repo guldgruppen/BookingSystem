@@ -75,5 +75,6 @@
         <StackPanel Grid.Column="2" Height="71" Grid.Row="2" Width="642" Background="#FF4B7B9F" Margin="0,418,0,0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" FlowDirection="RightToLeft">
             <Button x:Name="button" Content="Slet Kunde" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0" Command="{Binding DeleteCustomersCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
+        <Button x:Name="button1" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="220,129,0,0" Grid.Row="2" VerticalAlignment="Top" Height="79" Width="178" Command="{Binding ShowCustomerCommand}"/>
     </Grid>
 </Page>

@@ -10,9 +10,7 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Sommerhus
     {
-        public int AfstandFraVandIKm { get; set; }
         public int AntalBadeværelser { get; set; }
-        public int AntalParkeringspladser { get; set; }
         public int AntalSoveværelser { get; set; }
         public string Beliggenhed { get; set; }
         public bool HusdyrTilladt { get; set; }
@@ -20,11 +18,14 @@ namespace FranceVacanceBookingSystem.Model
         public int Størrelse { get; set; }
         public bool Swimmingpool { get; set; }
 
-        public Sommerhus(int afstandFraVand, int antalBadeværelser, int antalParkeringspladser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
+        public Sommerhus(int antalBadeværelser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
         {
-            AfstandFraVandIKm = afstandFraVand;
+            CheckAntalBadeværelser(antalBadeværelser);
+            CheckAntalSoveværelser(antalSoveværelser);
+            CheckBeliggenhed(beliggenhed);
+            CheckPris(pris);
+            CheckStørrelse(størrelse);
             AntalBadeværelser = antalBadeværelser;
-            AntalParkeringspladser = antalParkeringspladser;
             AntalSoveværelser = antalSoveværelser;
             Beliggenhed = beliggenhed;
             HusdyrTilladt = husdyrTilladt;
@@ -32,5 +33,37 @@ namespace FranceVacanceBookingSystem.Model
             Størrelse = størrelse;
             Swimmingpool = swimmingpool;
         }
+
+        public void CheckAntalBadeværelser(int antalbadeværelser)
+        {
+            if(antalbadeværelser.GetType() != typeof(int) || antalbadeværelser > 10 || antalbadeværelser <= 0)
+                throw new ArgumentException("Venligst indtast korrekt antal badeværelser");
+        }
+
+        public void CheckAntalSoveværelser(int soveværelser)
+        {
+            if(soveværelser.GetType() != typeof(int) || soveværelser > 10 || soveværelser <= 0)          
+                throw new ArgumentException("Venligst indtast korrekt antal soveværelser");
+        }
+
+        public void CheckBeliggenhed(string beg)
+        {
+            if(String.IsNullOrEmpty(beg))
+                throw new ArgumentException("Venligst indtast en beliggenhed");
+        }
+
+        public void CheckPris(int pris)
+        {
+            if(pris.GetType() != typeof(int) || pris > 20000 || pris <= 0)
+                throw new ArgumentException("Venligst indtast en korrekt pris");
+        }
+
+        public void CheckStørrelse(int størrelse)
+        {
+            if(størrelse.GetType() != typeof(int) || størrelse > 1000 || størrelse <= 0)
+                throw new ArgumentException("Venligst indtast en ordentlig størrelse");
+        }
+        
+
     }
 }

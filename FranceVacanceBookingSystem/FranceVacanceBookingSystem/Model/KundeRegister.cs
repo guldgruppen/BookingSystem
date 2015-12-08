@@ -2,16 +2,18 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using FranceVacanceBookingSystem.Annotations;
+using FranceVacanceBookingSystem.Persistency;
 
 namespace FranceVacanceBookingSystem.Model
 {
     public class KundeRegister : INotifyPropertyChanged
     {
         public Dictionary<int, Kunde> KundeMedId { get; set; }
+        
        
         public KundeRegister()
         {
-            KundeMedId = new Dictionary<int, Kunde>();
+            KundeMedId = new Dictionary<int, Kunde>();           
             KundeMedId.Add(Kunde.Id,new Kunde("bob","bob","bob","bobbobbo","bob","bob"));
             KundeMedId.Add(Kunde.Id, new Kunde("bob", "bob", "bob", "bobbobbo", "bob", "bob"));
            
@@ -31,5 +33,6 @@ namespace FranceVacanceBookingSystem.Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+       
     }
 }

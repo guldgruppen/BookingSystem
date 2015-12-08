@@ -38,7 +38,7 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition Height="602"/>
+            <RowDefinition/>
             <RowDefinition Height="26"/>
         </Grid.RowDefinitions>
 
@@ -55,10 +55,17 @@
 				AutomationProperties.Name="Back"
 				AutomationProperties.AutomationId="BackButton"
 				AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" 
-				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="106,0,32,40"/>
+            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,0,40" Text="France Vacance Booking System" HorizontalAlignment="Center"/>
+            <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,32,10" Width="293" VerticalAlignment="Bottom" Height="100">
+                <StackPanel Height="34" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Brugernavn:" FontSize="20"/>
+                    <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="et navn" FontSize="20"/>
+                </StackPanel>
+                <Button x:Name="button1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="67" FontSize="32" Margin="89,0,0,0" Background="#B25474A3" Content="Log Ud" Command="{Binding LogudCommand}"/>
+            </StackPanel>
         </Grid>
-        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,0" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#192B46" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,63" Grid.Row="1" Background="#192B46" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SommerhusIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
             <ListView.Resources>
                 <Style x:Key="ItemStyleSommerhusListe" TargetType="ListViewItem">
                     <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
@@ -96,7 +103,7 @@
                             <ColumnDefinition Width="220"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Margin="0,0,1,2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
-                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Val Thorens" HorizontalAlignment="Center" FontSize="29.333"/>
+                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding Beliggenhed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" FontSize="29.333"/>
                             <Image x:Name="image" Height="133" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Margin="0"/>
                         </StackPanel>
                         <StackPanel Margin="4,0,0,2" d:LayoutOverrides="Width, LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Grid.Column="2">
@@ -113,10 +120,11 @@
                             <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="ja" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="nej" Margin="0" FontSize="21.333"/>
                         </StackPanel>
-                        <StackPanel Margin="9,0,0,2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Grid.Column="5">
-                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="3.400 DKK" Margin="0,100,0,0" FontSize="40"/>
+                        <StackPanel Margin="9,0,31,2" Grid.Column="5" Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,100,0,0" FontSize="40"/>
+                            <TextBlock x:Name="textBlock12" TextWrapping="Wrap" Text="kr pr. dag" Margin="20,105,0,0" FontSize="32"/>
                         </StackPanel>
-                        <StackPanel Margin="16,16,0,0" Grid.Column="7" d:LayoutOverrides="Width, LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
+                        <StackPanel Margin="16,16,0,0" Grid.Column="7" d:LayoutOverrides="Width, LeftPosition, RightPosition">
                             <Button x:Name="button" Content="Tilføj til favoritter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFF9A716" Margin="0" FontSize="21.333"/>
                             <Button x:Name="button1" Content="Mere Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFCB2929" FontSize="21.333"/>
                             <Button x:Name="button2" Content="Book" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1AAA13" FontSize="21.333"/>
