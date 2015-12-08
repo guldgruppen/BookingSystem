@@ -23,9 +23,11 @@ namespace FranceVacanceBookingSystem.ViewModel
         private readonly NavigationService _navigationService;
         private string[] _loginTypes = { "Kunde", "Admin" };
         private List<Kunde> _kunderTilList;
-       
+        private string _loginUsername = "";
 
-        private static int _id = 1;   
+
+        private static int _id = 1;    
+       
            
         #endregion
         #region Properties
@@ -35,7 +37,15 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public Profile LoginProfil { get; set; }
 
-        private string LoginUsername { get; set; } = "";
+        private string LoginUsername
+        {
+            get { return _loginUsername; }
+            set
+            {
+                _loginUsername = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public Profile LoginProfile { get; set; }
@@ -67,6 +77,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public string Adress { get; set; }
         public string Tlf { get; set; }
 
+
         
        
         public RelayCommand NavToMainSystemCommand { get; set; }
@@ -79,6 +90,9 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand LogudCommand { get; set; }
         public RelayCommand AddSommerhusCommand { get; set; }
         public RelayCommand ShowCustomerCommand { get; set; }
+
+        public RelayCommand ShowPageOmOsCommand { get; set; }
+        public RelayCommand ShowPageKontaktOsCommand { get; set; }
 
 
 
@@ -143,11 +157,26 @@ namespace FranceVacanceBookingSystem.ViewModel
             //NEDENUNDER ER EN TEST 
             ShowInfoCommand = new RelayCommand(getSommerhus);
 
+            ShowPageOmOsCommand = new RelayCommand(ShowOmOs);
+            ShowPageKontaktOsCommand = new RelayCommand(ShowKontaktOs);
+
         }
 
         #endregion
 
         #region Methods
+
+        public void ShowOmOs()
+        {
+            _navigationService.Navigate(typeof(OmOs));
+
+        }
+
+        public void ShowKontaktOs()
+        {
+            _navigationService.Navigate(typeof(KontaktOs));
+        }
+
         public void AddCustomerWithProfile()
         {
             try
