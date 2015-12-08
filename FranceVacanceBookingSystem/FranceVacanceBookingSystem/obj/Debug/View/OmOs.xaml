@@ -73,3 +73,4 @@
         <StackPanel Grid.Column="2" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#CC192B46"/>
     </Grid>
 </Page>
+
