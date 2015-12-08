@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.ApplicationModel.Activation;
 using Windows.Security.Cryptography.Core;
+using Windows.UI.Xaml;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
@@ -21,24 +22,36 @@ namespace FranceVacanceBookingSystem.ViewModel
         #region Instance Fields
         private readonly NavigationService _navigationService;
         private string[] _loginTypes = { "Kunde", "Admin" };
-        private List<Kunde> KunderTilList; 
-        private static int _id = 1;      
+        private List<Kunde> _kunderTilList;
+       
+
+        private static int _id = 1;   
+           
         #endregion
         #region Properties
         public ProfileRegister ProfileRegister { get; set; }
         public KundeRegister KundeRegister { get; set; }
         public AdminRegister AdminRegister { get; set; }
 
+        public Profile LoginProfil { get; set; }
+
+        private string LoginUsername { get; set; } = "";
+
+
+        public Profile LoginProfile { get; set; }
         public Dictionary<int, int> av { get; set; }
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
 
         public int AntalPersoner { get; set; }
-        public int AntalVærelser { get; set; }
+        public int AntalSoveværelser { get; set; }
+        public int AntalBadeværelser { get; set; }
+        public int Størrelse { get; set; }
+        public string Beliggenhed { get; set; }
+        public int Pris { get; set; }
         public int FraDato { get; set; }
         public int TilDato { get; set; }
         public bool HusdyrTilladt { get; set; }
-        public bool Swimmingpool { get; set; }
-       
+        public bool Swimmingpool { get; set; }               
         public string[] LoginTypes
         {
             get { return _loginTypes; }
@@ -55,6 +68,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public string Tlf { get; set; }
 
         
+       
         public RelayCommand NavToMainSystemCommand { get; set; }
         public RelayCommand AddProfileWithCustomerCommand { get; set; }
         public RelayCommand NavToOretProfilCommand { get; set; }
@@ -63,24 +77,40 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand NavToOpretSommerhus { get; set; }
         public RelayCommand NavToListSommerhus { get; set; }
         public RelayCommand LogudCommand { get; set; }
-        
+        public RelayCommand AddSommerhusCommand { get; set; }
+        public RelayCommand ShowCustomerCommand { get; set; }
+
+
+
+        //***************************TEST**********************
+        public RelayCommand ShowInfoCommand { get; set; }
+        public int SommerhusIndex { get; set; }
+        public Sommerhus SelectedSommerhus { get; set; }
+        public void getSommerhus()
+        {
+            SelectedSommerhus = Sommerhuse[SommerhusIndex];
+            Dialog.Show(SelectedSommerhus.Beliggenhed);
+        }
+        //***************************TEST*********************
+
 
         #endregion
         #region Constructors
         public BookingSystem()
         {
             Sommerhuse = new ObservableCollection<Sommerhus>();
-            InitSommerhus();
-
-            LoadProfiles();
+            KundeRegister = new KundeRegister();
+            //InitSommerhus();
+            
             LoadKunder();
+            LoadProfiles();            
             LoadSommerhuse();
            
             
             ProfileRegister = new ProfileRegister();
             KundeRegister = new KundeRegister();
             AdminRegister = new AdminRegister();          
-
+            
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
             
@@ -105,6 +135,13 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 _navigationService.GoBack();           
             });
+            ShowCustomerCommand = new RelayCommand(() =>
+            {
+                Dialog.Show(KundeRegister.KundeMedId.Count.ToString());              
+            });
+            AddSommerhusCommand = new RelayCommand(AddSommerhus);
+            //NEDENUNDER ER EN TEST 
+            ShowInfoCommand = new RelayCommand(getSommerhus);
 
         }
 
@@ -139,13 +176,16 @@ namespace FranceVacanceBookingSystem.ViewModel
                 CheckForNullOrWhiteSpace(Username, Password);
                 if (LoginTypes[SelectedIndexLoginType] == "Kunde")
                 {
-                    Profile loginProfile = ProfileRegister.FindProfile(Username, Password);
+                    Profile tempProfile = ProfileRegister.FindProfile(Username, Password);
+                    LoginUsername = tempProfile.Username;
+                    OnPropertyChanged();                                     
                     NavigateToMainSystem();
                 }
                 if (LoginTypes[SelectedIndexLoginType] == "Admin")
                 {
-                    Admin TempAdmin = AdminRegister.FindAdmin(Username, Password);                   
-                    NavigateToAdminPage();                  
+                    Admin TempAdmin = AdminRegister.FindAdmin(Username, Password);                                       
+                    NavigateToAdminPage();  
+                                    
                 }
             }
             catch (ArgumentException ex)
@@ -155,6 +195,20 @@ namespace FranceVacanceBookingSystem.ViewModel
             catch (NullReferenceException ex)
             {
                 Dialog.Show(ex.Message);
+            }
+        }
+        private async void LoadKunder()
+        {
+            _id = 1;
+            var loadedKunder = await KundePersistency.LoadKunderFromJsonAsync();
+
+            if (loadedKunder != null)
+            {
+                KundeRegister.KundeMedId.Clear();             
+                foreach (var kunde in loadedKunder)
+                {
+                    KundeRegister.KundeMedId.Add(_id++, kunde);               
+                }
             }
         }
         public void CheckForNullOrWhiteSpace(string username, string password)
@@ -172,6 +226,27 @@ namespace FranceVacanceBookingSystem.ViewModel
         {           
             _navigationService.Navigate(typeof(AdminPage));
         }
+
+
+        public void SøgEfterSommerhus()
+        {
+
+        }
+
+        public void AddSommerhus()
+        {
+            try
+            {
+                Sommerhuse.Add(new Sommerhus(AntalBadeværelser, AntalSoveværelser, Beliggenhed, true, Pris, Størrelse,true));
+                Dialog.Show("profil tilføjet");
+                SommerhusPersistency.SaveSommerhusAsJsonAsync(Sommerhuse);
+            }
+            catch (ArgumentException ex)
+            {
+                Dialog.Show(ex.Message);
+            }
+        }
+
         private async void LoadProfiles()
         {
             var loadedProfiles = await ProfilePersistency.LoadProfilesFromJsonAsync();
@@ -187,20 +262,20 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
         public void SaveCustomers()
         {
-            KunderTilList = KundeRegister.KundeMedId.Values.ToList();           
-            KundePersistency.SaveKunderAsJsonAsync(KunderTilList);
+            _kunderTilList = KundeRegister.KundeMedId.Values.ToList();           
+            KundePersistency.SaveKunderAsJsonAsync(_kunderTilList);
         }
         public void InitSommerhus()
         {
-            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus(100, 2, 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(1000, 20, 20, 40, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus(3000, 1, 0, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 3, 6, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 1, 3, "DET VIRKER", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 7, 9, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 2, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 6, 8, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus( 3, 3, "Val Torens", false, 3500, 150, false));
         }
         public void DeleteCustomer()
         {
@@ -218,22 +293,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 av.Add(item, item);
             }
-        }
-        private async void LoadKunder()
-        {
-            _id = 1;
-            var loadedKunder = await KundePersistency.LoadKunderFromJsonAsync();
-            
-            if (loadedKunder != null)
-            {
-                KundeRegister.KundeMedId.Clear();
-                foreach (var kunde in loadedKunder)
-                {                   
-                    KundeRegister.KundeMedId.Add(_id++,kunde);
-                   
-                }                
-            }                    
-        }
+        }     
         private async void LoadSommerhuse()
         {
             var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
@@ -244,6 +304,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     Sommerhuse.Add(s);
                 }
+                OnPropertyChanged();
 
             }
         }
