@@ -128,6 +128,9 @@
     <Compile Include="View\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\KontaktOs.xaml.cs">
+      <DependentUpon>KontaktOs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\MainSystem.xaml.cs">
       <DependentUpon>MainSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OmOs.xaml.cs">
+      <DependentUpon>OmOs.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OpretProfil.xaml.cs">
       <DependentUpon>OpretProfil.xaml</DependentUpon>
@@ -240,11 +246,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\KontaktOs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OmOs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
