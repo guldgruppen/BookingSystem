@@ -22,6 +22,8 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public ObservableCollection<int> av { get; set; }
 
+        public ObservableCollection<Sommerhus> match { get; set; }
+
 
         public static Profil LoginProfil { get; set; }
 
@@ -46,16 +48,21 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public RelayCommand NavToOpretCommand { get; set; }
 
-        public RelayCommand NavToListCommand { get; set; }     
+        public RelayCommand NavToListCommand { get; set; }
+        
+        public RelayCommand Searh { get; set; } 
        
         public SommerhusKatalog()
         {
-            
+            match = new ObservableCollection<Sommerhus>();
+
             _navigationService = new NavigationService();
 
             NavToListCommand = new RelayCommand(() =>
             {
+
                 _navigationService.Navigate(typeof(SommerhusListe));
+
             });
             NavToOpretCommand = new RelayCommand(() =>
             {
@@ -66,12 +73,13 @@ namespace FranceVacanceBookingSystem.ViewModel
                 MessageDialog dialog = new MessageDialog(Username);
                 dialog.ShowAsync();
             });
+
             Sommerhuse = new ObservableCollection<Sommerhus>();
             av = new ObservableCollection<int>();
-
-           
+            
 
             LoadSommerhuse();
+
         }
 
         public void AddSommerhus()
@@ -92,7 +100,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         private async void LoadSommerhuse()
         {
             var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
-            
+
             if (loadedSommerhuse != null)
             {
                 Sommerhuse.Clear();
@@ -105,10 +113,17 @@ namespace FranceVacanceBookingSystem.ViewModel
                 foreach (var item in loadedSommerhuse.OrderBy(x => x.AntalSoveværelser).Select(x => x.AntalSoveværelser).Distinct())
                 {
                     av.Add(item);
-                                        
-                }
-            }
 
+                }
+
+                match.Clear();
+                foreach (Sommerhus s in Sommerhuse.Where(x => x.HusdyrTilladt == true && x.AntalBadeværelser == 2))
+                {
+                    match.Add(s);
+                }
+
+            }
+            
         }
 
         #region PropertyChanged Region

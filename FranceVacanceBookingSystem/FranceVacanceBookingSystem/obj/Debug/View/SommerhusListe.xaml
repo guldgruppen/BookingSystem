@@ -58,7 +58,7 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" 
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="106,0,32,40"/>
         </Grid>
-        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,0" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#192B46" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,0" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#192B46" ItemsSource="{Binding match, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
             <ListView.Resources>
                 <Style x:Key="ItemStyleSommerhusListe" TargetType="ListViewItem">
                     <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
@@ -100,21 +100,21 @@
                             <Image x:Name="image" Height="133" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Margin="0"/>
                         </StackPanel>
                         <StackPanel Margin="4,0,0,2" d:LayoutOverrides="Width, LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Grid.Column="2">
-                            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Badeværelser:" Margin="0,20,0,0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock1"  TextWrapping="Wrap" Text="Antal Badeværelser:" Margin="0,20,0,0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Soveværelser:" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse:" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt:" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool:" Margin="0" FontSize="21.333"/>
                         </StackPanel>
                         <StackPanel Margin="13,0,0,2" Grid.Column="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
-                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="4" Margin="0,20,0,0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="4" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="160 " Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="ja" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="nej" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="{Binding AntalBadeværelser, Mode=TwoWay}" Margin="0,20,0,0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="{Binding AntalSoveværelser, Mode=TwoWay}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="{Binding Størrelse, Mode=TwoWay}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="{Binding HusdyrTilladt, Mode=TwoWay}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="{Binding Swimmingpool, Mode=TwoWay}" Margin="0" FontSize="21.333"/>
                         </StackPanel>
                         <StackPanel Margin="9,0,0,2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Grid.Column="5">
-                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="3.400 DKK" Margin="0,100,0,0" FontSize="40"/>
+                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" Margin="0,100,0,0" FontSize="40"/>
                         </StackPanel>
                         <StackPanel Margin="16,16,0,0" Grid.Column="7" d:LayoutOverrides="Width, LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
                             <Button x:Name="button" Content="Tilføj til favoritter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFF9A716" Margin="0" FontSize="21.333"/>
