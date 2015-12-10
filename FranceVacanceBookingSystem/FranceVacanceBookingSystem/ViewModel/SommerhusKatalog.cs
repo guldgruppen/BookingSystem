@@ -22,7 +22,7 @@ namespace FranceVacanceBookingSystem.ViewModel
 
         public ObservableCollection<int> av { get; set; }
 
-        public ObservableCollection<Sommerhus> match { get; set; }
+        public static ObservableCollection<Sommerhus> match { get; set; }
 
 
         public static Profil LoginProfil { get; set; }
@@ -40,6 +40,43 @@ namespace FranceVacanceBookingSystem.ViewModel
         public bool HusdyrTilladt{ get; set; }
         public bool Swimmingpool { get; set; }
         public int SelectedIndex { get; set; }
+
+        public int SelectedAntalVærelser
+        {
+            get { return _selectedAntalVærelser; }
+
+            set
+            {
+                _selectedAntalVærelser = value;
+                OnPropertyChanged();
+            }
+        }
+        public int SelectedAntalPersoner { get; set; }
+        public bool SelectedHusdyr
+        {
+            get { return _selectedHusdyr; }
+
+            set
+            {
+                _selectedHusdyr = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool SlectedSwimmingpool
+        {
+            get { return _selectedSwimmingpool; }
+
+            set
+            {
+                _selectedSwimmingpool = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _selectedAntalVærelser;
+        private bool _selectedHusdyr;
+        private bool _selectedSwimmingpool;
+
         private NavigationService _navigationService;
 
         private string _username = LoginProfil.Username;
@@ -54,14 +91,13 @@ namespace FranceVacanceBookingSystem.ViewModel
        
         public SommerhusKatalog()
         {
-            match = new ObservableCollection<Sommerhus>();
-
             _navigationService = new NavigationService();
 
             NavToListCommand = new RelayCommand(() =>
             {
-
-                _navigationService.Navigate(typeof(SommerhusListe));
+                _navigationService.Navigate(typeof (SommerhusListe));
+                Match();
+                
 
             });
             NavToOpretCommand = new RelayCommand(() =>
@@ -113,17 +149,21 @@ namespace FranceVacanceBookingSystem.ViewModel
                 foreach (var item in loadedSommerhuse.OrderBy(x => x.AntalSoveværelser).Select(x => x.AntalSoveværelser).Distinct())
                 {
                     av.Add(item);
-
                 }
+            }
+        }
 
+        private void Match()
+        {
+            if (_selectedAntalVærelser != 0)
+            {
+                match = new ObservableCollection<Sommerhus>();
                 match.Clear();
-                foreach (Sommerhus s in Sommerhuse.Where(x => x.HusdyrTilladt == true && x.AntalBadeværelser == 2))
+                foreach (Sommerhus s in Sommerhuse.Where(x => x.AntalSoveværelser == _selectedAntalVærelser && x.HusdyrTilladt == _selectedHusdyr && x.Swimmingpool == _selectedSwimmingpool))
                 {
                     match.Add(s);
                 }
-
             }
-            
         }
 
         #region PropertyChanged Region
