@@ -17,14 +17,16 @@ namespace FranceVacanceBookingSystem.Model
         public int Pris { get; set; }
         public int Størrelse { get; set; }
         public bool Swimmingpool { get; set; }
+        public int AntalPersoner { get; set; }
 
-        public Sommerhus(int antalBadeværelser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
+        public Sommerhus(int antalPersoner, int antalBadeværelser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
         {
             CheckAntalBadeværelser(antalBadeværelser);
             CheckAntalSoveværelser(antalSoveværelser);
             CheckBeliggenhed(beliggenhed);
             CheckPris(pris);
             CheckStørrelse(størrelse);
+            AntalPersoner = antalPersoner;
             AntalBadeværelser = antalBadeværelser;
             AntalSoveværelser = antalSoveværelser;
             Beliggenhed = beliggenhed;
@@ -32,6 +34,19 @@ namespace FranceVacanceBookingSystem.Model
             Pris = pris;
             Størrelse = størrelse;
             Swimmingpool = swimmingpool;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (!(obj is Sommerhus))
+                return false;
+            return AntalBadeværelser == ((Sommerhus) obj).AntalBadeværelser &&
+                   AntalSoveværelser == ((Sommerhus) obj).AntalSoveværelser && Beliggenhed ==
+                   ((Sommerhus) obj).Beliggenhed && Pris == ((Sommerhus) obj).Pris &&
+                   Størrelse == ((Sommerhus) obj).Størrelse;
+            //SKAL OGSÅ INDEHOLDE HUSDYR OG SWIMMINGPOOL
         }
 
         public void CheckAntalBadeværelser(int antalbadeværelser)

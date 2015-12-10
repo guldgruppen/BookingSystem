@@ -39,7 +39,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition/>
-            <RowDefinition Height="26"/>
+            <RowDefinition Height="111"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
@@ -48,7 +48,7 @@
         </Grid.DataContext>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="3" Background="#CC192B46" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+        <Grid Grid.ColumnSpan="3" Background="#CC192B46">
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
 				Style="{StaticResource NavigationBackButtonNormalStyle}"
 				VerticalAlignment="Top"
@@ -60,12 +60,12 @@
             <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,32,10" Width="293" VerticalAlignment="Bottom" Height="100">
                 <StackPanel Height="34" Orientation="Horizontal" HorizontalAlignment="Right">
                     <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Brugernavn:" FontSize="20"/>
-                    <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="et navn" FontSize="20"/>
+                    <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="{Binding LoginUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
                 </StackPanel>
                 <Button x:Name="button1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="67" FontSize="32" Margin="89,0,0,0" Background="#B25474A3" Content="Log Ud" Command="{Binding LogudCommand}"/>
             </StackPanel>
         </Grid>
-        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,63" Grid.Row="1" Background="#192B46" ItemsSource="{Binding Sommerhuse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SommerhusIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+        <ListView x:Name="listView" Grid.Column="1" Margin="20,5,0,0" Grid.Row="1" Background="#192B46" ItemsSource="{Binding SommerhusMatch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SommerhusIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
             <ListView.Resources>
                 <Style x:Key="ItemStyleSommerhusListe" TargetType="ListViewItem">
                     <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
@@ -94,40 +94,35 @@
                     <Grid HorizontalAlignment="Stretch" Margin="0" Background="#CC415471" Width="auto" Height="175">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="178"/>
-                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="102*"/>
+                            <ColumnDefinition Width="206"/>
+                            <ColumnDefinition Width="139"/>
+                            <ColumnDefinition Width="147*"/>
                             <ColumnDefinition Width="190"/>
-                            <ColumnDefinition Width="58"/>
-                            <ColumnDefinition Width="7*"/>
-                            <ColumnDefinition Width="204"/>
-                            <ColumnDefinition Width="7*"/>
-                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="41"/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Margin="0,0,1,2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
+                        <StackPanel Margin="0,0,1,2">
                             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding Beliggenhed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" FontSize="29.333"/>
                             <Image x:Name="image" Height="133" Source="ms-appx:///Assets/Sommerhus i Frankrig2.jpg" Margin="0"/>
                         </StackPanel>
-                        <StackPanel Margin="4,0,0,2" d:LayoutOverrides="Width, LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Grid.Column="2">
-                            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Badeværelser:" Margin="0,20,0,0" FontSize="21.333"/>
+                        <StackPanel Margin="4,0,0,2" Grid.Column="2">
+                            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Antal Personer:" Margin="0,18,0,0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Soveværelser:" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse:" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse i m2:" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Husdyr tilladt:" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Swimmingpool:" Margin="0" FontSize="21.333"/>
                         </StackPanel>
-                        <StackPanel Margin="13,0,0,2" Grid.Column="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition">
-                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="4" Margin="0,20,0,0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="4" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="160 " Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="ja" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="nej" Margin="0" FontSize="21.333"/>
+                        <StackPanel Margin="13,0,0,2" Grid.Column="3">
+                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,20,0,0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="{Binding AntalSoveværelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="{Binding Størrelse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="{Binding HusdyrTilladt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,-27,0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="{Binding Swimmingpool, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
                         </StackPanel>
                         <StackPanel Margin="9,0,31,2" Grid.Column="5" Orientation="Horizontal" Grid.ColumnSpan="2">
                             <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,100,0,0" FontSize="40"/>
                             <TextBlock x:Name="textBlock12" TextWrapping="Wrap" Text="kr pr. dag" Margin="20,105,0,0" FontSize="32"/>
-                        </StackPanel>
-                        <StackPanel Margin="16,16,0,0" Grid.Column="7" d:LayoutOverrides="Width, LeftPosition, RightPosition">
-                            <Button x:Name="button" Content="Tilføj til favoritter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFF9A716" Margin="0" FontSize="21.333"/>
-                            <Button x:Name="button1" Content="Mere Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFCB2929" FontSize="21.333"/>
-                            <Button x:Name="button2" Content="Book" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1AAA13" FontSize="21.333"/>
                         </StackPanel>
                     </Grid>
 
@@ -135,7 +130,12 @@
             </ListView.ItemTemplate>
 
         </ListView>
-        <Grid Grid.Row="1" d:LayoutOverrides="TopPosition, BottomPosition" Background="#FF08172E" Grid.RowSpan="2">
+        <StackPanel HorizontalAlignment="Right" Height="86" VerticalAlignment="Top" Margin="5,0,0,0" Grid.Row="2" Background="#FF685C5C" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="button" Content="Tilføj Til Favoritter" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="253"  Background="#FFDE4A4A" FontSize="26.667" Margin="0,0,0,-2"/>
+            <Button x:Name="button_Copy" Content="Mere Info" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="230"  Background="#FFDA8836" FontSize="26.667"/>
+            <Button x:Name="button_Copy1" Content="Book Sommerhus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="261" Command="{Binding BookingCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="#FF5ECB2B" FontSize="26.667" Margin="0,0,0,-2"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Background="#FF08172E" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="33*"/>
                 <RowDefinition Height="376"/>
@@ -143,10 +143,11 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="10,0" Grid.Row="1" d:LayoutOverrides="TopPosition, BottomPosition">
                 <Button x:Name="button3" Content="Min Profil" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,50,0,0"/>
-                <Button x:Name="button4" Content="Bliv Udlejer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
-                <Button x:Name="button5" Content="Kontakt os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
-                <Button x:Name="button6" Content="Om os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0"/>
+                <Button x:Name="button4" Content="Bliv Udlejer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0" Command="{Binding NavToOpretSommerhus}"/>
+                <Button x:Name="button5" Content="Kontakt os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0" Command="{Binding ShowPageKontaktOsCommand}"/>
+                <Button x:Name="button6" Content="Om os" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="26.667" Margin="0,10,0,0" Command="{Binding ShowPageOmOsCommand}"/>
             </StackPanel>
+
         </Grid>
 
     </Grid>

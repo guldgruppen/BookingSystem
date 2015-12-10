@@ -4,10 +4,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Windows.ApplicationModel.Activation;
 using Windows.Security.Cryptography.Core;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
@@ -23,40 +21,75 @@ namespace FranceVacanceBookingSystem.ViewModel
         #region Instance Fields
         private readonly NavigationService _navigationService;
         private string[] _loginTypes = { "Kunde", "Admin" };
-        private List<Kunde> _kunderTilList;
-        private string _loginUsername = "";
+        private int _selectedAntalVærelser;
+        private bool _selectedHusdyr;
+        private bool _selectedSwimmingpool;
 
         #endregion
         #region Properties
-        public ProfileRegister ProfileRegister { get; set; }
-        public KundeRegister KundeRegister { get; set; }
-        public AdminRegister AdminRegister { get; set; }
 
-        public Profile LoginProfil { get; set; }
-
-        private string LoginUsername
+        //*************************************************************************
+        public int SelectedAntalVærelser
         {
-            get { return _loginUsername; }
+            get { return _selectedAntalVærelser; }
+
             set
             {
-                _loginUsername = value;
+                _selectedAntalVærelser = value;
+                OnPropertyChanged();
+            }
+        }
+        public int SelectedAntalPersoner { get; set; }
+        public bool SelectedHusdyr
+        {
+            get { return _selectedHusdyr; }
+
+            set
+            {
+                _selectedHusdyr = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool SelectedSwimmingpool
+        {
+            get { return _selectedSwimmingpool; }
+
+            set
+            {
+                _selectedSwimmingpool = value;
                 OnPropertyChanged();
             }
         }
 
+        //*************************************************************************
+        public ProfileRegister ProfileRegister { get; set; }
+        public KundeRegister KundeRegister { get; set; }
+        public AdminRegister AdminRegister { get; set; }
+        public BookingRegister BookingRegister { get; set; }
+        public static Profile Pro { get; set; }
 
         public Profile LoginProfile { get; set; }
-        public Dictionary<int, int> av { get; set; }
+        public static string LoginUsername { get; set; }
+        public int VærelseComboIndex { get; set; }
+        public int PersonerComboIndex { get; set; }
         public ObservableCollection<Sommerhus> Sommerhuse { get; set; }
-
+        public static ObservableCollection<Sommerhus> SommerhusMatch { get; set; } = new ObservableCollection<Sommerhus>();
+        public ObservableCollection<int> PersoneriCombobox { get; set; }
+        public ObservableCollection<int> VærelserICombobox { get; set; }
         public int AntalPersoner { get; set; }
         public int AntalSoveværelser { get; set; }
         public int AntalBadeværelser { get; set; }
         public int Størrelse { get; set; }
         public string Beliggenhed { get; set; }
         public int Pris { get; set; }
-        public int FraDato { get; set; }
-        public int TilDato { get; set; }
+        public static DateTimeOffset FraDato { get; set; }
+        public static DateTimeOffset TilDato { get; set; }
+
+        public DateTimeOffset MinValueFra { get; set; } = DateTimeOffset.Parse("01-01-2016");
+        public DateTimeOffset MaxValueFra { get; set; }  = DateTimeOffset.Parse("01-01-2016");
+        public DateTimeOffset MinValueTil { get; set; } = DateTimeOffset.Parse("01-01-2020");
+        public DateTimeOffset MaxValueTil { get; set; } = DateTimeOffset.Parse("01-01-2020");
+
         public bool HusdyrTilladt { get; set; }
         public bool Swimmingpool { get; set; }               
         public string[] LoginTypes
@@ -64,7 +97,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _loginTypes; }
             set { _loginTypes = value; }
         }
-        public static int ProfilId { get; set; }
         public int SelectedIndexLoginType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -73,9 +105,10 @@ namespace FranceVacanceBookingSystem.ViewModel
         public string Email { get; set; }
         public string Adress { get; set; }
         public string Tlf { get; set; }
-        public MessageDialog conDialog { get; set; }
+        public MessageDialog ConDialog { get; set; }
+        public MessageDialog BonDialog { get; set; }
         public int SelectedIndexListeKunde { get; set; }
-
+        public int SommerhusIndex { get; set; } = -1;
 
         public RelayCommand NavToMainSystemCommand { get; set; }
         public RelayCommand AddProfileWithCustomerCommand { get; set; }
@@ -89,39 +122,27 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand DeleteKundeCommand { get; set; }
         public RelayCommand ShowPageOmOsCommand { get; set; }
         public RelayCommand ShowPageKontaktOsCommand { get; set; }
-
-
-
-
-
-        //***************************TEST**********************
-        public RelayCommand ShowInfoCommand { get; set; }
-        public int SommerhusIndex { get; set; }
-        public Sommerhus SelectedSommerhus { get; set; }
-        public void getSommerhus()
-        {
-            SelectedSommerhus = Sommerhuse[SommerhusIndex];
-            Dialog.Show(SelectedSommerhus.Beliggenhed);
-        }
-        //***************************TEST*********************
-
+        public RelayCommand BookingCommand { get; set; }
 
         #endregion
         #region Constructors
         public BookingSystem()
         {
             Sommerhuse = new ObservableCollection<Sommerhus>();
-            KundeRegister = new KundeRegister();
+            PersoneriCombobox = new ObservableCollection<int>();
+            VærelserICombobox = new ObservableCollection<int>();
+                       
             //InitSommerhus();
-            
-            LoadKunder();
-            LoadProfiles();            
-            LoadSommerhuse();
-           
-            
+
             ProfileRegister = new ProfileRegister();
             KundeRegister = new KundeRegister();
-            AdminRegister = new AdminRegister();          
+            AdminRegister = new AdminRegister();
+            BookingRegister = new BookingRegister();
+
+            LoadKunder();
+            LoadProfiles();
+            LoadSommerhuse();
+            LoadBookings();
             
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
@@ -141,67 +162,144 @@ namespace FranceVacanceBookingSystem.ViewModel
             });
             NavToListSommerhus = new RelayCommand(() =>
             {
-                _navigationService.Navigate(typeof(SommerhusListe));
+                try
+                {
+                    CheckComboboxValue(SelectedAntalPersoner,SelectedAntalVærelser);
+                    CheckTime(FraDato, TilDato);
+                    MatchAfSommerhus();
+                    _navigationService.Navigate(typeof(SommerhusListe));                    
+                }
+                catch (ArgumentException ex)
+                {
+                    Dialog.Show(ex.Message);
+                }                                             
             });
             LogudCommand = new RelayCommand(() =>
             {
-                _navigationService.GoBack();           
+                _navigationService.Navigate(typeof(Login));        
             });
             DeleteKundeCommand = new RelayCommand(DeleteKundeFromListe);
             
             AddSommerhusCommand = new RelayCommand(AddSommerhus);
-            //NEDENUNDER ER EN TEST 
-            ShowInfoCommand = new RelayCommand(getSommerhus);
+            
 
             ShowPageOmOsCommand = new RelayCommand(ShowOmOs);
-            ShowPageKontaktOsCommand = new RelayCommand(ShowKontaktOs);
+            ShowPageKontaktOsCommand = new RelayCommand(ShowKontaktOs);            
+            BookingCommand = new RelayCommand(TryToBook);
+
+           
 
         }
 
         #endregion
 
         #region Methods
+        private void MatchAfSommerhus()
+        {                               
+                SommerhusMatch.Clear(); 
+                          
+                foreach (var matchingSommerhus in Sommerhuse.Where(x => x.AntalPersoner >= SelectedAntalPersoner && x.AntalSoveværelser >= SelectedAntalVærelser && x.HusdyrTilladt == SelectedHusdyr && x.Swimmingpool == SelectedSwimmingpool))
+                {                                     
+                    SommerhusMatch.Add(matchingSommerhus);
+                foreach (var bookings in BookingRegister.Bookings)
+                {
+                    if (matchingSommerhus.Equals(bookings.BookingSommerhus))
+                    {
+                        if ((FraDato > bookings.BookingFra && FraDato < bookings.BookingTil) ||
+                            (TilDato > bookings.BookingFra && TilDato < bookings.BookingTil))
+                        {
+                            SommerhusMatch.Remove(matchingSommerhus);
+                        }
+                        
+                    }
+                }
+            } 
+                    
+        }
+        public void CheckTime(DateTimeOffset fra, DateTimeOffset til)
+        {           
+            if(fra > til)
+                throw new ArgumentException("Din fradato skal være tidligere end din tildato");
+            var difTimeSpan = til - fra;
+            int DifInNumber = difTimeSpan.Days;
+            if(DifInNumber > 60)
+                throw new ArgumentException("Du kan ikke rejse mere end 2 måneder");
+            if(DifInNumber == 0)
+                throw new ArgumentException("Du skal minimum være afsted i 1 dag");
+        }
+        public void TryToBook()
+        {
+            try
+            {
+                NoSelectedIndex(SommerhusIndex);
+                Sommerhus temp = SommerhusMatch[SommerhusIndex];
+                BonDialog = new MessageDialog("Er du sikker på at du vil booke sommerhuset i "+temp.Beliggenhed+ " fra: "+FraDato.ToString("d") + " til: "+TilDato.ToString("d"));
+                BonDialog.Commands.Add(new UICommand("JA", command =>
+                {                    
+                    BookingRegister.CheckIfBooking(Pro, temp, FraDato, TilDato);
+                    Dialog.Show("Booking gennemført");
+                    BookingPersistency.SaveBookingAsJsonAsync(BookingRegister.Bookings);
+                }));
+                BonDialog.Commands.Add(new UICommand("NEJ", command => { }));
+                BonDialog.ShowAsync();
 
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Dialog.Show("Du har ikke valgt noget sommerhus at booke");
+            }
+            catch (NullReferenceException ex)
+            {
+                Dialog.Show(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                Dialog.Show(ex.Message);
+            }
+        }
+        public void CheckComboboxValue(int per, int vær)
+        {
+            if(per == 0)
+                throw new ArgumentException("Du mangler at indtaste personer");
+            if(vær == 0)
+                throw new ArgumentException("Du mangler at indtaste værelser");              
+        }
         public void DeleteKundeFromListe()
         {
             try
             {
                 NoSelectedIndex(SelectedIndexListeKunde);
-                conDialog = new MessageDialog("Er du sikker på at ville slette en kunde fra listen?");
-                conDialog.Commands.Add(new UICommand("JA", (command) =>
+                ConDialog = new MessageDialog("Er du sikker på at ville slette en kunde fra listen?");
+                ConDialog.Commands.Add(new UICommand("JA", command =>
                 {
                     KundeRegister.Kunder.Remove(KundeRegister.Kunder[SelectedIndexListeKunde]);
                     KundePersistency.SaveKunderAsJsonAsync(KundeRegister.Kunder);
                 }));
-                conDialog.Commands.Add(new UICommand("NEJ", (command) => { }));
+                ConDialog.Commands.Add(new UICommand("NEJ", command => { }));
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException)
             {
                 Dialog.Show("Ingen kunde er valgt");
                 return;
             }
-            conDialog.ShowAsync();
+            ConDialog.ShowAsync();
 
 
         }
-
         public void NoSelectedIndex(int val)
         {
-            if (val < 0 || val > KundeRegister.Kunder.Count)
+            if (val < 0 )
             throw new ArgumentOutOfRangeException();
         }
-
         public void ShowOmOs()
         {
             _navigationService.Navigate(typeof(OmOs));
 
         }
-
         public void ShowKontaktOs()
         {
             _navigationService.Navigate(typeof(KontaktOs));
         }
-
         public void AddCustomerWithProfile()
         {
             try
@@ -230,14 +328,13 @@ namespace FranceVacanceBookingSystem.ViewModel
                 CheckForNullOrWhiteSpace(Username, Password);
                 if (LoginTypes[SelectedIndexLoginType] == "Kunde")
                 {
-                    Profile tempProfile = ProfileRegister.FindProfile(Username, Password);
-                    LoginUsername = tempProfile.Username;
-                    OnPropertyChanged();                                     
+                    Pro = ProfileRegister.FindProfile(Username, Password);
+                    LoginUsername = Pro.Username;                                                                       
                     NavigateToMainSystem();
                 }
                 if (LoginTypes[SelectedIndexLoginType] == "Admin")
                 {
-                    Admin TempAdmin = AdminRegister.FindAdmin(Username, Password);                                       
+                    AdminRegister.FindAdmin(Username, Password);                                       
                     NavigateToAdminPage();  
                                     
                 }
@@ -252,8 +349,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
         }
         private async void LoadKunder()
-        {
-            
+        {           
             var loadedKunder = await KundePersistency.LoadKunderFromJsonAsync();
 
             if (loadedKunder != null)
@@ -264,7 +360,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                     KundeRegister.Kunder.Add(kunde);               
                 }
             }
-        }
+        }       
         public void CheckForNullOrWhiteSpace(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username))
@@ -279,20 +375,13 @@ namespace FranceVacanceBookingSystem.ViewModel
         public void NavigateToAdminPage()
         {           
             _navigationService.Navigate(typeof(AdminPage));
-        }
-
-
-        public void SøgEfterSommerhus()
-        {
-
-        }
-
+        }       
         public void AddSommerhus()
         {
             try
             {
-                Sommerhuse.Add(new Sommerhus(AntalBadeværelser, AntalSoveværelser, Beliggenhed, true, Pris, Størrelse,true));
-                Dialog.Show("profil tilføjet");
+                Sommerhuse.Add(new Sommerhus(AntalPersoner,AntalBadeværelser, AntalSoveværelser, Beliggenhed,HusdyrTilladt, Pris, Størrelse,Swimmingpool));
+                Dialog.Show("Sommerhus er tilføjet");
                 SommerhusPersistency.SaveSommerhusAsJsonAsync(Sommerhuse);
             }
             catch (ArgumentException ex)
@@ -300,7 +389,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 Dialog.Show(ex.Message);
             }
         }
-
         private async void LoadProfiles()
         {
             var loadedProfiles = await ProfilePersistency.LoadProfilesFromJsonAsync();
@@ -312,40 +400,28 @@ namespace FranceVacanceBookingSystem.ViewModel
                     ProfileRegister.Profiles.Add(profile);
                 }
             }
-
         }
         public void InitSommerhus()
         {
-            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 3, 6, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 1, 3, "DET VIRKER", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 7, 9, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 2, 3, "Val Torens", false, 3500, 150, false));
-            Sommerhuse.Add(new Sommerhus( 2, 4, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 6, 8, "Val Torens", true, 5000, 250, true));
-            Sommerhuse.Add(new Sommerhus( 3, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(5,2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,3, 6, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,1, 3, "DET VIRKER", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(5,2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,7, 9, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,2, 3, "Val Torens", false, 3500, 150, false));
+            Sommerhuse.Add(new Sommerhus(5,2, 4, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,6, 8, "Val Torens", true, 5000, 250, true));
+            Sommerhuse.Add(new Sommerhus(5,3, 3, "Val Torens", false, 3500, 150, false));
         }
         public void DeleteCustomer()
         {
             ProfileRegister.Profiles = null;
             OnPropertyChanged();
             Dialog.Show("done");
-        }
-        private void AddToComboBox()
-        {
-            av = new Dictionary<int, int>();
-
-            Sommerhuse.Select(x => x.AntalSoveværelser).Distinct();
-
-            foreach (int item in Sommerhuse.Select(x => x.AntalSoveværelser).Distinct())
-            {
-                av.Add(item, item);
-            }
-        }     
+        }    
         private async void LoadSommerhuse()
         {
-            var loadedSommerhuse = await Persistency.SommerhusPersistency.LoadSommerhuseFromJsonAsync();
+            var loadedSommerhuse = await SommerhusPersistency.LoadSommerhuseFromJsonAsync();
             if (loadedSommerhuse != null)
             {
                 Sommerhuse.Clear();
@@ -353,12 +429,35 @@ namespace FranceVacanceBookingSystem.ViewModel
                 {
                     Sommerhuse.Add(s);
                 }
+                PersoneriCombobox.Clear();
+                foreach (var item in loadedSommerhuse.OrderBy(x => x.AntalPersoner).Select(x => x.AntalPersoner).Distinct())
+                {
+                    PersoneriCombobox.Add(item);
+                }
+                VærelserICombobox.Clear();
+                foreach (var item in loadedSommerhuse.OrderBy(x => x.AntalSoveværelser).Select(x => x.AntalSoveværelser).Distinct())
+                {
+                    VærelserICombobox.Add(item);
+                }
+            }
+        }
+        private async void LoadBookings()
+        {
+            var loadedBookings = await BookingPersistency.LoadBookingFromJsonAsync();
+               
+            if (loadedBookings != null)
+            {
+                BookingRegister.Bookings.Clear();
+                foreach (var s in loadedBookings)
+                {
+                    BookingRegister.Bookings.Add(s);
+                }
                 OnPropertyChanged();
 
             }
         }
-        #endregion
 
+        #endregion
         #region OnPropertyChanged Region
 
         public event PropertyChangedEventHandler PropertyChanged;

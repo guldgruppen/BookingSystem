@@ -1,13 +1,14 @@
 ﻿<Page
-    x:Name="pageRoot"
-    x:Class="FranceVacanceBookingSystem.View.OmOs"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FranceVacanceBookingSystem.View"
     xmlns:common="using:FranceVacanceBookingSystem.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:FranceVacanceBookingSystem.ViewModel"
+    x:Name="pageRoot"
+    x:Class="FranceVacanceBookingSystem.View.OmOs"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -15,11 +16,6 @@
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
 
-    <!--
-        This grid acts as a root panel for the page that defines two rows:
-        * Row 0 contains the back button and page title
-        * Row 1 contains the rest of the page layout
-    -->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
@@ -42,6 +38,10 @@
             <RowDefinition Height="93*"/>
         </Grid.RowDefinitions>
 
+        <Grid.DataContext>
+            <ViewModel:BookingSystem/>
+        </Grid.DataContext>
+
         <!-- Back button and page title -->
         <Grid Background="#CC192B46" Grid.ColumnSpan="4">
             <Grid.ColumnDefinitions>
@@ -49,13 +49,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="Om Os" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#FF08172E" Margin="0,0,-3,0" Grid.RowSpan="3">
             <Grid.RowDefinitions>
@@ -65,11 +65,71 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="10,0" Orientation="Vertical" Width="220" Height="376" Grid.Row="1">
                 <Button x:Name="button2" Content="Min Profil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,50,0,0" Height="54" FontSize="26.667"/>
-                <Button x:Name="button1" Content="Bliv Udlejer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
-                <Button x:Name="button3" Content="Kontakt os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
+                <Button x:Name="button1" Content="Bliv Udlejer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667" Command="{Binding NavToOpretSommerhus}"/>
+                <Button x:Name="button3" Content="Kontakt os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667" Command="{Binding ShowPageKontaktOsCommand}"/>
                 <Button x:Name="button" Content="Om os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Column="2" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#CC192B46"/>
+        <StackPanel Grid.Column="2" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Background="#CC192B46">
+            <StackPanel Height="257" Margin="0,0,0,25">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="France Vacance" Height="59" FontFamily="Comic Sans MS" FontSize="46.667" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="331,0,330,0"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Height="172" Margin="0,25,0,0">
+					<Run FontStyle="Italic" FontSize="21.333" Text="Info om France Vacance:"/>
+					<LineBreak/>
+					<Run FontSize="16"/>
+					<LineBreak/>
+					<Run FontSize="16" Text="France Vacance er et sommerhus udlejningsfirma som lever af at udleje private personers sommmerhuse ud. Dette vil sige at en privat"/>
+					<Run FontSize="16" Text="person"/>
+					<Run FontSize="16" Text="med et sommerhus de ikke"/>
+					<Run FontSize="16" Text="bruger, kan"/>
+					<Run FontSize="16" Text="tage kontakt til os, vi denne app, hvor sommerhuset så kan blive oprettet og"/>
+					<Run FontSize="16" Text="så blive klar til udlejning."/>
+					<LineBreak/>
+					<Run FontSize="16"/>
+					<LineBreak/>
+					<Run FontSize="16" Text="France Vacance har to hovedkvarterer. Det ene ligger i Englang og det "/>
+					<Run FontSize="16" Text="andet ligger i Frankrig."/>
+					<LineBreak/>
+					<Run FontSize="16" Text="Hvis det ønskes kan der også blive bestilt sommerhuse derfra."/>
+					<LineBreak/>
+					<Run FontSize="16"/>
+					<Run FontSize="16" Text=" "/>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Height="228" Orientation="Horizontal" Margin="0">
+                <StackPanel Width="491">
+                    <StackPanel Height="115" HorizontalAlignment="Left" Width="179" Margin="120,0,0,5">
+                        <StackPanel.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/bygning.jpg"/>
+                        </StackPanel.Background>
+                    </StackPanel>
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Height="60" HorizontalAlignment="Left" Margin="120,0,0,0">
+						<Run Text="France Vacance Hovedkvarter i Englang"/>
+						<LineBreak/>
+						<Run Text="Adresse: Enellerandenvej 120"/>
+						<LineBreak/>
+						<Run Text="By: London"/>
+						<LineBreak/>
+						<Run Text="Tlf: 87654321"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Width="506">
+                    <StackPanel Height="115" HorizontalAlignment="Left" Width="179" Margin="0,0,8,5">
+                        <StackPanel.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/bygning.jpg"/>
+                        </StackPanel.Background>
+                    </StackPanel>
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Height="59" HorizontalAlignment="Left">
+						<Run Text="France Vacance Hovedkvarter i Frankrig"/>
+						<LineBreak/>
+						<Run Text="Adresse: Enellerandenvej 110"/>
+						<LineBreak/>
+						<Run Text="By: Paris"/>
+						<LineBreak/>
+						<Run Text="Tlf: 65478932"/>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
