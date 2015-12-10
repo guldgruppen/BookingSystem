@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Assets/FranceImage.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="{Binding CurrentImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stretch="UniformToFill"/>           
         </Grid.Background>
         <Grid.ChildrenTransitions>
             <TransitionCollection>

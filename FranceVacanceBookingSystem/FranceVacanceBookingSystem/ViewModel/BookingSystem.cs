@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.Security.Cryptography.Core;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using FranceVacanceBookingSystem.Annotations;
 using FranceVacanceBookingSystem.Common;
 using FranceVacanceBookingSystem.Model;
@@ -24,9 +25,51 @@ namespace FranceVacanceBookingSystem.ViewModel
         private int _selectedAntalVærelser;
         private bool _selectedHusdyr;
         private bool _selectedSwimmingpool;
+        private Uri _currentImage1;
 
         #endregion
         #region Properties
+
+        //*************************************************************************
+
+        public DispatcherTimer Timer { get; set; } = new DispatcherTimer();
+        public static int CountBackground { get; set; } = 0;
+        public  Uri[] BackgroundImages { get; set; }
+
+        public Uri CurrentImage
+        {
+            get { return _currentImage1; }
+            set
+            {
+                _currentImage1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void StartTimer()
+        {
+            Timer.Interval = TimeSpan.FromSeconds(4);            
+            Timer.Tick += (sender, e) =>
+            {
+                if (CountBackground == 2)
+                    CountBackground = 0;
+                else
+                CountBackground++;
+
+                if (CountBackground == 0)
+                {
+                    CurrentImage = BackgroundImages[0];
+                }
+                if (CountBackground == 1)
+                CurrentImage = BackgroundImages[1];
+                if (CountBackground == 2)
+                {
+                    CurrentImage = BackgroundImages[2];                   
+                }                
+
+            };
+            Timer.Start();
+        }
 
         //*************************************************************************
         public int SelectedAntalVærelser
@@ -143,7 +186,16 @@ namespace FranceVacanceBookingSystem.ViewModel
             LoadProfiles();
             LoadSommerhuse();
             LoadBookings();
+           
+            BackgroundImages = new Uri[] { new Uri("ms-appx:///assets/FranceImage.jpg"), new Uri("ms-appx:///assets/FranceImage2.jpg"), new Uri("ms-appx:///assets/louvre-museum.jpg") };
+            CurrentImage = BackgroundImages[CountBackground];            
+            StartTimer();
             
+
+
+
+
+
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
             
