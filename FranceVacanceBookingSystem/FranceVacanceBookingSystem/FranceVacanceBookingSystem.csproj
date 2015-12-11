@@ -165,6 +165,7 @@
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-140.png" />
     <Content Include="Assets\BadgeLogo.scale-180.png" />
+    <Content Include="Assets\bygning.jpg" />
     <Content Include="Assets\FranceImage.jpg" />
     <Content Include="Assets\FranceImage2.jpg" />
     <Content Include="Assets\FranceVacanceSplashScreen.scale-180.png" />

@@ -25,7 +25,7 @@ namespace FranceVacanceBookingSystem.Model
             CheckAntalSoveværelser(antalSoveværelser);
             CheckBeliggenhed(beliggenhed);
             CheckPris(pris);
-            CheckStørrelse(størrelse);
+            CheckStørrelse(størrelse);            
             AntalPersoner = antalPersoner;
             AntalBadeværelser = antalBadeværelser;
             AntalSoveværelser = antalSoveværelser;

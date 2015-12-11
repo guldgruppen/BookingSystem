@@ -13,8 +13,6 @@ namespace FranceVacanceBookingSystem.Model
     public class BookingRegister
     {
         public ObservableCollection<Booking> Bookings { get; set; }
-        public static DateTimeOffset SelectedFra { get; set; }
-        public static DateTimeOffset SelectedTil { get; set; }
 
         public BookingRegister()
         {
@@ -22,7 +20,7 @@ namespace FranceVacanceBookingSystem.Model
         }
 
 
-        public void CheckIfBooking(Profile profil, Sommerhus somhus, DateTimeOffset fra, DateTimeOffset til)
+        public void AddBooking(Profile profil, Sommerhus somhus, DateTimeOffset fra, DateTimeOffset til)
         {           
             Bookings.Add(new Booking(profil,somhus,fra,til));
         }

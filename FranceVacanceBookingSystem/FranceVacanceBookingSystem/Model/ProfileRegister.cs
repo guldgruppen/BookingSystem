@@ -17,8 +17,15 @@ namespace FranceVacanceBookingSystem.Model
               
         public void AddProfile(string username, string password)
         {
-            Profiles.Add(new Profile(username,password));
-           
+            foreach (Profile profil in Profiles)
+            {
+                if(profil.Username == username)
+                    throw new ArgumentException("Brugernavn eksisterer i forvejen,  indtast et andet brugernavn");
+                
+            }
+            Profiles.Add(new Profile(username, password));
+
+
         }        
         public Profile FindProfile(string username, string password)
         {
@@ -31,6 +38,7 @@ namespace FranceVacanceBookingSystem.Model
             }
             throw new NullReferenceException("Profil eksisterer ikke");
         }
+
 
     }
 }

@@ -30,12 +30,9 @@ namespace FranceVacanceBookingSystem.ViewModel
         #endregion
         #region Properties
 
-        //*************************************************************************
-
         public DispatcherTimer Timer { get; set; } = new DispatcherTimer();
         public static int CountBackground { get; set; } = 0;
         public  Uri[] BackgroundImages { get; set; }
-
         public Uri CurrentImage
         {
             get { return _currentImage1; }
@@ -45,33 +42,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 OnPropertyChanged();
             }
         }
-
-        public void StartTimer()
-        {
-            Timer.Interval = TimeSpan.FromSeconds(4);            
-            Timer.Tick += (sender, e) =>
-            {
-                if (CountBackground == 2)
-                    CountBackground = 0;
-                else
-                CountBackground++;
-
-                if (CountBackground == 0)
-                {
-                    CurrentImage = BackgroundImages[0];
-                }
-                if (CountBackground == 1)
-                CurrentImage = BackgroundImages[1];
-                if (CountBackground == 2)
-                {
-                    CurrentImage = BackgroundImages[2];                   
-                }                
-
-            };
-            Timer.Start();
-        }
-
-        //*************************************************************************
         public int SelectedAntalVærelser
         {
             get { return _selectedAntalVærelser; }
@@ -102,9 +72,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 _selectedSwimmingpool = value;
                 OnPropertyChanged();
             }
-        }
-
-        //*************************************************************************
+        }       
         public ProfileRegister ProfileRegister { get; set; }
         public KundeRegister KundeRegister { get; set; }
         public AdminRegister AdminRegister { get; set; }
@@ -132,6 +100,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public DateTimeOffset MaxValueFra { get; set; }  = DateTimeOffset.Parse("01-01-2016");
         public DateTimeOffset MinValueTil { get; set; } = DateTimeOffset.Parse("01-01-2020");
         public DateTimeOffset MaxValueTil { get; set; } = DateTimeOffset.Parse("01-01-2020");
+
 
         public bool HusdyrTilladt { get; set; }
         public bool Swimmingpool { get; set; }               
@@ -190,11 +159,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             BackgroundImages = new Uri[] { new Uri("ms-appx:///assets/FranceImage.jpg"), new Uri("ms-appx:///assets/FranceImage2.jpg"), new Uri("ms-appx:///assets/louvre-museum.jpg") };
             CurrentImage = BackgroundImages[CountBackground];            
             StartTimer();
-            
-
-
-
-
+           
 
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
@@ -244,7 +209,6 @@ namespace FranceVacanceBookingSystem.ViewModel
         }
 
         #endregion
-
         #region Methods
         private void MatchAfSommerhus()
         {                               
@@ -268,13 +232,37 @@ namespace FranceVacanceBookingSystem.ViewModel
             } 
                     
         }
+        public void StartTimer()
+        {
+            Timer.Interval = TimeSpan.FromSeconds(10);
+            Timer.Tick += (sender, e) =>
+            {
+                if (CountBackground == 2)
+                    CountBackground = 0;
+                else
+                    CountBackground++;
+
+                if (CountBackground == 0)
+                {
+                    CurrentImage = BackgroundImages[0];
+                }
+                if (CountBackground == 1)
+                    CurrentImage = BackgroundImages[1];
+                if (CountBackground == 2)
+                {
+                    CurrentImage = BackgroundImages[2];
+                }
+
+            };
+            Timer.Start();
+        }
         public void CheckTime(DateTimeOffset fra, DateTimeOffset til)
         {           
             if(fra > til)
                 throw new ArgumentException("Din fradato skal være tidligere end din tildato");
             var difTimeSpan = til - fra;
             int DifInNumber = difTimeSpan.Days;
-            if(DifInNumber > 60)
+            if(DifInNumber > 365)
                 throw new ArgumentException("Du kan ikke rejse mere end 2 måneder");
             if(DifInNumber == 0)
                 throw new ArgumentException("Du skal minimum være afsted i 1 dag");
@@ -288,7 +276,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 BonDialog = new MessageDialog("Er du sikker på at du vil booke sommerhuset i "+temp.Beliggenhed+ " fra: "+FraDato.ToString("d") + " til: "+TilDato.ToString("d"));
                 BonDialog.Commands.Add(new UICommand("JA", command =>
                 {                    
-                    BookingRegister.CheckIfBooking(Pro, temp, FraDato, TilDato);
+                    BookingRegister.AddBooking(Pro, temp, FraDato, TilDato);
                     Dialog.Show("Booking gennemført");
                     BookingPersistency.SaveBookingAsJsonAsync(BookingRegister.Bookings);
                 }));
@@ -355,7 +343,7 @@ namespace FranceVacanceBookingSystem.ViewModel
         public void AddCustomerWithProfile()
         {
             try
-            {              
+            {                           
                 ProfileRegister.AddProfile(Username, Password);
                 KundeRegister.AddKunde(Username, Password, Adress, Email, Name, Tlf);
                 CheckRepeatPassword(Password, RepeatPassword);

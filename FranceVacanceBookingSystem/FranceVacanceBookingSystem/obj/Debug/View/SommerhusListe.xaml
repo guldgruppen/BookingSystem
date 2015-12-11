@@ -131,7 +131,7 @@
 
         </ListView>
         <StackPanel HorizontalAlignment="Right" Height="86" VerticalAlignment="Top" Margin="5,0,0,0" Grid.Row="2" Background="#FF685C5C" Grid.Column="1" Orientation="Horizontal">
-            <Button x:Name="button" Content="Tilføj Til Favoritter" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="253"  Background="#FFDE4A4A" FontSize="26.667" Margin="0,0,0,-2"/>
+            <Button x:Name="button" Content="Tilføj Til Favoritter" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="253"  Background="#FFE03131" FontSize="26.667" Margin="0,0,0,-2"/>
             <Button x:Name="button_Copy" Content="Mere Info" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="230"  Background="#FFDA8836" FontSize="26.667"/>
             <Button x:Name="button_Copy1" Content="Book Sommerhus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="261" Command="{Binding BookingCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="#FF5ECB2B" FontSize="26.667" Margin="0,0,0,-2"/>
         </StackPanel>
