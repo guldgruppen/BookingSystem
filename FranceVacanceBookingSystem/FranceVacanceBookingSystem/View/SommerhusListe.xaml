@@ -117,8 +117,8 @@
                             <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,20,0,0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="{Binding AntalSoveværelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
                             <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="{Binding Størrelse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="{Binding HusdyrTilladt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,-27,0" FontSize="21.333"/>
-                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="{Binding Swimmingpool, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="{Binding HusdyrText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,-27,0" FontSize="21.333"/>
+                            <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="{Binding SwimmingpoolText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" FontSize="21.333"/>
                         </StackPanel>
                         <StackPanel Margin="9,0,31,2" Grid.Column="5" Orientation="Horizontal" Grid.ColumnSpan="2">
                             <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,100,0,0" FontSize="40"/>

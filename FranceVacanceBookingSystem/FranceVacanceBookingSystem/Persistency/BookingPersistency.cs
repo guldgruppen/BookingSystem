@@ -14,14 +14,11 @@ namespace FranceVacanceBookingSystem.Persistency
     public class BookingPersistency
     {
         private static string JsonFileBooking = "BBookAsJsonFile.dat";
-
-
         public static async void SaveBookingAsJsonAsync(ObservableCollection<Booking> sh)
         {
             string kundeJsonString = JsonConvert.SerializeObject(sh);
             SerializeKunderFileAsync(kundeJsonString, JsonFileBooking);
         }
-
         public static async Task<List<Booking>> LoadBookingFromJsonAsync()
         {
             string kundeJsonString = await DeserializekunderFileAsync(JsonFileBooking);
@@ -29,16 +26,11 @@ namespace FranceVacanceBookingSystem.Persistency
                 return (List<Booking>)JsonConvert.DeserializeObject(kundeJsonString, typeof(List<Booking>));
             return null;
         }
-
-
-
         private static async void SerializeKunderFileAsync(string kunderJsonString, string fileName)
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(localFile, kunderJsonString);
         }
-
-
         private static async Task<string> DeserializekunderFileAsync(string fileName)
         {
             try

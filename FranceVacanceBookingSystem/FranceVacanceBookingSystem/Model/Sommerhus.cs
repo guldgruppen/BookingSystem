@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -10,13 +11,43 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Sommerhus
     {
+        private bool _husdyrTilladt;
+        private bool _swimmingpool;
         public int AntalBadeværelser { get; set; }
         public int AntalSoveværelser { get; set; }
         public string Beliggenhed { get; set; }
-        public bool HusdyrTilladt { get; set; }
+
+        public bool Swimmingpool
+        {
+            get { return _swimmingpool; }
+            set
+            {
+                _swimmingpool = value;
+                if (value == true)
+                    SwimmingpoolText = "ja";
+                if (value == false)
+                    SwimmingpoolText = "nej";
+            }
+        }
+
+        public bool HusdyrTilladt
+        {
+            get { return _husdyrTilladt; }
+            set
+            {
+                _husdyrTilladt = value;
+                if (value == true)
+                    HusdyrText = "ja";
+                if (value == false)
+                    HusdyrText = "nej";                
+
+            }
+        }
+        public string HusdyrText { get; set; }
+        public string SwimmingpoolText { get; set; }
+
         public int Pris { get; set; }
-        public int Størrelse { get; set; }
-        public bool Swimmingpool { get; set; }
+        public int Størrelse { get; set; }      
         public int AntalPersoner { get; set; }
 
         public Sommerhus(int antalPersoner, int antalBadeværelser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
