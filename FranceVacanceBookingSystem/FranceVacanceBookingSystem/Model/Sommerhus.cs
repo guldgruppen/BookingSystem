@@ -10,14 +10,46 @@ namespace FranceVacanceBookingSystem.Model
 {
     public class Sommerhus
     {
+        private bool _swimmingpool;
+        private bool _husdyrTilladt;
         public int AntalBadeværelser { get; set; }
         public int AntalSoveværelser { get; set; }
         public string Beliggenhed { get; set; }
-        public bool HusdyrTilladt { get; set; }
+
+        public bool HusdyrTilladt
+        {
+            get { return _husdyrTilladt; }
+            set
+            {
+                _husdyrTilladt = value;
+                if (value)
+                    HusdyrIText = "Ja";
+                else
+                {
+                    HusdyrIText = "Nej";
+                }
+            }
+        }
+
         public int Pris { get; set; }
         public int Størrelse { get; set; }
-        public bool Swimmingpool { get; set; }
+        public bool Swimmingpool
+        {
+            get { return _swimmingpool; }
+            set
+            {
+                _swimmingpool = value;
+                if (value)
+                    SwimmingPoolIText = "Ja";
+                else
+                {
+                    SwimmingPoolIText = "Nej";
+                }
+            }
+        }
         public int AntalPersoner { get; set; }
+        public string HusdyrIText { get; set; }
+        public string SwimmingPoolIText { get; set; }
 
         public Sommerhus(int antalPersoner, int antalBadeværelser, int antalSoveværelser, string beliggenhed, bool husdyrTilladt, int pris, int størrelse,bool swimmingpool)
         {
