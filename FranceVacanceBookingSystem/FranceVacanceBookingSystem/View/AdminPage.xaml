@@ -65,8 +65,8 @@
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="20,0,387,40" Text="Administrator" HorizontalAlignment="Center" FontSize="106.667" Foreground="#FF2C2828">
             </TextBlock>
             <StackPanel HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Grid.Column="1" Margin="0,20,90,0" Orientation="Horizontal">
-                <Button x:Name="button3" Content="Statistik" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,31,0,0" Width="166" Background="#FFFA2F2F" FontSize="26.667"/>
-                <Button x:Name="button3_Copy" Content="Log ud" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,31,0,0" Width="166" Background="#FFFA2F2F" Height="69" FontSize="26.667"/>
+                <Button x:Name="button3" Content="Statistik" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,31,0,0" Width="166" Background="#FFFA2F2F" FontSize="26.667" Command="{Binding NavToStatistikCommand}"/>
+                <Button x:Name="button3_Copy" Content="Log ud" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,31,0,0" Width="166" Background="#FFFA2F2F" Height="69" FontSize="26.667" Command="{Binding LogudCommand}"/>
             </StackPanel>
         </Grid>
         <ListView x:Name="listView" Grid.Column="3" Grid.Row="3" Background="#FF306791" Margin="3,0,0,80" ItemsSource="{Binding KundeRegister.Kunder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedIndexListeKunde, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
@@ -150,7 +150,7 @@
         <StackPanel Grid.Column="1" Height="71" Grid.Row="3" Background="#FF4B7B9F" Margin="0,0,0,10" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Button x:Name="button1" Content="Slet booking" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0" FontSize="22.667" Background="#FFDE7219"/>
             <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Antal Bookninger:" FontSize="26.667" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="200,0,0,3"/>
-            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="0" FontSize="26.667" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0,0,3"/>
+            <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="{Binding BookingRegister.Bookings.Count, Mode=OneWay}" FontSize="26.667" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0,0,3"/>
         </StackPanel>
     </Grid>
 </Page>

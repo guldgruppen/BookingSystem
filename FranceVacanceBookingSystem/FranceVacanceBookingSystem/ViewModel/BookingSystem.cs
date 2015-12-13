@@ -135,6 +135,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand ShowPageOmOsCommand { get; set; }
         public RelayCommand ShowPageKontaktOsCommand { get; set; }
         public RelayCommand BookingCommand { get; set; }
+        public RelayCommand NavToStatistikCommand { get; set; }
+        public RelayCommand NavToAdminPageCommand { get; set; }
 
         #endregion
         #region Constructors
@@ -203,7 +205,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             ShowPageOmOsCommand = new RelayCommand(ShowOmOs);
             ShowPageKontaktOsCommand = new RelayCommand(ShowKontaktOs);            
             BookingCommand = new RelayCommand(TryToBook);
-
+            NavToStatistikCommand = new RelayCommand(NavigateToStatistikPage);
+            NavToAdminPageCommand = new RelayCommand(NavigateToAdminPage);
            
 
         }
@@ -415,7 +418,13 @@ namespace FranceVacanceBookingSystem.ViewModel
         public void NavigateToAdminPage()
         {           
             _navigationService.Navigate(typeof(AdminPage));
-        }       
+        }
+
+        public void NavigateToStatistikPage()
+        {
+            _navigationService.Navigate(typeof(Statistik));
+        }
+
         public void AddSommerhus()
         {
             try

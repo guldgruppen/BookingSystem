@@ -124,7 +124,7 @@
     <Compile Include="Persistency\BookingPersistency.cs" />
     <Compile Include="Persistency\KundePersistency.cs" />
     <Compile Include="Persistency\ProfilePersistency.cs" />
-    <Compile Include="View\SommerhusPersistency.cs" />
+    <Compile Include="Persistency\SommerhusPersistency.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
     <Compile Include="View\AdminPage.xaml.cs">
@@ -152,6 +152,9 @@
     </Compile>
     <Compile Include="View\SommerhusListe.xaml.cs">
       <DependentUpon>SommerhusListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statistik.xaml.cs">
+      <DependentUpon>Statistik.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SommerhusListe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statistik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
