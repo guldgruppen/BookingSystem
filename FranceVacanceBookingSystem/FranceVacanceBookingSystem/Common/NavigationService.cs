@@ -22,6 +22,7 @@ namespace FranceVacanceBookingSystem.Common
             frame.Navigate(sourcePage, parameter);
         }
 
+
         public void GoBack()
         {
             var frame = (Frame)Window.Current.Content;
