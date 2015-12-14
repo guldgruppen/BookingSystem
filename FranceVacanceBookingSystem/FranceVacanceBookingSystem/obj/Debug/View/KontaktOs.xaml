@@ -61,6 +61,11 @@
 				AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="Kontakt Os" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <StackPanel Height="34" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0,19,27,0" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
+                <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="Brugernavn:" FontSize="20"/>
+                <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="{Binding LoginUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
+            </StackPanel>
+            <Button x:Name="button1_Copy" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="67" FontSize="32" Margin="0,0,27,20" Background="#B25474A3" Content="Log Ud" Command="{Binding LogudCommand}" Grid.Column="1" Width="204"/>
         </Grid>
         <Grid Grid.Row="1" Background="#FF08172E" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Margin="0,0,-2,0" Grid.RowSpan="3">
             <Grid.RowDefinitions>
@@ -69,7 +74,7 @@
                 <RowDefinition Height="56*"/>
             </Grid.RowDefinitions>
             <StackPanel Margin="10,0" Orientation="Vertical" Width="220" Height="376" Grid.Row="1">
-                <Button x:Name="button2" Content="Min Profil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,50,0,0" Height="54" FontSize="26.667"/>
+                <Button x:Name="button2" Content="Min Profil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,50,0,0" Height="54" FontSize="26.667" Command="{Binding ShowPageMinProfilCommand}"/>
                 <Button x:Name="button1" Content="Bliv Udlejer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667" Command="{Binding NavToOpretSommerhus}"/>
                 <Button x:Name="button3" Content="Kontakt os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667"/>
                 <Button x:Name="button" Content="Om os" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:LayoutOverrides="Width" Margin="0,10,0,0" Height="54" FontSize="26.667" Command="{Binding ShowPageOmOsCommand}"/>
