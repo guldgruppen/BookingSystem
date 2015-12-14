@@ -124,6 +124,9 @@
     <Compile Include="Persistency\BookingPersistency.cs" />
     <Compile Include="Persistency\KundePersistency.cs" />
     <Compile Include="Persistency\ProfilePersistency.cs" />
+    <Compile Include="View\MinProfil.xaml.cs">
+      <DependentUpon>MinProfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SommerhusPersistency.cs" />
     <Compile Include="ViewModel\BookingSystem.cs" />
     <Compile Include="ViewModel\OpretSommerhus.cs" />
@@ -256,6 +259,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MinProfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

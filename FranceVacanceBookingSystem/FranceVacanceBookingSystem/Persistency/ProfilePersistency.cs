@@ -16,17 +16,17 @@ namespace FranceVacanceBookingSystem.Persistency
     {
         private static string JsonFileProfiles = "ProfilAsJson.dat";
 
-        public static async void SaveProfilesAsJsonAsync(List<Profile> sh)
+        public static async void SaveProfilesAsJsonAsync(Dictionary<string, string> sh)
         {
             string notesJsonString = JsonConvert.SerializeObject(sh);
             SerializeProfilesFileAsync(notesJsonString, JsonFileProfiles);
         }
 
-        public static async Task<List<Profile>> LoadProfilesFromJsonAsync()
+        public static async Task<Dictionary<string, string>> LoadProfilesFromJsonAsync()
         {
             string SommerhusJsonString = await DeserializeProfilesFileAsync(JsonFileProfiles);
             if (SommerhusJsonString != null)
-                return (List<Profile>)JsonConvert.DeserializeObject(SommerhusJsonString, typeof(List<Profile>));
+                return (Dictionary<string, string>)JsonConvert.DeserializeObject(SommerhusJsonString, typeof(Dictionary<string, string>));
             return null;
         }
 
