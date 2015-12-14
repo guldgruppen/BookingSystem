@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -26,7 +27,18 @@ namespace FranceVacanceBookingSystem.Model
             Kunder.Add(new Kunde(adresse, email, name, tlf, username, password));    
         }
 
-
+        public Kunde FindKunde(string username, string password)
+        {
+            foreach (var kunder in Kunder)
+            {
+                if (kunder.Username == username && kunder.Password == password)
+                {
+                    return kunder;
+                }
+            }
+            throw new NullReferenceException("Kunde eksisterer ikke");
+        }
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

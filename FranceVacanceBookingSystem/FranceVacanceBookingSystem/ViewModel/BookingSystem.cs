@@ -28,7 +28,6 @@ namespace FranceVacanceBookingSystem.ViewModel
         #endregion
         #region Properties
 
-        //*************************************************************************
         public int SelectedAntalVærelser
         {
             get { return _selectedAntalVærelser; }
@@ -59,14 +58,15 @@ namespace FranceVacanceBookingSystem.ViewModel
                 _selectedSwimmingpool = value;
                 OnPropertyChanged();
             }
-        }
-
-        //*************************************************************************
+        }   
         public ProfileRegister ProfileRegister { get; set; }
         public KundeRegister KundeRegister { get; set; }
         public AdminRegister AdminRegister { get; set; }
         public BookingRegister BookingRegister { get; set; }
+
+        public FavoritRegister FavoritRegister { get; set; }
         public static Profile Pro { get; set; }
+        public static Kunde KundeLogin { get; set; }
 
         public Profile LoginProfile { get; set; }
         public static string LoginUsername { get; set; }
@@ -97,6 +97,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             get { return _loginTypes; }
             set { _loginTypes = value; }
         }
+        
         public int SelectedIndexLoginType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -125,6 +126,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand BookingCommand { get; set; }
         public RelayCommand NavToMinProfilCommand { get; set; }
 
+        public RelayCommand AddFavoritCommand { get; set; }
+
         #endregion
         #region Constructors
         public BookingSystem()
@@ -132,6 +135,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse = new ObservableCollection<Sommerhus>();
             PersoneriCombobox = new ObservableCollection<int>();
             VærelserICombobox = new ObservableCollection<int>();
+
                        
             //InitSommerhus();
 
@@ -139,12 +143,18 @@ namespace FranceVacanceBookingSystem.ViewModel
             KundeRegister = new KundeRegister();
             AdminRegister = new AdminRegister();
             BookingRegister = new BookingRegister();
+            FavoritRegister = new FavoritRegister();
 
             LoadKunder();
             LoadProfiles();
             LoadSommerhuse();
             LoadBookings();
-            
+
+            if (Pro != null)
+            {
+                LoadFavorits();
+            }
+
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
             
@@ -191,6 +201,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 _navigationService.Navigate(typeof(MinProfil));
             });
+            AddFavoritCommand = new RelayCommand(AddToFavorites);
 
            
 
@@ -305,6 +316,32 @@ namespace FranceVacanceBookingSystem.ViewModel
         {
             _navigationService.Navigate(typeof(KontaktOs));
         }
+        public void NavToMinProfil()
+        {
+
+            _navigationService.Navigate(typeof(MinProfil));
+        }
+        public void AddToFavorites()
+        {
+            try
+            {
+                NoSelectedIndex(SommerhusIndex);
+                Sommerhus temp = SommerhusMatch[SommerhusIndex];
+                foreach (var t in FavoritRegister.FavoritListe)
+                {
+                    if(t.FavoritSommerhus.Equals(temp))
+                        throw new Exception("eksisterer i forvejen");
+                }
+                FavoritRegister.Addfavorit(Pro, temp);
+                Dialog.Show("Sommerhus tilføjet til dine favoritter");
+                FavoritPersistency.SaveFavoritAsJsonAsync(FavoritRegister.FavoritListe);
+            }
+            catch (Exception ex)
+            {
+                Dialog.Show(ex.Message);
+            }
+        }
+
         public void AddCustomerWithProfile()
         {
             try
@@ -334,7 +371,8 @@ namespace FranceVacanceBookingSystem.ViewModel
                 if (LoginTypes[SelectedIndexLoginType] == "Kunde")
                 {
                     Pro = ProfileRegister.FindDicProfile(Username, Password);
-                    LoginUsername = Pro.Username;                                                                       
+                    KundeLogin = KundeRegister.FindKunde(Pro.Username, Pro.Password);
+                    LoginUsername = Pro.Username;                    
                     NavigateToMainSystem();
                 }
                 if (LoginTypes[SelectedIndexLoginType] == "Admin")
@@ -451,6 +489,22 @@ namespace FranceVacanceBookingSystem.ViewModel
                 foreach (var s in loadedBookings)
                 {
                     BookingRegister.Bookings.Add(s);
+                }
+                OnPropertyChanged();
+
+            }
+        }
+
+        private async void LoadFavorits()
+        {
+            var loadedFavorit = await FavoritPersistency.LoadFavoritFromJsonAsync();
+
+            if (loadedFavorit != null)
+            {
+                FavoritRegister.FavoritListe.Clear();
+                foreach (var s in loadedFavorit.Where( x => x.FavoritProfile.Username == Pro.Username))
+                {
+                    FavoritRegister.FavoritListe.Add(s);
                 }
                 OnPropertyChanged();
 

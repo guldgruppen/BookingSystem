@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Core.AnimationMetrics;
 
 namespace FranceVacanceBookingSystem.Model
 {
@@ -13,6 +15,7 @@ namespace FranceVacanceBookingSystem.Model
 
         public Profile(string username, string password)
         {
+            
             CheckUsername(username);
             CheckPassword(password);           
             Username = username;

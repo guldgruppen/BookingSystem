@@ -116,12 +116,15 @@
     <Compile Include="Model\AdminRegister.cs" />
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\BookingRegister.cs" />
+    <Compile Include="Model\FavoritRegister.cs" />
+    <Compile Include="Model\FavoritSommerhuse.cs" />
     <Compile Include="Model\Kunde.cs" />
     <Compile Include="Model\KundeRegister.cs" />
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\ProfileRegister.cs" />
     <Compile Include="Model\Sommerhus.cs" />
     <Compile Include="Persistency\BookingPersistency.cs" />
+    <Compile Include="Persistency\FavoritPersistency.cs" />
     <Compile Include="Persistency\KundePersistency.cs" />
     <Compile Include="Persistency\ProfilePersistency.cs" />
     <Compile Include="View\MinProfil.xaml.cs">

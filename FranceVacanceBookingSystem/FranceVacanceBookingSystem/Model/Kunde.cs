@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using Windows.UI.Core.AnimationMetrics;
 
 namespace FranceVacanceBookingSystem.Model
 {
     public class Kunde
     {
-        private static int _id = 1;
 
         #region Instance Fields
-
+        private string _name;
+        private string _adress;
+        private string _email;
+        private string _tlf;
         #endregion
 
         #region Properties
@@ -34,16 +38,8 @@ namespace FranceVacanceBookingSystem.Model
         public string Username { get; set; }
         public string Password { get; set; }
 
+        public ObservableCollection<Sommerhus> Favoritter { get; set; }
 
-        private string _name;
-        private string _adress;
-        private string _email ;
-        private string _tlf;
-        public static int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
 
         #endregion
 
@@ -53,17 +49,22 @@ namespace FranceVacanceBookingSystem.Model
             CheckName(name);
             CheckAdress(adress);
             CheckEmail(email);
-            CheckTlf(tlf);
-            _id++;
+            CheckTlf(tlf);            
             Adress = adress;
             Email = email;
             Name = name;
             Tlf = tlf;
             Username = username;
             Password = password;
+            Favoritter = new ObservableCollection<Sommerhus>();
            
         } 
         #endregion
+
+        public void AddFavoritSommerhus(Sommerhus s)
+        {
+            Favoritter.Add(s);
+        }
 
         public override string ToString()
         {
