@@ -123,6 +123,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public RelayCommand ShowPageOmOsCommand { get; set; }
         public RelayCommand ShowPageKontaktOsCommand { get; set; }
         public RelayCommand BookingCommand { get; set; }
+        public RelayCommand ShowPageMinProfilCommand { get; set; }
+      
 
         #endregion
         #region Constructors
@@ -186,6 +188,8 @@ namespace FranceVacanceBookingSystem.ViewModel
             ShowPageOmOsCommand = new RelayCommand(ShowOmOs);
             ShowPageKontaktOsCommand = new RelayCommand(ShowKontaktOs);            
             BookingCommand = new RelayCommand(TryToBook);
+            ShowPageMinProfilCommand=new RelayCommand(ShowMinProfil);
+        
 
            
 
@@ -300,6 +304,13 @@ namespace FranceVacanceBookingSystem.ViewModel
         {
             _navigationService.Navigate(typeof(KontaktOs));
         }
+
+        public void ShowMinProfil()
+        {
+            _navigationService.Navigate(typeof(MinProfil));
+        }
+
+        
         public void AddCustomerWithProfile()
         {
             try

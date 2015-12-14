@@ -141,6 +141,9 @@
     <Compile Include="View\MainSystem.xaml.cs">
       <DependentUpon>MainSystem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MinProfil.xaml.cs">
+      <DependentUpon>MinProfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OmOs.xaml.cs">
       <DependentUpon>OmOs.xaml</DependentUpon>
     </Compile>
@@ -256,6 +259,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MinProfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
