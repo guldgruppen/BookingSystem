@@ -11,13 +11,34 @@ namespace FranceVacanceBookingSystem.Model
         #endregion
 
         #region Properties
-        public string Adress { get; set; }
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public string Tlf { get; set; }
+        public string Adress
+        {
+            get { return _adress; }
+            set { CheckAdress(value); _adress = value; }
+        }
+        public string Email
+        {
+            get { return _email; }
+            set { CheckEmail(value); _email = value; }
+        }
+        public string Name
+        {
+            get { return _name; }
+            set { CheckName(value); _name = value; }
+        }
+        public string Tlf
+        {
+            get { return _tlf; }
+            set { CheckTlf(value); _tlf = value; }
+        }
         public string Username { get; set; }
         public string Password { get; set; }
 
+
+        private string _name;
+        private string _adress;
+        private string _email ;
+        private string _tlf;
         public static int Id
         {
             get { return _id; }
