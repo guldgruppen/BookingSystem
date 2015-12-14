@@ -303,8 +303,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public void AddCustomerWithProfile()
         {
             try
-            {              
-                ProfileRegister.AddProfile(Username, Password);
+            {                             
+                ProfileRegister.AddDicProfile(Username,Password);
                 KundeRegister.AddKunde(Username, Password, Adress, Email, Name, Tlf);
                 CheckRepeatPassword(Password, RepeatPassword);
                 Dialog.Show("Profil er tilføjet");
@@ -313,7 +313,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             {
                 Dialog.Show(ex.Message);
             }
-            ProfilePersistency.SaveProfilesAsJsonAsync(ProfileRegister.Profiles);
+            ProfilePersistency.SaveProfilesAsJsonAsync(ProfileRegister.DicProfile);
             KundePersistency.SaveKunderAsJsonAsync(KundeRegister.Kunder);
         }
         public void CheckRepeatPassword(string password, string repeatPassword)
@@ -328,7 +328,7 @@ namespace FranceVacanceBookingSystem.ViewModel
                 CheckForNullOrWhiteSpace(Username, Password);
                 if (LoginTypes[SelectedIndexLoginType] == "Kunde")
                 {
-                    Pro = ProfileRegister.FindProfile(Username, Password);
+                    Pro = ProfileRegister.FindDicProfile(Username, Password);
                     LoginUsername = Pro.Username;                                                                       
                     NavigateToMainSystem();
                 }
@@ -394,10 +394,10 @@ namespace FranceVacanceBookingSystem.ViewModel
             var loadedProfiles = await ProfilePersistency.LoadProfilesFromJsonAsync();
             if (loadedProfiles != null)
             {
-                ProfileRegister.Profiles.Clear();
+                ProfileRegister.DicProfile.Clear();
                 foreach (var profile in loadedProfiles)
                 {
-                    ProfileRegister.Profiles.Add(profile);
+                    ProfileRegister.DicProfile.Add(profile.Key,profile.Value);
                 }
             }
         }
@@ -412,13 +412,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse.Add(new Sommerhus(5,2, 4, "Val Torens", true, 5000, 250, true));
             Sommerhuse.Add(new Sommerhus(5,6, 8, "Val Torens", true, 5000, 250, true));
             Sommerhuse.Add(new Sommerhus(5,3, 3, "Val Torens", false, 3500, 150, false));
-        }
-        public void DeleteCustomer()
-        {
-            ProfileRegister.Profiles = null;
-            OnPropertyChanged();
-            Dialog.Show("done");
-        }    
+        }   
         private async void LoadSommerhuse()
         {
             var loadedSommerhuse = await SommerhusPersistency.LoadSommerhuseFromJsonAsync();

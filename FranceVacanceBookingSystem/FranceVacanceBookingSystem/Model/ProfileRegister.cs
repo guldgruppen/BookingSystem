@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace FranceVacanceBookingSystem.Model
 {
     public class ProfileRegister
-    {
-        public List<Profile> Profiles { get; set; }     
+    {     
+        public Dictionary<string,string> DicProfile { get; set; } 
         public ProfileRegister()
         {           
-            Profiles = new List<Profile>()
-            {
-                new Profile("bob","bob"),
-                new Profile("john","john")
-            };           
+            DicProfile = new Dictionary<string, string>();
+            DicProfile.Add("bo", "bo");
+            DicProfile.Add("jan","jan");         
         }
               
-        public void AddProfile(string username, string password)
+
+        public void AddDicProfile(string username, string password)
         {
-            Profiles.Add(new Profile(username,password));
-           
-        }        
-        public Profile FindProfile(string username, string password)
+            DicProfile.Add(username,password);
+        }
+
+        public Profile FindDicProfile(string username, string password)
         {
-            foreach (var profile in Profiles)
+            foreach (var dics in DicProfile)
             {
-                if (profile.Username == username && profile.Password == password)
+                if (dics.Key == username && dics.Value == password)
                 {
-                    return profile;
-                }
+                    return new Profile(dics.Key,dics.Value);
+                }                              
             }
             throw new NullReferenceException("Profil eksisterer ikke");
         }
