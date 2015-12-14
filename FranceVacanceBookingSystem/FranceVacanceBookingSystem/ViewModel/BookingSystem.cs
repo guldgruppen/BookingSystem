@@ -76,6 +76,8 @@ namespace FranceVacanceBookingSystem.ViewModel
         public static ObservableCollection<Sommerhus> SommerhusMatch { get; set; } = new ObservableCollection<Sommerhus>();
         public ObservableCollection<int> PersoneriCombobox { get; set; }
         public ObservableCollection<int> VærelserICombobox { get; set; }
+
+        public static ObservableCollection<Sommerhus> MatchFav { get; set; } = new ObservableCollection<Sommerhus>();
         public int AntalPersoner { get; set; }
         public int AntalSoveværelser { get; set; }
         public int AntalBadeværelser { get; set; }
@@ -135,6 +137,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             Sommerhuse = new ObservableCollection<Sommerhus>();
             PersoneriCombobox = new ObservableCollection<int>();
             VærelserICombobox = new ObservableCollection<int>();
+            
 
                        
             //InitSommerhus();
@@ -148,12 +151,9 @@ namespace FranceVacanceBookingSystem.ViewModel
             LoadKunder();
             LoadProfiles();
             LoadSommerhuse();
-            LoadBookings();
-
-            if (Pro != null)
-            {
-                LoadFavorits();
-            }
+            LoadBookings();                     
+            LoadFavorits();
+            
 
             _navigationService = new NavigationService();
             NavToMainSystemCommand = new RelayCommand(CheckLoginInformationAndNavigate);
@@ -199,6 +199,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             BookingCommand = new RelayCommand(TryToBook);
             NavToMinProfilCommand = new RelayCommand(() =>
             {
+                MatchFavorites();
                 _navigationService.Navigate(typeof(MinProfil));
             });
             AddFavoritCommand = new RelayCommand(AddToFavorites);
@@ -232,6 +233,22 @@ namespace FranceVacanceBookingSystem.ViewModel
             } 
                     
         }
+
+        public void MatchFavorites()
+        {
+            MatchFav.Clear();
+            foreach (var a in FavoritRegister.FavoritListe)
+            {
+                if (a.FavoritProfile.Username == Pro.Username)
+                {
+                    MatchFav.Add(a.FavoritSommerhus);
+                }
+            }
+
+        }
+
+
+
         public void CheckTime(DateTimeOffset fra, DateTimeOffset til)
         {           
             if(fra > til)
@@ -329,11 +346,9 @@ namespace FranceVacanceBookingSystem.ViewModel
                 Sommerhus temp = SommerhusMatch[SommerhusIndex];
                 foreach (var t in FavoritRegister.FavoritListe)
                 {
-                    if(t.FavoritSommerhus.Equals(temp))
+                    if(t.FavoritSommerhus.Equals(temp) && t.FavoritProfile.Username == Pro.Username)
                         throw new Exception("eksisterer i forvejen");
                 }
-
-
                 FavoritRegister.Addfavorit(Pro, temp);
                 Dialog.Show("Sommerhus tilføjet til dine favoritter");
                 FavoritPersistency.SaveFavoritAsJsonAsync(FavoritRegister.FavoritListe);
@@ -504,7 +519,7 @@ namespace FranceVacanceBookingSystem.ViewModel
             if (loadedFavorit != null)
             {
                 FavoritRegister.FavoritListe.Clear();
-                foreach (var s in loadedFavorit.Where( x => x.FavoritProfile.Username == Pro.Username))
+                foreach (var s in loadedFavorit)
                 {
                     FavoritRegister.FavoritListe.Add(s);
                 }
