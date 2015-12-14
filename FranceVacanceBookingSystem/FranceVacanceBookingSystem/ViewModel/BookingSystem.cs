@@ -332,6 +332,8 @@ namespace FranceVacanceBookingSystem.ViewModel
                     if(t.FavoritSommerhus.Equals(temp))
                         throw new Exception("eksisterer i forvejen");
                 }
+
+
                 FavoritRegister.Addfavorit(Pro, temp);
                 Dialog.Show("Sommerhus tilføjet til dine favoritter");
                 FavoritPersistency.SaveFavoritAsJsonAsync(FavoritRegister.FavoritListe);
