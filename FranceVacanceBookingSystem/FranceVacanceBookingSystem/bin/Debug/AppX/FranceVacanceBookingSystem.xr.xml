@@ -18,13 +18,15 @@
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="ShowPageOmOsCommand" />
     <RootPropertyPathName Name="NavToOpretSommerhus" />
+    <RootPropertyPathName Name="NavToMinProfilCommand" />
+    <RootPropertyPathName Name="LogudCommand" />
+    <RootPropertyPathName Name="LoginUsername" />
     <RootPropertyPathName Name="NavToMainSystemCommand" />
     <RootPropertyPathName Name="LoginTypes" />
     <RootPropertyPathName Name="SelectedIndexLoginType" />
     <RootPropertyPathName Name="NavToOretProfilCommand" />
     <RootPropertyPathName Name="SendEmailCommand" />
     <RootPropertyPathName Name="ShowPageKontaktOsCommand" />
-    <RootPropertyPathName Name="NavToMinProfilCommand" />
     <RootPropertyPathName Name="NavToListSommerhus" />
     <RootPropertyPathName Name="SelectedSwimmingpool" />
     <RootPropertyPathName Name="SelectedHusdyr" />
@@ -38,8 +40,6 @@
     <RootPropertyPathName Name="SelectedAntalPersoner" />
     <RootPropertyPathName Name="VærelserICombobox" />
     <RootPropertyPathName Name="SelectedAntalVærelser" />
-    <RootPropertyPathName Name="LogudCommand" />
-    <RootPropertyPathName Name="LoginUsername" />
     <RootPropertyPathName Name="MatchFav" />
     <RootPropertyPathName Name="FavoritSommerhus" />
     <RootPropertyPathName Name="Pris" />

@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-14T22:35:27.590</Modified>
+      <Modified>2015-12-15T08:29:10.217</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
       <PackagePath>FranceVacanceBookingSystem.exe</PackagePath>
-      <Modified>2015-12-14T22:35:27.446</Modified>
+      <Modified>2015-12-15T08:29:09.961</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -366,51 +366,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
       <PackagePath>FranceVacanceBookingSystem.xr.xml</PackagePath>
-      <Modified>2015-12-14T22:17:16.689</Modified>
+      <Modified>2015-12-15T08:29:09.620</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.036</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\AdminPage.xbf">
       <PackagePath>View\AdminPage.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.036</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\KontaktOs.xbf">
       <PackagePath>View\KontaktOs.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
       <PackagePath>View\MainSystem.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MinProfil.xbf">
       <PackagePath>View\MinProfil.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OmOs.xbf">
       <PackagePath>View\OmOs.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
       <PackagePath>View\OpretProfil.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretSommerhus.xbf">
       <PackagePath>View\OpretSommerhus.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.037</Modified>
+      <Modified>2015-12-15T08:29:09.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SommerhusListe.xbf">
       <PackagePath>View\SommerhusListe.xbf</PackagePath>
-      <Modified>2015-12-14T22:17:53.038</Modified>
+      <Modified>2015-12-15T08:29:09.692</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-14T22:17:53.283</Modified>
+      <Modified>2015-12-15T08:29:10.145</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
