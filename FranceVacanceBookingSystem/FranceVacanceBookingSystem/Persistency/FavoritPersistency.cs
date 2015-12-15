@@ -13,7 +13,7 @@ namespace FranceVacanceBookingSystem.Persistency
 {
     public class FavoritPersistency
     {
-        private static string JsonFileFavorit = "AFavoritAsJsonFile.dat";
+        private static string JsonFileFavorit = "xxxFavoritAsJsonFile.dat";
 
 
         public static async void SaveFavoritAsJsonAsync(ObservableCollection<FavoritSommerhuse> sh)

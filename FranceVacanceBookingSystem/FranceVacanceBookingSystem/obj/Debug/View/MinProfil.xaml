@@ -136,7 +136,7 @@
                             <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="{Binding SwimText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
                         </StackPanel>
                         <StackPanel Height="146" VerticalAlignment="Center" Width="164" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,-30,-4" Grid.Column="6" Grid.ColumnSpan="2">
-                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding FavoritSommerhus.Pris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,10" FontSize="20" Width="66"/>
+                            <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,10" FontSize="20" Width="66"/>
                             <TextBlock x:Name="textBlock12" TextWrapping="Wrap" Text="kr pr dag" VerticalAlignment="Bottom" Margin="0,0,20,10" HorizontalAlignment="Right" FontSize="20" Width="83"/>
                         </StackPanel>
                     </Grid>
