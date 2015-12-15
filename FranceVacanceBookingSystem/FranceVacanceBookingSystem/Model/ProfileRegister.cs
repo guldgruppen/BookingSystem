@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FranceVacanceBookingSystem.Persistency;
 
 namespace FranceVacanceBookingSystem.Model
 {
@@ -10,7 +11,8 @@ namespace FranceVacanceBookingSystem.Model
         {                     
             DicProfile = new Dictionary<string, string>();
             DicProfile.Add("jan","jan");
-            DicProfile.Add("torben","torben");           
+            DicProfile.Add("torben","torben");
+            ProfilePersistency.SaveProfilesAsJsonAsync(DicProfile);           
         }
               
 
