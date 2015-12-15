@@ -9,6 +9,7 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using FranceVacanceBookingSystem.View;
 using WpfApplication.ViewModel;
 
 namespace FranceVacanceBookingSystem.Common
@@ -190,7 +191,8 @@ namespace FranceVacanceBookingSystem.Common
         /// </summary>
         public virtual void GoBack()
         {
-            if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
+            if (this.Frame != null && this.Frame.CanGoBack)
+                this.Frame.Navigate(typeof (MainSystem));
         }
         /// <summary>
         /// Virtual method used by the <see cref="GoForwardCommand"/> property

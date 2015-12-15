@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>CHAMPENS</Machine>
-    <WindowsUser>Kasper</WindowsUser>
+    <Machine>DESKTOP-2HJJFD7</Machine>
+    <WindowsUser>Ricki</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetOsVersion>6.3</TargetOsVersion>
     <TargetOsDescription>Windows 8.1</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>c7b8d96f-3d01-4e7d-9507-6eb85710c2d4</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\FranceVacanceBookingSystemTest.dll">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\FranceVacanceBookingSystemTest.dll">
       <PackagePath>FranceVacanceBookingSystemTest.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\FranceVacanceBookingSystemTest.pdb">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\FranceVacanceBookingSystemTest.pdb">
       <PackagePath>FranceVacanceBookingSystemTest.pdb</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.pdb">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.pdb">
       <PackagePath>FranceVacanceBookingSystem.pdb</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSTestFramework\14.0\References\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.dll">
@@ -33,10 +33,10 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSTestFramework\14.0\References\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.UnitTestFramework.dll">
       <PackagePath>Microsoft.VisualStudio.TestPlatform.UnitTestFramework.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.exe">
       <PackagePath>FranceVacanceBookingSystem.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\TestPlatform\14.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.Common.dll">
@@ -63,281 +63,281 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\TestPlatform\14.0\Redist\CommonConfiguration\neutral\vstest.executionengine.appcontainer.x86.exe">
       <PackagePath>vstest.executionengine.appcontainer.x86.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestLogo.scale-100.png">
       <PackagePath>Images\UnitTestLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestSmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestSmallLogo.scale-100.png">
       <PackagePath>Images\UnitTestSmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestSplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestSplashScreen.scale-100.png">
       <PackagePath>Images\UnitTestSplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestStoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\Images\UnitTestStoreLogo.scale-100.png">
       <PackagePath>Images\UnitTestStoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-140.png">
       <PackagePath>Assets\BadgeLogo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\BadgeLogo.scale-180.png">
       <PackagePath>Assets\BadgeLogo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceVacanceSplashScreen.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceVacanceSplashScreen.scale-180.png">
       <PackagePath>Assets\FranceVacanceSplashScreen.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo120x120.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo120x120.png">
       <PackagePath>Assets\fvlogo120x120.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo126x126.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo126x126.png">
       <PackagePath>Assets\fvlogo126x126.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo150x150.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo150x150.png">
       <PackagePath>Assets\fvlogo150x150.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo16x16.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo16x16.png">
       <PackagePath>Assets\fvlogo16x16.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo210x210.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo210x210.png">
       <PackagePath>Assets\fvlogo210x210.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo248x120.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo248x120.png">
       <PackagePath>Assets\fvlogo248x120.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo248x248.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo248x248.png">
       <PackagePath>Assets\fvlogo248x248.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo24x24.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo24x24.png">
       <PackagePath>Assets\fvlogo24x24.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo256x256.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo256x256.png">
       <PackagePath>Assets\fvlogo256x256.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo270x270.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo270x270.png">
       <PackagePath>Assets\fvlogo270x270.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo30x30.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo30x30.png">
       <PackagePath>Assets\fvlogo30x30.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo310x150.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo310x150.png">
       <PackagePath>Assets\fvlogo310x150.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo310x310.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo310x310.png">
       <PackagePath>Assets\fvlogo310x310.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo32x32.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo32x32.png">
       <PackagePath>Assets\fvlogo32x32.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo33x33.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo33x33.png">
       <PackagePath>Assets\fvlogo33x33.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo42x42.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo42x42.png">
       <PackagePath>Assets\fvlogo42x42.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo434x210.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo434x210.png">
       <PackagePath>Assets\fvlogo434x210.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo434x434.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo434x434.png">
       <PackagePath>Assets\fvlogo434x434.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo43x43.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo43x43.png">
       <PackagePath>Assets\fvlogo43x43.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo48x48.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo48x48.png">
       <PackagePath>Assets\fvlogo48x48.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo50x50.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo50x50.png">
       <PackagePath>Assets\fvlogo50x50.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo54x54.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo54x54.png">
       <PackagePath>Assets\fvlogo54x54.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo558x558.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo558x558.png">
       <PackagePath>Assets\fvlogo558x558.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo56x56.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo56x56.png">
       <PackagePath>Assets\fvlogo56x56.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo70x70.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo70x70.png">
       <PackagePath>Assets\fvlogo70x70.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo90x90.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo90x90.png">
       <PackagePath>Assets\fvlogo90x90.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo98x98.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogo98x98.png">
       <PackagePath>Assets\fvlogo98x98.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-140.png">
       <PackagePath>Assets\Logo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-180.png">
       <PackagePath>Assets\Logo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Logo.scale-80.png">
       <PackagePath>Assets\Logo.scale-80.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-140.png">
       <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-180.png">
       <PackagePath>Assets\SmallLogo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-80.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.scale-80.png">
       <PackagePath>Assets\SmallLogo.scale-80.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-16.png">
       <PackagePath>Assets\SmallLogo.targetsize-16.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-256.png">
       <PackagePath>Assets\SmallLogo.targetsize-256.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-32.png">
       <PackagePath>Assets\SmallLogo.targetsize-32.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SmallLogo.targetsize-48.png">
       <PackagePath>Assets\SmallLogo.targetsize-48.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-140.png">
       <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\SplashScreen.scale-180.png">
       <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-100.png">
       <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-140.png">
       <PackagePath>Assets\Square310x310Logo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-180.png">
       <PackagePath>Assets\Square310x310Logo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square310x310Logo.scale-80.png">
       <PackagePath>Assets\Square310x310Logo.scale-80.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-100.png">
       <PackagePath>Assets\Square70x70Logo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-140.png">
       <PackagePath>Assets\Square70x70Logo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-180.png">
       <PackagePath>Assets\Square70x70Logo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Square70x70Logo.scale-80.png">
       <PackagePath>Assets\Square70x70Logo.scale-80.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-140.png">
       <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\StoreLogo.scale-180.png">
       <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-140.png">
       <PackagePath>Assets\Wide310x150Logo.scale-140.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-180.png">
       <PackagePath>Assets\Wide310x150Logo.scale-180.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Wide310x150Logo.scale-80.png">
       <PackagePath>Assets\Wide310x150Logo.scale-80.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage.jpg">
       <PackagePath>Assets\FranceImage.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage2.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\FranceImage2.jpg">
       <PackagePath>Assets\FranceImage2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\frankrigs skønhed.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\frankrigs skønhed.jpg">
       <PackagePath>Assets\frankrigs skønhed.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\frankrigs skønhed2.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\frankrigs skønhed2.jpg">
       <PackagePath>Assets\frankrigs skønhed2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg1.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg1.jpg">
       <PackagePath>Assets\fvimg1.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg2.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg2.jpg">
       <PackagePath>Assets\fvimg2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg3.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvimg3.jpg">
       <PackagePath>Assets\fvimg3.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogob24x24.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\fvlogob24x24.jpg">
       <PackagePath>Assets\fvlogob24x24.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\louvre-museum.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\louvre-museum.jpg">
       <PackagePath>Assets\louvre-museum.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommer i Frankrig3.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommer i Frankrig3.jpg">
       <PackagePath>Assets\Sommer i Frankrig3.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig.jpg">
       <PackagePath>Assets\Sommerhus i Frankrig.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig1.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig1.jpg">
       <PackagePath>Assets\Sommerhus i Frankrig1.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig2.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig2.jpg">
       <PackagePath>Assets\Sommerhus i Frankrig2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig4.jpg">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\Assets\Sommerhus i Frankrig4.jpg">
       <PackagePath>Assets\Sommerhus i Frankrig4.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\FranceVacanceBookingSystem.xr.xml">
       <PackagePath>FranceVacanceBookingSystem.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\AdminPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\AdminPage.xbf">
       <PackagePath>View\AdminPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\KontaktOs.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\KontaktOs.xbf">
       <PackagePath>View\KontaktOs.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MainSystem.xbf">
       <PackagePath>View\MainSystem.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MinProfil.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\MinProfil.xbf">
       <PackagePath>View\MinProfil.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OmOs.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OmOs.xbf">
       <PackagePath>View\OmOs.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretProfil.xbf">
       <PackagePath>View\OpretProfil.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretSommerhus.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\OpretSommerhus.xbf">
       <PackagePath>View\OpretSommerhus.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SommerhusListe.xbf">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\bin\Debug\View\SommerhusListe.xbf">
       <PackagePath>View\SommerhusListe.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

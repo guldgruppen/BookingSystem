@@ -1,2 +1,2 @@
-C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem.csproj;neutral
-C:\Users\Kasper\Desktop\GitHub\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\FranceVacanceBookingSystemTest.csproj;neutral
+C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystem.csproj;neutral
+C:\Users\Ricki\Desktop\Github\BookingSystem\FranceVacanceBookingSystem\FranceVacanceBookingSystemTest\FranceVacanceBookingSystemTest.csproj;neutral
