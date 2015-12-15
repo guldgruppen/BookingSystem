@@ -9,10 +9,8 @@ namespace FranceVacanceBookingSystem.Model
         public Dictionary<string,string> DicProfile { get; set; }     
         public ProfileRegister()
         {                     
-            DicProfile = new Dictionary<string, string>();
-            DicProfile.Add("jan","jan");
-            DicProfile.Add("torben","torben");
-            ProfilePersistency.SaveProfilesAsJsonAsync(DicProfile);           
+            DicProfile = new Dictionary<string, string>();          
+
         }
               
 
