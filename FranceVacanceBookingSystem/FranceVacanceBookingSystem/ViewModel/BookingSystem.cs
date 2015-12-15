@@ -233,7 +233,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             } 
                     
         }
-
         public void MatchFavorites()
         {
             MatchFav.Clear();
@@ -246,9 +245,6 @@ namespace FranceVacanceBookingSystem.ViewModel
             }
 
         }
-
-
-
         public void CheckTime(DateTimeOffset fra, DateTimeOffset til)
         {           
             if(fra > til)
@@ -358,7 +354,6 @@ namespace FranceVacanceBookingSystem.ViewModel
                 Dialog.Show(ex.Message);
             }
         }
-
         public void AddCustomerWithProfile()
         {
             try
@@ -511,7 +506,6 @@ namespace FranceVacanceBookingSystem.ViewModel
 
             }
         }
-
         private async void LoadFavorits()
         {
             var loadedFavorit = await FavoritPersistency.LoadFavoritFromJsonAsync();
@@ -527,7 +521,6 @@ namespace FranceVacanceBookingSystem.ViewModel
 
             }
         }
-
         #endregion
         #region OnPropertyChanged Region
 

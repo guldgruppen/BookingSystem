@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roots xmlns="clr-namespace:Microsoft.Xaml.Tools.XamlCompiler.RootLog;assembly=Microsoft.Windows.UI.Xaml.81.Build.Tasks">
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="DefaultViewModel" />
+    <RootPropertyPathName Name="BookingRegister" />
+    <RootPropertyPathName Name="Bookings" />
+    <RootPropertyPathName Name="DeleteKundeCommand" />
+    <RootPropertyPathName Name="KundeRegister" />
+    <RootPropertyPathName Name="Kunder" />
+    <RootPropertyPathName Name="Count" />
+    <RootPropertyPathName Name="SelectedIndexListeKunde" />
+    <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="Tlf" />
+    <RootPropertyPathName Name="Email" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="NavigationHelper" />
+    <RootPropertyPathName Name="GoBackCommand" />
+    <RootPropertyPathName Name="ShowPageOmOsCommand" />
+    <RootPropertyPathName Name="NavToOpretSommerhus" />
+    <RootPropertyPathName Name="NavToMainSystemCommand" />
+    <RootPropertyPathName Name="LoginTypes" />
+    <RootPropertyPathName Name="SelectedIndexLoginType" />
+    <RootPropertyPathName Name="NavToOretProfilCommand" />
+    <RootPropertyPathName Name="SendEmailCommand" />
+    <RootPropertyPathName Name="ShowPageKontaktOsCommand" />
+    <RootPropertyPathName Name="NavToMinProfilCommand" />
+    <RootPropertyPathName Name="NavToListSommerhus" />
+    <RootPropertyPathName Name="SelectedSwimmingpool" />
+    <RootPropertyPathName Name="SelectedHusdyr" />
+    <RootPropertyPathName Name="TilDato" />
+    <RootPropertyPathName Name="MaxValueTil" />
+    <RootPropertyPathName Name="MaxValueFra" />
+    <RootPropertyPathName Name="FraDato" />
+    <RootPropertyPathName Name="MinValueFra" />
+    <RootPropertyPathName Name="MinValueTil" />
+    <RootPropertyPathName Name="PersoneriCombobox" />
+    <RootPropertyPathName Name="SelectedAntalPersoner" />
+    <RootPropertyPathName Name="VærelserICombobox" />
+    <RootPropertyPathName Name="SelectedAntalVærelser" />
+    <RootPropertyPathName Name="LogudCommand" />
+    <RootPropertyPathName Name="LoginUsername" />
+    <RootPropertyPathName Name="MatchFav" />
+    <RootPropertyPathName Name="FavoritSommerhus" />
+    <RootPropertyPathName Name="Pris" />
+    <RootPropertyPathName Name="SwimText" />
+    <RootPropertyPathName Name="DogText" />
+    <RootPropertyPathName Name="Størrelse" />
+    <RootPropertyPathName Name="AntalSoveværelser" />
+    <RootPropertyPathName Name="AntalPersoner" />
+    <RootPropertyPathName Name="Beliggenhed" />
+    <RootPropertyPathName Name="KundeLogin" />
+    <RootPropertyPathName Name="Adress" />
+    <RootPropertyPathName Name="Pro" />
+    <RootPropertyPathName Name="AddProfileWithCustomerCommand" />
+    <RootPropertyPathName Name="RepeatPassword" />
+    <RootPropertyPathName Name="AddSommerhusCommand" />
+    <RootPropertyPathName Name="Swimmingpool" />
+    <RootPropertyPathName Name="HusdyrTilladt" />
+    <RootPropertyPathName Name="AntalBadeværelser" />
+    <RootPropertyPathName Name="BookingCommand" />
+    <RootPropertyPathName Name="AddFavoritCommand" />
+    <RootPropertyPathName Name="SommerhusMatch" />
+    <RootPropertyPathName Name="SommerhusIndex" />
+  </Roots.PropertyPathNames>
+  <Roots.RootTypes>
+    <RootType FullName="Windows.UI.Xaml.Application" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="RelativeSource" />
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="ElementName" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
+      <RootProperty Name="Mode" />
+    </RootType>
+    <RootType FullName="System.String" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Background" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="ChildrenTransitions" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+      <RootProperty Name="MinWidth" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="FranceVacanceBookingSystem.ViewModel.BookingSystem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="ItemContainerStyle" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Flyout" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Inlines" />
+      <RootProperty Name="FontStyle" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="SelectionHighlightColor" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Background" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension">
+      <RootProperty Name="ResourceKey" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
+      <RootMethod Name="GetName" />
+      <RootMethod Name="SetName" />
+      <RootMethod Name="GetAutomationId" />
+      <RootMethod Name="SetAutomationId" />
+      <RootMethod Name="GetItemType" />
+      <RootMethod Name="SetItemType" />
+    </RootType>
+    <RootType FullName="FranceVacanceBookingSystem.View.AdminPage" />
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="ImageSource" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontStyle" />
+      <RootProperty Name="FontSize" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
+    <RootType FullName="FranceVacanceBookingSystem.View.KontaktOs" />
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Password" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="MaxDropDownHeight" />
+      <RootProperty Name="SelectedValue" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
+      <RootProperty Name="Placement" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="FranceVacanceBookingSystem.View.Login" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Header" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="OffContent" />
+      <RootProperty Name="OnContent" />
+      <RootProperty Name="IsOn" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Date" />
+      <RootProperty Name="MinYear" />
+      <RootProperty Name="MaxYear" />
+    </RootType>
+    <RootType FullName="FranceVacanceBookingSystem.View.MainSystem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="TabNavigation" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.UIElement">
+      <RootProperty Name="IsHoldingEnabled" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ControlTemplate">
+      <RootProperty Name="TargetType" />
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter">
+      <RootProperty Name="CheckHintBrush" />
+      <RootProperty Name="CheckBrush" />
+      <RootProperty Name="ContentMargin" />
+      <RootProperty Name="ContentTransitions" />
+      <RootProperty Name="CheckSelectingBrush" />
+      <RootProperty Name="DragForeground" />
+      <RootProperty Name="DragOpacity" />
+      <RootProperty Name="DragBackground" />
+      <RootProperty Name="DisabledOpacity" />
+      <RootProperty Name="FocusBorderBrush" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="PointerOverBackgroundMargin" />
+      <RootProperty Name="PlaceholderBackground" />
+      <RootProperty Name="PointerOverBackground" />
+      <RootProperty Name="ReorderHintOffset" />
+      <RootProperty Name="SelectedPointerOverBorderBrush" />
+      <RootProperty Name="SelectionCheckMarkVisualEnabled" />
+      <RootProperty Name="SelectedForeground" />
+      <RootProperty Name="SelectedPointerOverBackground" />
+      <RootProperty Name="SelectedBorderThickness" />
+      <RootProperty Name="SelectedBackground" />
+      <RootProperty Name="VerticalContentAlignment" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.TemplateBindingExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Source" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="FranceVacanceBookingSystem.View.MinProfil" />
+    <RootType FullName="FranceVacanceBookingSystem.View.OmOs" />
+    <RootType FullName="FranceVacanceBookingSystem.View.OpretProfil" />
+    <RootType FullName="FranceVacanceBookingSystem.View.OpretSommerhus" />
+    <RootType FullName="FranceVacanceBookingSystem.View.SommerhusListe" />
+  </Roots.RootTypes>
+</Roots>

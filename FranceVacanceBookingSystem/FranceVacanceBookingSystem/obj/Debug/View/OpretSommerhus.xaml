@@ -1,0 +1,133 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FranceVacanceBookingSystem.View"
+    xmlns:common="using:FranceVacanceBookingSystem.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:FranceVacanceBookingSystem.ViewModel"
+    x:Name="pageRoot"
+    x:Class="FranceVacanceBookingSystem.View.OpretSommerhus"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">My Application</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="821*"/>
+            <ColumnDefinition Width="545*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/louvre-museum.jpg"/>
+        </Grid.Background>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.DataContext>
+            <ViewModel:BookingSystem/>
+        </Grid.DataContext>
+
+        <!-- Back button and page title -->
+        <Grid Background="#CC192B46" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" 
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Text="France Vacance Booking System" Margin="0,0,0,41" Grid.Column="1" HorizontalAlignment="Center"/>
+            <StackPanel x:Name="LogIn" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,32,10" Width="293" VerticalAlignment="Bottom" Height="100">
+                <StackPanel Height="34" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock x:Name="textBlocker" TextWrapping="Wrap" Text="Brugernavn:" FontSize="20"/>
+                    <TextBlock x:Name="textBlock6er" TextWrapping="Wrap" Text="{Binding LoginUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
+                </StackPanel>
+                <Button x:Name="button1er" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="67" FontSize="32" Margin="89,0,0,0" Background="#B25474A3" Content="Log Ud" Command="{Binding LogudCommand}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="31,30,27,30" Grid.Row="1" Background="#CC192B46" Grid.ColumnSpan="2">
+            <StackPanel Margin="375,20,639,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
+                <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding AntalBadeværelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Antal Badeværelser" FontSize="24" Background="White"/>
+                <TextBox x:Name="textBox1" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="24" PlaceholderText="" Margin="0,10,0,0" Background="White"/>
+                <TextBox x:Name="textBox2" TextWrapping="Wrap" Text="{Binding AntalSoveværelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="24" Margin="0,10,0,0" PlaceholderText="Antal Soveværelser" Background="White"/>
+                <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="{Binding Størrelse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="24" PlaceholderText="Størrelse" Margin="0,10,0,0" Background="White"/>
+                <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="{Binding Beliggenhed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="24" PlaceholderText="Beliggendhed" Margin="0,10,0,0"/>
+                <TextBox x:Name="textBox5" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="24" PlaceholderText="Pris" Margin="0,10,0,0"/>
+                <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja" FontSize="21.333" Margin="0,20,0,0" IsOn="{Binding HusdyrTilladt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <ToggleSwitch x:Name="toggleSwitch1" Header="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OffContent="Nej" OnContent="Ja" FontSize="21.333" IsOn="{Binding Swimmingpool, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button x:Name="button" Content="Opret Sommerhus" Margin="0" VerticalAlignment="Stretch" Height="74" FontSize="26.667" Background="#B25474A3" HorizontalAlignment="Stretch" Command="{Binding AddSommerhusCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Width="326" d:LayoutOverrides="TopPosition, BottomPosition" Margin="0,17,0,0">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Antal Badeværelser:" FontSize="24" Margin="10,10,10,0"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="24" Margin="10,20,10,0" Height="34">
+                	<Run Text="Antal "/>
+                	<Run Text="Personer:"/>
+                	<LineBreak/>
+                	<Run/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Antal Soveværelser:" FontSize="24" Margin="10,25,10,0"/>
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Størrelse i m2:" FontSize="24" Margin="10,25,10,0"/>
+                <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="0" TextWrapping="Wrap" Text="TextBlock" Width="10"/>
+                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" FontSize="24" Margin="10,25,10,0" Text="Beliggendhed:"/>
+                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" FontSize="24" Margin="10,25,10,0" Text="Pris pr dag:"/>
+                <TextBlock x:Name="textBlock8" TextWrapping="Wrap" FontSize="24" Margin="10,27,10,0">
+					<Run Text="Husdyr Tillad"/>
+					<Run Text="t"/>
+					<Run Text=":"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock9" TextWrapping="Wrap" FontSize="24" Margin="10,29,10,0">
+					<Run Text="Swimmingpool"/>
+					<Run Text=":"/>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0,20,74,234" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Right" Width="513">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Sommerhus i Frankrig.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <StackPanel Height="100" Margin="0,0,487,110" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100">
+                <StackPanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Sommerhus i Frankrig2.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Height="100" Margin="0,0,349,110" VerticalAlignment="Bottom" Width="100">
+                <StackPanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Sommer i Frankrig3.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Height="100" Margin="0,0,210,110" VerticalAlignment="Bottom" Width="100">
+                <StackPanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Sommerhus i Frankrig1.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Height="100" VerticalAlignment="Bottom" Width="100" Margin="0,0,74,110">
+                <StackPanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Sommerhus i Frankrig4.jpg"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <Button x:Name="button1" Content="Upload billede" HorizontalAlignment="Right" Margin="0,0,194,19" VerticalAlignment="Bottom" Height="59" Width="234" FontSize="24" Background="#B25474A3"/>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="57,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Page>
+
