@@ -1,3 +1,3 @@
 # Booking System - France Vacance
 
-Just a test
+1 semester projekt - Rasmus, Stefan, Ricki og Kasper
